@@ -1,0 +1,59 @@
+<section class="customer-account-template customer-template">
+  <div class="container">
+    <div class="customer-account-main">
+      <h1 class="heading-2 bold text-center">{{ 'customer.account.title' | t }}</h1>
+
+      {%- assign linklist = 'account-menu' -%}
+
+      {% render 'account-menu', linklist: linklists[linklist], class_name: 'account-menu' %}
+
+      <h2 class="heading-3 bold">{{ 'customer.orders.title' | t }}</h2>
+      <div class="customer-account-content">
+        <section class="orders-overview">
+          {% paginate customer.orders by 20 %}
+            {% if customer.orders.size != 0 %}
+              <table class="responsive-table" data-turbolinks="false">
+                <thead>
+                  <tr>
+                    <th>{{ 'customer.orders.order_number' | t }}</th>
+                    <th>{{ 'customer.orders.date' | t }}</th>
+                    <th>{{ 'customer.orders.payment_status' | t }}</th>
+                    <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                    <th>{{ 'customer.orders.total' | t }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for order in customer.orders %}
+                    <tr>
+                      <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                      <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: format: 'month_day_year' }}</td>
+                      <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                      <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                      <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% else %}
+              <p class="no-orders">{{ 'customer.orders.none' | t }}</p>
+            {% endif %}
+
+            {% if paginate.pages > 1 %}
+              {% include 'pagination' %}
+            {% endif %}
+          {% endpaginate %}
+        </section>
+
+        <section class="customer-details-overview">
+          <div class="customer-details-overview-container">
+            <h2 class="heading-5 bold">{{ 'customer.account.address_primary' | t }}</h2>
+            <div class="address">
+              {{ customer.default_address | format_address }}
+              <a href="/account/addresses">{{ 'customer.account.addresses_cta' | t }}</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+{%- comment -%}
+  {% render 'collections-showcase-item', data: data, id: block.id %}
+{%- endcomment -%}
+
+{% if dt_width == 'two_thirds' %}
+{%- comment -%}grab different dimensions if it is a 33% or 66% width{%- endcomment -%}
+  {% assign thumbnail = image | img_url: '200x', crop: 'center' %}
+  {% assign oneXImage = image | img_url: '996x', crop: 'center' %}
+  {% assign twoXImage = image | img_url: '1992x', crop: 'center' %}
+{% else %}
+  {% assign thumbnail = image | img_url: '200x', crop: 'center' %}
+  {% assign oneXImage = image | img_url: '448x', crop: 'center' %}
+  {% assign twoXImage = image | img_url: '896x', crop: 'center' %}
+{% endif %}
+
+{% if mobile_image != blank %}
+  {% assign oneXmobImage = mobile_image | img_url: '420x', crop: 'center' %}
+  {% assign twoXmobImage = mobile_image | img_url: '820x', crop: 'center' %}
+
+  {% assign oneXtabImage = mobile_image | img_url: '768x', crop: 'center' %}
+  {% assign twoXtabImage = mobile_image | img_url: '1536x', crop: 'center' %}
+{% else %}
+  {%- comment -%}if mobile image is blank use DT image{%- endcomment -%}
+  {% assign oneXmobImage = oneXImage %}
+  {% assign twoXmobImage = twoXImage %}
+
+  {% assign oneXtabImage = oneXImage %}
+  {% assign twoXtabImage = twoXImage %}
+{% endif %}
+
+<li class="collections-showcase-item {{ dt_width }} {% if show_on_mobile != true %}hide-on-mobile{% endif %}" id="collections-showcase-item-{{ id }}">
+  <a href="{{ link }}">
+    <picture>
+      <source
+        media="(max-width: 415px)"
+        data-lazy-load
+        data-srcset="{{ oneXmobImage }} 1x, {{ twoXmobImage }} 2x" />
+      <source
+        media="(max-width: 767px)"
+        data-lazy-load
+        data-srcset="{{ oneXtabImage }} 1x, {{ twoXtabImage }} 2x" />
+      <img
+           ss
+        data-lazy-load
+        src="{{ thumbnail }}"
+        data-src="{{ oneXImage }}"
+        data-srcset="{{ oneXImage }} 1x, {{ twoXImage }} 2x,"
+        alt="{{ data.image.alt }}" />
+    </picture>
+    
+    <div class="footer footer-{{ contrast }}">
+      <div class="flex footer-inner">
+        <h4 class="heading-4 bold">{{ title }}</h4>
+        <span class="btn btn-tertiary">{{ 'homepage.collection_cta_text' | t }}</span>
+      </div>
+    </div>
+    <style>
+      #collections-showcase-item-{{ id }} .footer p {
+        color: {{ title_color }};
+      }
+    </style>
+  </a>
+</li>
+

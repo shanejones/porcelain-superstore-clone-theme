@@ -1,0 +1,162 @@
+
+{%- comment -%}
+    e.g.
+      {% render 'accordion', 
+      product: product, 
+      type: 'specifications', 
+      blocks: blocks, 
+      section_settings: section_settings %}
+{%- endcomment -%}
+
+{%- comment -%}accordion title{%- endcomment -%}
+{% case type %}
+  {% when 'specifications' %}
+    {% assign title = 'products.product.accordion_1_title_html' | t %}
+    {% if product.type != 'Tile' %}
+      {% assign title = 'products.product.accordion_1_title_non_tile_html' | t %}
+    {% endif %}
+  {% when 'suitable-for' %}  
+    {% assign title = 'products.product.accordion_2_title_html' | t %}
+  {% when 'delivery-and-returns' %}  
+    {% assign title = 'products.product.accordion_3_title_html' | t %}
+  {% when 'measure' %}  
+    {% assign title = 'products.product.accordion_4_title_html' | t %}
+  {% when 'install' %}  
+    {% assign title = 'products.product.accordion_5_title_html' | t %}
+  {% else %}
+    {% assign title = 'products.product.accordion_title_fallback_html' | t %}
+{% endcase %}
+
+<li class="accordion" data-accordion-item="true" id="tab-{{ title | handleize }}">
+  <div class="accordion__title-container" data-accordion-title="product">
+    <h2 class="accordion__title">{{ title }}</h2>
+    {% if product.type == 'Tile' and type == 'specifications' %}
+      <div class="image-container">
+        <img class="opt_lazy"
+   data-src="{{ section_settings.tile_icon | img_url: '99x', crop: 'center' }}"
+        alt="{{ title | append: '-image' }}">
+      </div>
+    {% endif %}
+  </div>
+  <div class="accordion__body">
+    
+      {% case type %}
+      
+        {%- comment -%}TILE SPECIFICAITONS ACCORDION{%- endcomment -%}
+        {% when 'specifications' %}
+          <ul class="accordion__content specifications" data-product-variant-info-accordion>
+            {% assign title = 'products.product.accordion_1_title_html' | t %}
+            {% if product.type != 'Tile' %}
+              {% assign title = 'products.product.accordion_1_title_non_tile_html' | t %}
+            {% endif %}
+            {% assign data = data | split: ',' %}
+            {% assign count = 0 %}
+            {% for tag in data %}
+              {% assign count = count | plus: 1 %}
+              {%- comment -%}hide product code...for now...{%- endcomment -%}
+              {% unless tag contains 'product-code' and  section_settings.hide_product_code != blank %}
+                {% if tag contains 'spec::' %}
+                  {% assign tag_data = tag | remove: 'spec::' %}
+                {% endif %}
+                {% assign tag_data = tag | split: '::' %}
+                {% assign title = tag_data[1] | capitalize | replace: '-', ' ' %}
+                {% assign info = tag_data[2] | capitalize |  replace: '_', ' ' %}
+
+                {% for data in tag_data %}
+                  {% if data contains 'pei' %}
+                    {% assign title_data = data | split: '-' %}
+                    {% assign title_first_word = title_data[0] | upcase %}
+                    {% assign title = title_first_word | append: ' '| append: title_data[1] %}
+                  {% endif %}
+                {% endfor %}
+                <li>
+                  <p class="bold">{{ title }}</p>
+                  <p class="accordion-info">{{ info }}</p>
+                </li>
+              {% endunless%}
+            {% endfor %}
+
+            {%- comment -%}if there are variant metafields include space for them{%- endcomment -%}
+            {% for variant in product.variants %}
+              {% if variant.metafields.product.spec != blank %}
+                {% assign spec_tag = variant.metafields.product.spec | split: ',' %}
+                {% for spec in spec_tag %}
+                  {% assign count = count | plus: 1 %}
+                {% endfor %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+
+            {% assign height = count | divided_by: 2.0 | ceil | times: 40 | append: 'px'  %}
+
+            <style>
+              .specifications {
+                max-height: {{ height }};
+              }
+            </style>
+          </ul>
+
+        {%- comment -%}SUITABLE FOR ACCORDION{%- endcomment -%}
+        {% when 'suitable-for' %}
+          <ul class="accordion__content" data-product-variant-info-accordion>
+            {% assign data = data | split: ',' %}
+            {% for tag in data %}
+              {% assign tag_data = tag | split: '::' %}
+              {% assign title = tag_data[1] | capitalize | replace: '-', ' ' %}
+              {% assign info = tag_data[2] | capitalize |  replace: '_', ' ' %}
+              {%- comment -%}add icon for suitable-for accordion{%- endcomment -%}
+              {% assign block_image = '' %}
+              {% for block in blocks %}
+                {% if title == block.settings.text %}
+                  {% assign block_image = block.settings.image %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              <li>
+                <div class="image-container">
+                  <img class="opt_lazy"
+             data-src="{{ block_image | img_url: '60x', crop: 'center' }}"
+                  alt="{{ title | append: '-image' }}">
+                </div>
+                <p class="accordion-info">{{ title }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+
+        {%- comment -%}DELIVERY & RETURNS ACCORDION{%- endcomment -%}
+        {% when 'delivery-and-returns' %}
+          <ul class="accordion__content" data-product-variant-info-accordion>
+            {% if product.type != 'Tile' %}
+              <li class="full-width">
+                {{ section_settings.delivery_non_tiles }}
+              </li>
+            {% else %}
+              <li class="full-width">
+                {{ section_settings.delivery }}
+              </li>
+            {% endif %}
+          </ul>  
+        
+        {%- comment -%}HOW TO MEASURE ACCORDION{%- endcomment -%}
+        {% when 'measure' %}
+          <ul class="accordion__content" data-product-variant-info-accordion>
+            <li class="full-width">
+              <div>
+                {{ product.metafields.product.how_to_measure }}
+              </div>
+            </li>
+          </ul>
+          
+        {%- comment -%}HOW TO INSTALL ACCORDION{%- endcomment -%}
+        {% when 'install' %}  
+          <ul class="accordion__content" data-product-variant-info-accordion>
+            <li class="full-width">
+              <div>
+                {{ product.metafields.product.how_to_install }}
+              </div>
+            </li>
+          {% else %}
+        </ul>
+      {% endcase %}
+  </div>
+</li>

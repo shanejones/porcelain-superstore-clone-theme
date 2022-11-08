@@ -1,0 +1,15 @@
+<div class="mascot-and-text section-margin-bottom">
+  {% for block in blocks %}
+    <div class="mascot-and-text-block">
+      <a href="{{ block.settings.link }}">
+        <div class="image-container">
+          <img class="opt_lazy" data-src="{{ block.settings.image | img_url: '240x240' }}" alt="{{ block.settings.title | append: "-image" }}">
+        </div>
+      </a>
+      <div class="text-container">
+        <h3 class="heading-5 bold">{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

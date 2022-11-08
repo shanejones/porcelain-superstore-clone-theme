@@ -1,0 +1,84 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Blog posts" section in the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the blog posts section
+  - Blog (which blog category to show in your store)
+
+  Theme Store optional settings
+  - Number of posts to show
+  - Show author
+  - Show date
+{%- endcomment -%}
+<section class="blog-posts container section-margin-bottom">
+  {% if section.settings.title != blank %}
+    <header class="flex">
+      <h2 class="heading-2 bold">{{ section.settings.title | escape }}</h2>
+      <a class="btn btn-secondary hide-mobile" href="{{ section.settings.cta }}">{{ 'general.listings.view_all_link' | t }}</a>
+    </header>
+  {% endif %}
+
+  {% assign article_1 = articles[section.settings.featured_article_1] %}
+  {% assign article_2 = articles[section.settings.featured_article_2] %}
+  
+  <ul class="blog-post flex">
+    {% if article_1 != blank %}
+      {% render 'blog-post', article: article_1 %}
+    {% endif %}
+    {% if article_2 != blank %}
+      {% render 'blog-post', article: article_2 %}
+    {% endif %}
+  </ul>
+  <a class="btn btn-secondary hide-desktop-inline-flex" href="{{ section.settings.cta }}">{{ 'general.listings.view_all_link' | t }}</a>
+</section>
+
+{% schema %}
+  {
+    "name": "Blog posts",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Blog posts"
+      },
+      {
+        "id": "blog",
+        "type": "blog",
+        "label": "Blog",
+        "info": "This is a required setting from Shopify - PLEASE LEAVE BLANK"
+      },
+      {
+        "type": "article",
+        "id": "featured_article_1",
+        "label": "First article to feature on the homepage"
+      },
+      {
+      "type": "article",
+      "id": "featured_article_2",
+      "label": "Second article to feature on the home page"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "id": "cta",
+        "type": "url",
+        "label": "CTA Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog posts",
+        "category": "Blog",
+        "settings": {
+          "blog": "News"
+        }
+      }
+    ]
+  }
+{% endschema %}

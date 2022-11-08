@@ -1,0 +1,34 @@
+<section class="page-template">
+  {% render 'page-header'%}
+  <div class="container">
+    <main class="rte">
+      <h1 class="heading-1 bold">{{ page.title }}</h1>
+      {{ page.content }}
+    </main>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Page Headers",
+"blocks": 
+[
+  {
+    "type": "page-text",
+    "name": "Page headers",
+    "settings": [
+      {
+        "type": "page",
+        "id": "page",
+        "label": "Attach to a page"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Add custom background image"
+      }
+    ]
+  }
+]
+}
+{% endschema %}

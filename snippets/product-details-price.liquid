@@ -1,0 +1,16 @@
+
+{% if current_variant.compare_at_price != blank and current_variant.compare_at_price > current_variant.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+<div class="product-details-price-snippet heading-4 bold">
+  <span data-product-price>
+    {{ current_variant.price | money }}
+  </span>
+
+  <s class="heading-4" data-product-compare-at-price>
+    {% if on_sale %}
+      {{ current_variant.compare_at_price | money }}
+    {% endif %}
+  </s>
+</div>

@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-main",
+      "blocks": {
+        "1296e111-a535-4d44-88fd-ec9a985e1f75": {
+          "type": "tag",
+          "settings": {
+            "tag": "Bathroom",
+            "color": "#f4f4f4",
+            "text_color": "#000000"
+          }
+        },
+        "e34e2c7c-e302-4745-8768-c68ef0d0de67": {
+          "type": "tag",
+          "settings": {
+            "tag": "Get The Look",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "762b3bfa-a30b-45fa-89d5-081f3ad1af38": {
+          "type": "tag",
+          "settings": {
+            "tag": "Collection Spotlight",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "2457f1ef-1ef5-438e-bdc4-b6efb09e551c": {
+          "type": "tag",
+          "settings": {
+            "tag": "Feature Walls",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "166a3200-2b3b-4a76-b528-d480a3563ade": {
+          "type": "tag",
+          "settings": {
+            "tag": "Tile Trivia",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "c91b4891-750a-4f6f-8ffe-6752e332fc13": {
+          "type": "tag",
+          "settings": {
+            "tag": "Fireplace",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "8ba853dd-ec6a-4eea-b43f-0de154999636": {
+          "type": "tag",
+          "settings": {
+            "tag": "Floors",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "77f9d5e9-5e6b-48ee-ac90-527bfe6bc672": {
+          "type": "tag",
+          "settings": {
+            "tag": "Gardens",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "c1f24936-e802-43e7-aee4-fd1deaaebae2": {
+          "type": "tag",
+          "settings": {
+            "tag": "Hexagon",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "963a9748-af12-4b44-b711-cce54ae4f6b4": {
+          "type": "tag",
+          "settings": {
+            "tag": "Kitchen",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "135fc3b6-cf8c-44ee-b8bf-00156c7d3c47": {
+          "type": "tag",
+          "settings": {
+            "tag": "Now Trending",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "7c81c9b9-a764-420e-be74-762230dfb831": {
+          "type": "tag",
+          "settings": {
+            "tag": "Patterned",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "ab91e8bd-f677-4f1a-a70b-e8edb0860689": {
+          "type": "tag",
+          "settings": {
+            "tag": "",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "6d706315-4e2b-44fa-8907-b409bd15ff0d": {
+          "type": "tag",
+          "settings": {
+            "tag": "Style Tips",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "3fe3c7ea-ee89-4fa9-a366-78a2383e6f0c": {
+          "type": "tag",
+          "settings": {
+            "tag": "Terrazzo",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "b2d4333c-0493-48ad-b1db-519b87c72a26": {
+          "type": "tag",
+          "settings": {
+            "tag": "Wood Effect",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        },
+        "da20e823-f839-4a68-8349-f0a8388c4306": {
+          "type": "tag",
+          "settings": {
+            "tag": "Real Homes",
+            "color": "#f4f4f4",
+            "text_color": "#212a2f"
+          }
+        }
+      },
+      "block_order": [
+        "1296e111-a535-4d44-88fd-ec9a985e1f75",
+        "e34e2c7c-e302-4745-8768-c68ef0d0de67",
+        "762b3bfa-a30b-45fa-89d5-081f3ad1af38",
+        "2457f1ef-1ef5-438e-bdc4-b6efb09e551c",
+        "166a3200-2b3b-4a76-b528-d480a3563ade",
+        "c91b4891-750a-4f6f-8ffe-6752e332fc13",
+        "8ba853dd-ec6a-4eea-b43f-0de154999636",
+        "77f9d5e9-5e6b-48ee-ac90-527bfe6bc672",
+        "c1f24936-e802-43e7-aee4-fd1deaaebae2",
+        "963a9748-af12-4b44-b711-cce54ae4f6b4",
+        "135fc3b6-cf8c-44ee-b8bf-00156c7d3c47",
+        "7c81c9b9-a764-420e-be74-762230dfb831",
+        "ab91e8bd-f677-4f1a-a70b-e8edb0860689",
+        "6d706315-4e2b-44fa-8907-b409bd15ff0d",
+        "3fe3c7ea-ee89-4fa9-a366-78a2383e6f0c",
+        "b2d4333c-0493-48ad-b1db-519b87c72a26",
+        "da20e823-f839-4a68-8349-f0a8388c4306"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/floor_3840x_762bf56b-f6b0-4852-afd9-7546c873b5bb.jpg",
+        "title": "Ideas & Inspiration",
+        "content": "Welcome to our blog. It’s our little corner of the internet where we share all things tiles. There’s everything from inspiring interiors, styling secrets and beautiful ideas to transform your space.",
+        "text_limit": 350,
+        "display_feature": false,
+        "feature_image": "shopify:\/\/shop_images\/terrazo.jpg",
+        "article": "inspiration\/trending-terrazzo"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

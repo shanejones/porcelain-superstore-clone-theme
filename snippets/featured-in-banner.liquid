@@ -1,0 +1,23 @@
+{% if section.settings.show_featured_banner %}
+  <section class="featured-banner">
+    <div class="container">
+      <div class="featured-header">
+        <h3 class="heading-3 bold">{{ section.settings.banner_title }}</h3>
+      </div>
+      <div class="grid">
+        {% for block in section.blocks %}
+          <div class="grid-item">
+            {% if block.settings.url %}
+              <a href="{{ block.settings.url }}" class="grid-link">
+                <img data-src="{{ block.settings.logo | img_url: 'medium' }}" alt="{{ block.settings.logo.alt }}" class="grid-logo opt_lazy">
+              </a>
+              {% else %}
+                <img data-src="{{ block.settings.logo | img_url: 'medium' }}" alt="{{ block.settings.logo.alt }}" class="grid-logo opt_lazy">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %} 
+

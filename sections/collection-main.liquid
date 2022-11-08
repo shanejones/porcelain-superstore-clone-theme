@@ -1,0 +1,79 @@
+<section class="collection-template">
+  {% render 'collection' %}
+  <div data-products-wrapper>
+    {% render 'collection-products' %}
+  </div>
+  {% render 'seo-block' text: collection.metafields.seo.text %}
+</section>
+
+{% schema %}
+  {
+    "name": "Collection",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "range",
+        "id": "character_limit",
+        "label": "Text Limit",
+        "min": 150,
+        "max": 500,
+        "step": 5,
+        "default": 180
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "infinite",
+        "label": "Infinite scroll",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "use_load_more_button",
+        "label": "Use load more button?",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection_setting",
+        "name": "Collection Setting",
+        "settings": [
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          },
+          {
+            "type": "header",
+            "content": "Header Settings"
+          },
+          {
+            "type":      "color",
+            "id":        "text_color",
+            "label":     "Text Colour",
+            "default":   "#fff"
+          },
+          {
+            "type":      "color",
+            "id":        "background_color",
+            "label":     "Background Colour",
+            "default":   "#fff"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}

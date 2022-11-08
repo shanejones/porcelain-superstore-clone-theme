@@ -1,0 +1,19 @@
+
+{%- comment -%}
+  {% render 'product-subtitle' %}
+{%- endcomment -%}
+
+<section class="product-subtitle-snippet">
+  
+  {% if product.metafields.product.price_per_meter_squared != blank %}
+    <div data-price-per-meter-squared>
+      {{ 'products.product.sq_m_price' | t: sq_m_price: product.metafields.product.price_per_meter_squared }}  
+    </div>
+  {% endif %}
+
+  {% if product.metafields.product.size_dimensions != blank %}
+    <div>
+      {{ product.metafields.product.size_dimensions }} {% if product.metafields.product.per_unit_type != blank %} <div class="circle"></div> {{ current_variant.price | money }} {{ product.metafields.product.per_unit_type }}{% endif %}
+    </div>
+  {% endif %}
+</section>

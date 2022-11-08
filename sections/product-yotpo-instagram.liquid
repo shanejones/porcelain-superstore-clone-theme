@@ -1,0 +1,15 @@
+{% render 'product-yotpo-instagram', product: product, id: section.settings.yotpo  %}
+{% schema %}
+  {
+    "name": "Yotpo Instagram",
+    "settings":
+      [
+        {
+          "type": "text",
+          "id": "yotpo",
+          "label": "Yotpo Gallery ID from Yotpo",
+          "info": "e.g. data-gallery-id='604b398b1b07c34b3e97abcc' would be 604b398b1b07c34b3e97abcc"
+        }
+      ]
+  }
+{% endschema %}

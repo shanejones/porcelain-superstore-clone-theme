@@ -1,0 +1,37 @@
+{% comment %}
+  Modal with full size images (triggered on gallery click)
+{% endcomment %}
+
+{% assign loop_size = product.images.size | minus: 1 %}
+
+<div class="product-image-list">
+  <button class="product-image-list__close-btn" data-click-toggle='{"target": "body", "remove": "modal-visible,modal-product-image-list"}'></button>
+  <div class="product-image-list__scroll">
+    <div class="product-image-list__items">
+      {% for i in (0..1) %}
+        {% assign count = i %}
+        <div id="product-image-list-img-{{ count }}" class="product-image-list__item" data-click-toggle='{"target": "body", "remove": "modal-visible,modal-product-image-list"}'>
+          <img class="product-image-list__img" data-raw-src="{{ product.images[i] | img_url: 'master' }}" src="{{ product.images[i] | img_url: '2048x2048' }}">
+        </div>
+      {% endfor %}
+      {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+        {% assign video_thumnail_image = product.metafields.video.thumbnail %}
+        <div id="product-image-list-img-2" class="product-image-list__item" data-click-toggle='{"target": "body", "remove": "modal-visible,modal-product-image-list"}'>
+          <div class="product-image-list__video">
+            <iframe src="https://www.youtube.com/embed/{{ product.metafields.video.video_id }}?enablejsapi=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      {% endif %}
+      {% for i in (2..loop_size) %}
+        {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+          {% assign count = i | plus: 1 %}
+        {% else %}
+          {% assign count = i %}
+        {% endif %}
+        <div id="product-image-list-img-{{ count }}" class="product-image-list__item" data-click-toggle='{"target": "body", "remove": "modal-visible,modal-product-image-list"}'>
+          <img class="product-image-list__img" data-raw-src="{{ product.images[i] | img_url: 'master' }}" src="{{ product.images[i] | img_url: '2048x2048' }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

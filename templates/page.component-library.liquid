@@ -1,0 +1,181 @@
+<section class="component-library container">
+  <button class="btn btn--primary btn--lg">Primary</button><br><br>
+  <button class="btn btn--primary">Primary</button><br><br>
+  <button class="btn btn--primary btn--sm">Primary</button><br><br>
+  <button class="btn btn--primary-inverted btn--sm">Primary</button><br><br>
+  <button class="btn btn--secondary btn--lg">Secondary</button><br><br>
+  <button class="btn btn--secondary">Secondary</button><br><br>
+  <button class="btn btn--secondary btn--sm">Secondary</button><br><br>
+  <button class="btn btn--primary btn--lg btn--with-plus">Primary</button><br><br>
+  <button class="btn btn--primary btn--with-plus">Primary</button><br><br>
+  <button class="btn btn--primary btn--sm btn--with-plus">Primary</button><br><br>
+  <button class="btn btn--secondary btn--lg btn--with-plus">Secondary</button><br><br>
+  <button class="btn btn--secondary btn--with-plus">Secondary</button><br><br>
+  <button class="btn btn--secondary btn--sm btn--with-plus">Secondary</button><br><br>
+  <button class="btn btn--primary btn--lg btn--only-plus">Primary</button><br><br>
+  <button class="btn btn--primary btn--only-plus">Primary</button><br><br>
+  <button class="btn btn--primary btn--sm btn--only-plus">Primary</button><br><br>
+  <button class="btn btn--secondary btn--lg btn--only-plus">Secondary</button><br><br>
+  <button class="btn btn--secondary btn--only-plus">Secondary</button><br><br>
+  <button class="btn btn--secondary btn--sm btn--only-plus">Secondary</button><br><br>
+  <label class="label">Label</label>
+  <input type="text" placeholder="Placeholder..." class="text-input"><br><br>
+  <label class="label">Label</label>
+  <select class="select">
+    <option>Example</option>
+  </select>
+  <br><br>
+  <label class="label">Label</label>
+  <textarea class="text-area" id="" cols="30" rows="10"></textarea>
+  <br><br>
+  <input id="checkbox1" class="checkbox" type="checkbox">
+  <label for="checkbox1" class="checkbox-label">Label</label>
+  <br>
+  <input id="radio1" checked name="radios" class="radio" type="radio">
+  <label for="radio1" class="radio-label">Option</label>
+  <br>
+  <input id="radio2" name="radios" class="radio" type="radio">
+  <label for="radio2" class="radio-label">Option</label>
+  <br>
+  <input id="radio3" name="radios" class="radio" type="radio">
+  <label for="radio3" class="radio-label">Option</label>
+  <br>
+  <label class="radio-wrapper" for="radio4">
+    <input id="radio4" name="radios1" class="radio" type="radio">
+    <span class="radio-label">Option</span>
+  </label>
+  <label class="radio-wrapper" for="radio5">
+    <input id="radio5" name="radios1" class="radio" type="radio">
+    <span class="radio-label">Option</span>
+  </label>
+  <br>
+  <input id="checkbox2" class="checkbox" type="checkbox">
+  <label for="checkbox2" class="checkbox-toggle"></label>
+  <br>
+  <input id="checkbox3" class="checkbox" type="checkbox">
+  <label for="checkbox3" class="checkbox-toggle" data-on-text="on" data-off-text="off"></label>
+  <br><br>
+  <div data-dismissable-item class="alert-success">Success message<button data-dismissable-dismisser class="close-btn close-btn--white"></button></div>
+  <br><br>
+  <div data-dismissable-item class="alert-error">Error message<button data-dismissable-dismisser class="close-btn close-btn--white"></button></div>
+  <br><br>
+  <div data-dismissable-item class="alert-warning">Warning message<button data-dismissable-dismisser class="close-btn close-btn--white"></button></div>
+  <br><br>
+  <div data-dismissable-item class="alert-info">Information message<button data-dismissable-dismisser class="close-btn close-btn--white"></button></div>
+  <br><br>
+  <div data-dismissable-item class="toast-info">
+    <div class="message-inner">
+      <h4>Information message</h4>
+      <p>This a description of a toast message that is going to disappear.</p>
+    </div>
+    <button data-dismissable-dismisser class="close-btn close-btn--grey"></button>
+  </div>
+  <br><br>
+  <div data-dismissable-item class="toast-info">
+    <div class="message-inner">
+      <h4>Dismissable message</h4>
+    </div>
+    <button class="dismiss-btn" data-dismissable-dismisser>Dismiss</button>
+  </div>
+  <br><br>
+  <div class="cl-product-card-container">
+    {% for item in (1..12) %}
+        <div class="cl-product-card">
+          <div class="cl-product-card-image">
+            <img src="{{ 'fake-image.svg' | asset_url }}" alt="">
+          </div>
+          <div class="cl-product-card-info">
+            <h2 class="cl-product-card-name">Product Name</h2>
+            <div class="cl-product-card-price">£0.00</div>
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+  <br>
+  <br>
+  <div class="content">
+    <h3 class="heading-3">This is a title</h3>
+    <p class="content-text">Lorem ipsum dolor sit amet</p>
+    <button class="btn btn--primary">Shop Now</button>
+  </div>
+  <br>
+  <br>
+  <div class="content content-background-image bottom">
+    <div>
+      <h3 class="heading-3">This is a title</h3>
+      <p class="content-text">Lorem ipsum dolor sit amet</p>
+      <button class="btn btn--primary">Shop Now</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="content">
+    <div class="content-image-box"></div>
+    <div class="text-center">
+      <h3 class="heading-3">This is a title</h3>
+      <p class="content-text">Lorem ipsum dolor sit amet</p>
+      <button class="btn btn--primary">Shop Now</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="products-slider">
+    <div class="slider-title-container">
+      <h3 class="heading-3">Our Favourites</h3>
+      <a href="" class="bold underline" >View all</a>
+    </div>
+    <div data-slick-slider='
+    {"infinite": true, 
+    "arrows": false,
+    "slidesToShow": 4, 
+    "responsive": [{"breakpoint": 768,"settings": {"slidesToShow": 2}}]
+    }'>
+      {% for item in (1..12) %}
+        <div class="cl-product-card product-card-slider-container">
+          <div class="cl-product-card-image product-card-slider-image-container">
+            <img src="{{ 'fake-image.svg' | asset_url }}" alt="">
+          </div>
+          <div class="cl-product-card-info">
+            <h2 class="cl-product-card-name">Product Name</h2>
+            <div class="cl-product-card-price">£0.00</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="products-slider">
+    <div class="slider-title-container">
+      <h3 class="heading-3">Our Favourites</h3>
+      <a href="" class="bold underline">View all</a>
+    </div>
+    <div data-slick-slider='
+    {"infinite": true, 
+    "arrows": false,
+    "slidesToShow": 8, 
+    "responsive": [{"breakpoint": 1024,"settings": {"slidesToShow": 6}}, {"breakpoint": 768,"settings": {"slidesToShow": 3}}]
+    }'>
+        {% for item in (1..12) %}
+          <div class="cl-product-card product-card-slider-container">
+            <div class="cl-product-card-image product-card-slider-image-container">
+              <img src="{{ 'fake-image.svg' | asset_url }}" alt="">
+            </div>
+            <div class="cl-product-card-info">
+              <h2 class="cl-product-card-name">Product Name</h2>
+              <div class="cl-product-card-price">£0.00</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+    <br>
+    <br>
+</section>
+<br>
+<br>
+<div class="sec-nav">
+  {% for item in (1..3) %}
+    <a class="sec-nav-item text-center btn btn--primary btn--lg" href="">Secondary</a>
+  {% endfor %}
+</div>

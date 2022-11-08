@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-main",
+      "settings": {
+      }
+    },
+    "1661177568301408ee": {
+      "type": "apps",
+      "disabled": true,
+      "blocks": {
+        "16995dc7-7e7b-471f-aa15-85d1243f68bc": {
+          "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/form-block\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+          "settings": {
+            "form_uuid": "_RdZ-i5lqXi8YjfyZLWblg"
+          }
+        }
+      },
+      "block_order": [
+        "16995dc7-7e7b-471f-aa15-85d1243f68bc"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1661177568301408ee"
+  ]
+}

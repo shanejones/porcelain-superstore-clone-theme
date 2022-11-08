@@ -1,0 +1,37 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'product_video' %}
+      {% render 'product-video', product: product %}
+    {% else %}
+    {% when 'product_content_and_image' %}
+      {% render 'product-content-and-image', product: product %}
+    {% else %}
+    {% when 'product_related_products' %}
+      {% render 'product-related-products', product: product %}
+    {% else %}
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Product Details",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "product_video",
+        "name": "Product video",
+        "settings": []
+      },
+      {
+        "type": "product_content_and_image",
+        "name": "Product Content and Image",
+        "settings": []
+      },
+      {
+        "type": "product_related_products",
+        "name": "Product Related Products",
+        "settings": []
+      }
+    ]
+  }
+{% endschema %}

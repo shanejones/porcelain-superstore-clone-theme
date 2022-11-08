@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": {
+      "type": "cart-main",
+      "blocks": {
+        "3a82537b-d699-4c6c-a7b4-d988b199789f": {
+          "type": "shipping_band",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "3a82537b-d699-4c6c-a7b4-d988b199789f"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

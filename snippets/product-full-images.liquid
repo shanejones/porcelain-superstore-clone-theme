@@ -1,0 +1,49 @@
+<div class="product-full-images hide-mobile">
+  {% if first_only %}
+    <div class="image-container">
+      {%- comment -%} 
+      <picture class="pic-container">
+        <source
+          media="(max-width: 767px)"
+          data-lazy-load
+          data-srcset="
+          {{ product.images[0].src | img_url: '100x', crop: 'center' }} 1x,
+          {{ product.images[0].src | img_url: '200x', crop: 'center' }} 2x" />
+      {%- endcomment -%}
+        <img
+          data-lazy-load
+          src="{{ product.images[0].src | img_url: '100x', crop: 'center' }}"
+          data-src="{{ product.images[0].src | img_url: '816x', crop: 'center' }}"
+          data-srcset="
+          {{ product.images[0].src | img_url: '816x', crop: 'center' }} 1x,
+          {{ product.images[0].src | img_url: '1630x', crop: 'center' }} 2x"
+          alt="{{ product.title }}">
+        {%- comment -%} </picture> {%- endcomment -%}   
+    </div>
+  {% else %}
+    {% for image in product.images %}
+      {% unless forloop.first %}
+        {% if image.src != blank %}
+        <div class="image-container">
+          <picture class="pic-container">
+            <source
+              media="(max-width: 767px)"
+              data-lazy-load
+              data-srcset="
+              {{ product.images[0].src | img_url: '100x', crop: 'center' }} 1x,
+              {{ product.images[0].src | img_url: '200x', crop: 'center' }} 2x" />
+            <img
+              data-lazy-load
+              src="{{ image.src | img_url: '100x', crop: 'center' }}"
+              data-src="{{ image.src | img_url: '816x', crop: 'center' }}"
+              data-srcset="
+              {{ image.src | img_url: '816x', crop: 'center' }} 1x,
+              {{ image.src | img_url: '1630x', crop: 'center' }} 2x"
+              alt="{{ product.title }}">
+          </picture>
+        </div>
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+</div>

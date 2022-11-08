@@ -1,0 +1,16 @@
+
+{%- comment -%}
+  {% render 'header-standard' %}
+{%- endcomment -%}
+<header class="header-standard-snippet {{ class_name }}" role="banner">
+  <div class="container">
+    <div>
+      <h1 class="heading-1">{{ title }}</h1>
+        {% if description  %}
+          <div class="rte">
+            {{ description }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+</header>

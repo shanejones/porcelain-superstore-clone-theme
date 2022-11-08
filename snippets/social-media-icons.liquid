@@ -1,0 +1,16 @@
+{% assign list = 'facebook,instagram,twitter,pinterest,snapchat,tumblr,youtube,vimeo' | split: ',' %}
+
+<ul class="social-icons flex bottom">
+  {% for social in list %}
+    {% assign link_key = 'social_' | append: social | append: '_link' %}
+    {% assign img_key = 'social_' | append: social | append: '_img' %}
+    {% if settings[img_key] != blank %}
+      <li class="social-icon">
+        <a href="{{ settings[link_key] }}" aria-label="{{ social }} button">
+             {{ settings[img_key] | img_tag }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+<img class="opt_lazy" data-src="{{ settings[img_key]  }}">  

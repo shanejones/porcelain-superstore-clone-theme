@@ -1,0 +1,31 @@
+<div data-app-layer="main"
+  data-app-layer-config-test="TEST!!">
+<p>Loading App Layer</p>
+</div>
+
+{% if settings.minicart %}
+  {% capture payment_icons %}
+    [
+    {% for type in shop.enabled_payment_types %}
+      {{ type | payment_type_svg_tag: class: 'icon' | json }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ]
+  {% endcapture %}
+  <div data-app-layer-portal="minicart" data-payment-icons='{{ payment_icons | strip_newlines }}' data-lang-strings='{% render 'minicart-lang-strings-json' %}' data-show-klarna='{{ settings.show_klarna_annoucement }}'></div>
+{% endif %}
+
+<div data-app-layer-portal="quickadd" data-lang-strings='{% render 'quick-add-lang-strings-json' %}' ></div>
+
+<script type="noscript-s" data-src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script type="noscript-s" data-src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.min.js"></script>
+<script type="noscript-s" data-src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+
+{% if request.host == settings.testing_site_url %}
+  {% render 'script-tags-dev' %}
+{% else %}
+  {% render 'script-tags-prod' %}
+{% endif %}
+
+{% if settings.jira_enabled %}
+  <script type="noscript-s" data-src="https://blubolt.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/sb53l8/b/24/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-GB&collectorId=a878fd9d"></script>
+{% endif %}

@@ -1,0 +1,43 @@
+{%- comment -%}
+  {% render 'product-related-products' %}
+{%- endcomment -%}
+{% assign related_products = product.metafields.related.handles %}
+{% if second_related_products == true  %}
+  {% assign related_products = product.metafields.related.handles_2 %}
+{% endif %}
+{% if related_products != blank %}
+  {% assign related_products = related_products | split: ',' %}
+  <section class="product-related-products-snippet section-with-header">
+    <div class="container">
+      <header>
+        {% if second_related_products == blank  %}
+          <h2 class="heading-2 bold">{{ 'products.product.related_title' | t }}</h2>
+        {% else %}
+          <h2 class="heading-2 bold">{{ 'products.product.related_title_2' | t }}</h2>
+        {% endif %}
+      </header>
+      <div class="cl-product-card-container grid-list"> 
+        {% assign i = 0 %}
+        {% for handle in related_products %}
+          {% assign related_product_handle = handle | strip %}
+          {% assign related_product = all_products[related_product_handle] %}
+          {% if related_product != blank %}
+            {% assign i = i | plus: 1 %}
+            <div class="grid-item">
+              {% render 'product-card', product: related_product %}
+            </div>
+          {% endif %}
+
+          {%- comment -%} Do not display more than 4 related items {%- endcomment -%}
+          {% if i == 4 %}{% break %}{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% else %}
+  <div data-app-layer-portal="product-recommendations"
+    data-base-url="{{ routes.product_recommendations_url }}"
+    data-product-id="{{ product.id }}"
+    data-title="{{ 'products.product.related_title' | t }}"
+    data-limit="4"></div>
+{% endif %}

@@ -1,0 +1,139 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-main",
+      "blocks": {
+        "2020f1ce-01f3-4ff2-87d9-f1c4da6d357c": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bathrooms_80x80_a1886d1a-103b-4ebb-8874-b054f1c5e08d.png",
+            "text": "Bathrooms"
+          }
+        },
+        "40f90224-2551-4c08-a730-1b31540f58ad": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kitchens_80x80_9b46b63c-3777-4830-b01d-4fd679358d90.png",
+            "text": "Kitchens"
+          }
+        },
+        "6c45bb42-f523-4ae8-80f1-e36c57363a44": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fireplaces_80x80_26a6ba55-0a02-431e-9b1f-c0fac3f1e8bf.png",
+            "text": "Fireplaces"
+          }
+        },
+        "10a0acbe-7df2-4425-af4e-be7a81a5cbc6": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wetrooms_80x80_c23d554e-6ff7-41f8-88c4-b43baec96b19.png",
+            "text": "Wetrooms"
+          }
+        },
+        "68bfa8c1-2c77-4e31-b621-05cac327ca75": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Heating_80x80_119b2b6b-9d18-4118-b28f-ababf0f32c59.png",
+            "text": "Underfloor_heating"
+          }
+        },
+        "21dbfee9-1daf-428b-aa4f-b31daa69f416": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Floors_80x80_b549fb03-9c99-488c-b81b-3609455fc73d.png",
+            "text": "Floors"
+          }
+        },
+        "52ec01ee-4c9d-4268-b387-e2ddb40ae27d": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frostproof_80x80_a348478b-15a3-4474-a788-af32e0a083f3.png",
+            "text": "Frostproof"
+          }
+        },
+        "757df29f-43ed-48be-983e-66a199308744": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Heating_80x80_119b2b6b-9d18-4118-b28f-ababf0f32c59.png",
+            "text": "Underfloor Heating"
+          }
+        },
+        "d228c042-85b6-4d1c-93c2-afdc391f52a7": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Splashback_80x80_aec08c19-1b3e-4938-9f73-3fab0c53b083.png",
+            "text": "Splashbacks"
+          }
+        },
+        "87ea55ea-2799-4c23-ba40-48f6b422f687": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Splashback_80x80_aec08c19-1b3e-4938-9f73-3fab0c53b083.png",
+            "text": "Splashback"
+          }
+        },
+        "2e1ef7b4-41cb-4b4e-afa8-a9803f240dca": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/outdoor_80x80_279b7ae9-23a4-4808-a3a2-6ddfc9d726fe.png",
+            "text": "Outdoor"
+          }
+        }
+      },
+      "block_order": [
+        "2020f1ce-01f3-4ff2-87d9-f1c4da6d357c",
+        "40f90224-2551-4c08-a730-1b31540f58ad",
+        "6c45bb42-f523-4ae8-80f1-e36c57363a44",
+        "10a0acbe-7df2-4425-af4e-be7a81a5cbc6",
+        "68bfa8c1-2c77-4e31-b621-05cac327ca75",
+        "21dbfee9-1daf-428b-aa4f-b31daa69f416",
+        "52ec01ee-4c9d-4268-b387-e2ddb40ae27d",
+        "757df29f-43ed-48be-983e-66a199308744",
+        "d228c042-85b6-4d1c-93c2-afdc391f52a7",
+        "87ea55ea-2799-4c23-ba40-48f6b422f687",
+        "2e1ef7b4-41cb-4b4e-afa8-a9803f240dca"
+      ],
+      "settings": {
+        "character_limit": 300,
+        "delivery": "<p><strong>Standard Delivery<br\/><\/strong>Minimum of 5 working days<br\/>Free on orders over £500<br\/>£36 for orders under £500<br\/>£15 for orders under 18kg<br\/><br\/><strong>Express Delivery<br\/><\/strong>2 working days<br\/>£50 on all orders<br\/><br\/>At the shopping cart you are able to choose a convenient weekday for your delivery. <br\/><br\/>Most orders are delivered on a pallet and are kerbside only. <br\/>Please note that there may be a surcharge to certain postcodes.<br\/><br\/>Please see our <a href=\"\/pages\/deliveries\" title=\"Deliveries\"><strong>deliveries<\/strong><\/a> page for more information. <br\/><br\/><strong>Returns<br\/><\/strong>You can return your full order to us within 30 days for a complete refund. <br\/>Please see our <a href=\"\/pages\/returns\" title=\"Returns\"><strong>returns<\/strong><\/a> page for more information.<\/p>",
+        "delivery_non_tiles": "<p><strong>Standard Delivery<br\/><\/strong>Minimum of 5 working days<br\/>Free on orders over £500<br\/>£36 for orders under £500<br\/>£15 for orders under 18kg<br\/><br\/><strong>Express Delivery<br\/><\/strong>2 working days<br\/>£50 on all orders<br\/><br\/>At the shopping cart you are able to choose a convenient weekday for your delivery. <br\/><br\/>Most orders are delivered on a pallet and are kerbside only. <br\/>Please note that there may be a surcharge to certain postcodes.<br\/>Please see our <a href=\"\/pages\/deliveries\" title=\"Deliveries\">deliveries<\/a> page for more information. <br\/><br\/><strong>Returns<br\/><\/strong>You can return your full order to us within 30 days for a complete refund. <br\/>Please see our <a href=\"\/pages\/returns\" title=\"Returns\">returns<\/a> page for more information.<\/p>",
+        "tile_icon": "shopify:\/\/shop_images\/ruler_1_99x_crop_center_7f00c9b3-6db5-45fc-9878-51eda7a93ff7.png",
+        "hide_product_code": true,
+        "yotpo": "61fa99037546e30e2a38ec8d",
+        "image": "shopify:\/\/shop_images\/samples_2880x1540_crop_center_9aace75e-4c89-4003-8345-bb1bfe57e243.jpg",
+        "image_non_tile": "shopify:\/\/shop_images\/samples_2880x1540_crop_center_9aace75e-4c89-4003-8345-bb1bfe57e243.jpg",
+        "layout": "left",
+        "title": "Find your match, for free",
+        "title_non_tile": "Find your match, for free",
+        "text": "<p>Finding your perfect tile is super easy - you can order up to 4 free samples, completely free of charge.<br\/><br\/>Simply click the Add Free Sample button above and head to the checkout when you're ready.<\/p>",
+        "text_non_tile": "<p>Finding your perfect tile is super easy - you can order up to 4 free samples, completely free of charge.<br\/><br\/>Simply click the Add Free Sample button above and head to the checkout when you're ready.<\/p>",
+        "button_label": "LEARN MORE",
+        "button_label_non_tile": "LEARN MORE",
+        "button_link": "shopify:\/\/pages\/samples",
+        "button_link_non_tile": "shopify:\/\/pages\/samples"
+      }
+    },
+    "shogun-above": {
+      "type": "shogun-above",
+      "settings": {
+      }
+    },
+    "shogun-below": {
+      "type": "shogun-below",
+      "settings": {
+      }
+    },
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "shogun-above",
+    "main",
+    "shogun-below"
+  ]
+}

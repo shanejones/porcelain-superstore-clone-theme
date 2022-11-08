@@ -1,0 +1,24 @@
+
+{%- comment -%}
+  {% render 'header-article' %}
+{%- endcomment -%}
+
+<header class="header-article-snippet" role="banner">
+  {% if img != blank %}
+    <div class="overlay"></div>
+    {% render 'image-full-width', img: img, max_width: 2560 %}
+  {% endif %}
+
+  <div class="container">
+    {% if tag != blank %}
+      <p>{{ tag }}</p>
+    {% endif %}
+
+  <h1 class="heading-1 bold">{{ title }}</h1>
+  
+  {% if sub_title != blank %}
+    <p>{{ sub_title }}</p>
+  {% endif %}
+  </div> 
+</header>
+  

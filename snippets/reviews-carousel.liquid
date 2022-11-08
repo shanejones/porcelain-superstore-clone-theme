@@ -1,0 +1,91 @@
+{% assign carousel_count = 0 %}
+{% for block in blocks %}
+  {%- if block.type == 'carousel_image' -%}
+    {% assign carousel_count = carousel_count | plus: 1 %}
+  {%- endif -%}
+{% endfor %}
+{%- assign count = 0 -%}
+{%- capture carousel_data -%}
+{
+  {%- for block in blocks -%}
+    {%- if block.type == 'carousel_image' -%}
+      "{{- count -}}": {
+        "quote": "{{- block.settings.quote | escape | strip -}}",
+        "info": "{{- block.settings.info | escape | strip -}}",
+        "cta": "{{- block.settings.cta | escape | strip -}}"
+      }
+      {% assign count = count | plus: 1 %}
+      {%- if count != carousel_count -%},{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+}
+{%- endcapture -%}
+{% if carousel_count != 0 %}
+  <style>
+    @media only screen and (max-width: 767px) {
+      .reviews-carousel {
+        background-color: {{ background_color }};
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      .carousel-text-container {
+        background-color: {{ background_color }};
+      }
+    }
+  </style>
+  <section class="reviews-carousel container flex section-margin-bottom" data-carousel-data='{{ carousel_data }}'>
+    <div class="glide" id="reviews-carousel" data-glide data-glide-id="carousel">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          {% assign media_count = 0 %}
+          {% for block in blocks %}
+            {% if block.type == 'carousel_image' %}
+              {% assign media_count = media_count | plus: 1 %}
+              {% assign media = block.settings.img %}
+              <li class="glide__slide" data-image-index="{{ media_count }}">
+                  <div class="product-single__media img-zoom-wrap">
+                    <img
+                      class="carousel-image lazyload"
+                      data-lazy-load
+                      data-src="{{ media | img_url: '1000x', crop: 'center' }}"
+                      data-srcset="
+                        {{ media | img_url: '343x375', crop: 'center' }} 320w,
+                        {{ media | img_url: '768x', crop: 'center' }} 770w,
+                        {{ media | img_url: '768x', crop: 'center' }} 1x,
+                        {{ media | img_url: '1536x', crop: 'center' }} 2x"
+                      "
+                      alt="{{ media.alt }}" />
+                  </div>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="carousel-text-container">
+      <div class="carousel-text-container-inner">
+        <h2 class="heading-2 bold" data-carousel-quote style="color: {{ text_color }};"></h2>
+        <p data-carousel-info></p>
+        <div class="buttons-container flex">
+          <a class="btn btn-primary" data-carousel-cta>{{ cta_text }}</a>
+          {%- capture arrow_src -%}{{ 'icon-circle-arrow.svg' | asset_url }}{%- endcapture -%}
+          <div class="glide-buttons-wrapper">
+            <button data-glide-button="<">
+              <img data-lazy-load
+              class="arrow"
+              src="{{ arrow_src }}"
+              alt="arrow prev">
+            </button>
+            <button data-glide-button=">">
+              <img data-lazy-load
+              class="arrow next"
+              src="{{ arrow_src }}"
+              alt="arrow next">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

@@ -1,0 +1,17 @@
+{%- comment -%}
+{% render 'product-form-content', product: product, current_variant: current_variant, hide: 'mobile' or 'desktop' %}
+{%- endcomment -%}
+
+<div class="product-details-form-wrapper container">
+  <div class="product-details-form-wrapper-inner">
+    <div class="product-details-form-wrapper-inner-wrapper">
+      {% render 'product-yotpo-review-stars' %}
+      {% render 'product-actions', product: product %}
+      {% render 'product-title', product: product %}
+      {% render 'product-subtitle', product: product, current_variant: current_variant %}
+      {% render 'product-form', product: product, current_variant: current_variant %}
+      {% render 'shop-usps' %}
+      {% render 'product-features-images-and-text', product: product %}
+    </div>
+  </div>
+</div>

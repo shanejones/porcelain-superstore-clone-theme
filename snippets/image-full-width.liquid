@@ -1,0 +1,61 @@
+{%- comment -%}
+  {% render 'image-full-width', img: section.settings.img, max_width: 1440 %}
+  ---OR---
+  {% render 'image-full-width', img: section.settings.img, max_width: 1440, prevent_lazy_load_pop: false %}
+  prevent_lazy_load_pop 
+  This sets the image width to 100% in css, can be disabled if it messes stuff up for some reason.
+{%- endcomment -%}
+
+
+{% assign img = img | split: '/' | last %}
+
+
+{% assign image_widths_default = '375,768,1024,1440,1600,1920,2048,2560' %}
+{% assign media_sizes  = '' %}
+{% assign image_widths = '' %}
+{% if max_width == blank %}
+  {% assign max_width = 2560 %}
+{% endif %}
+{% assign image_widths_default = image_widths_default | split: ',' %}
+{% for width in image_widths_default %}
+  {% assign width_num = width | plus: 0 | round %}
+  {% assign max_width_num = max_width | plus: 0 | round %}
+  {% if width_num > max_width_num %}
+    {% assign image_widths = image_widths | append: max_width %}
+    {% break %}
+  {% endif %}
+  {% assign image_widths = image_widths | append: width %}
+  {% if forloop.last != true %}
+    {% assign image_widths = image_widths | append: ',' %}
+  {% endif %}
+{% endfor %}
+{%- assign image_widths = image_widths | split: ',' | uniq | reverse -%}
+<div class="image-snippet">
+  <picture>
+    {% for width in image_widths %}
+      {% assign media_query = image_widths[forloop.index] %}
+      {% if forloop.last %}
+        {% assign media_query = '200' %}
+      {% endif %}
+      {% assign one_times = width | append: 'x' %}
+      {% assign two_times = width | times: 2 | append: 'x' %}
+      {% assign one_times_url = img | file_img_url: one_times %}
+      {% assign two_times_url = img | file_img_url: two_times %}
+      <source
+        media="(min-width: {{media_query}}px)"
+        data-lazy-load
+        data-srcset="{{one_times_url}} 1x, {{two_times_url}} 2x"
+      >
+    {% endfor %}
+    <img
+      {% unless prevent_lazy_load_pop == false %}
+        class="prevent-lazy-load-pop"
+      {% endunless %}
+      data-src="{{img | file_img_url: '375x'}} 1x, {{img | file_img_url: '750x' }} 2x"
+      src="{{img | file_img_url: '100x'}}" data-lazy-load
+      {% if img.alt != blank %}
+        alt="{{img.alt}}"
+      {% endif %}
+    >
+  </picture>
+</div>

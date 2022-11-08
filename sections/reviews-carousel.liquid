@@ -1,0 +1,64 @@
+{% render 'reviews-carousel', 
+  blocks: section.blocks,
+  text_color: section.settings.text_color,
+  background_color: section.settings.background_color,
+  cta_text: section.settings.cta_text
+%}
+
+{% schema %}
+  {
+    "name": "Reviews Carousel",
+    "settings": [
+    {
+      "type":      "color",
+      "id":        "background_color",
+      "label":     "Background Colour"
+    },
+    {
+      "type":      "color",
+      "id":        "text_color",
+      "label":     "Text Color"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "SHOP NOW"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "carousel_image",
+        "name": "Carousel Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image",
+            "info": "Recommended size: 1750x1330"
+          },
+          {
+            "type": "textarea",
+            "id": "quote",
+            "label": "Review quote",
+            "info": "Please use ““ or '' for quotes (copy and paste these example quote marks)"
+          },
+          {
+            "type": "richtext",
+            "id": "info",
+            "label": "Name and Product"
+          },
+          {
+            "id": "cta",
+            "type": "url",
+            "label": "CTA Link"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Reviews Carousel",
+      "category": "Homepage"
+    }]
+  }
+{% endschema %}

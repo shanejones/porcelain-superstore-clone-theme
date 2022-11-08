@@ -1,0 +1,522 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-faqs",
+      "blocks": {
+        "ee7f186e-2a82-4a0c-8d0c-7b3c7d97f861": {
+          "type": "accordion",
+          "settings": {
+            "title": "How will you deliver my order",
+            "parent_title": "Delivery & Returns",
+            "category_title": "Delivery & Returns",
+            "accordion_title": "How will you deliver my order?",
+            "accordion_body": "<p>The majority of our orders are delivered on wooden pallets by a dedicated delivery partner. <\/p><p>Smaller orders that weigh under 18kg may be delivered by a parcel courier.<\/p>"
+          }
+        },
+        "572e83f4-0dda-49eb-8619-fefd994fe16c": {
+          "type": "accordion",
+          "settings": {
+            "title": "When will I get my order?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "When will I get my order?",
+            "accordion_body": "<p>At the checkout, you can choose a convenient weekday for your delivery. <\/p><p>Over 97.5% of our orders are delivered on their chosen date.<\/p>"
+          }
+        },
+        "3406a384-91d5-4b95-9358-61f4ed7a5acd": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can I order samples",
+            "parent_title": "Ordering",
+            "category_title": "Ordering",
+            "accordion_title": "Can I order samples?",
+            "accordion_body": "<p>To make sure you’ll be completely happy with your purchase, you can order up to four different samples, completely free of charge. <\/p><p>These are delivered within three working days and you won’t need to enter card details at any stage.<\/p><p>As an added bonus, if you sign up for our newsletter you receive £10 off your actual tile order!<\/p>"
+          }
+        },
+        "46c30c4f-f19c-4aa4-ba0a-aca328717849": {
+          "type": "accordion",
+          "settings": {
+            "title": "How much is UK delivery?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "How much is UK delivery?",
+            "accordion_body": "<p>Delivery to most mainland UK postcodes is free on orders over £500. <br\/>For orders under £500, delivery is just £30. <br\/>For orders that weigh under 18kg, delivery is £15.<\/p><p>If you live in a remote or island postcode, you may incur additional delivery charges. Please see our delivery page for further information.<\/p>"
+          }
+        },
+        "b5bc1756-d7f9-45f0-9098-4bdc51bd447d": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is kerbside delivery?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "What is kerbside delivery?",
+            "accordion_body": "<p>Our pallet deliveries are kerbside only. <\/p><p>This means your order will be delivered to the nearest kerbside at your address, at the driver’s discretion. The driver will leave your order and the pallet at this location.<\/p>"
+          }
+        },
+        "079cc7b1-2cf7-4349-9f6b-a0e0f0b9dc2b": {
+          "type": "accordion",
+          "settings": {
+            "title": "Where is my order?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "Where is my order?",
+            "accordion_body": "<p>Our deliveries are made between 8am and 6pm and we do ask the driver to call you an hour ahead. <\/p>"
+          }
+        },
+        "f057cf25-beee-46c6-9cc5-0cdedad4c1c5": {
+          "type": "accordion",
+          "settings": {
+            "title": "What happens if my order is damaged?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "What happens if my order is damaged?",
+            "accordion_body": "<p>Although our orders are dispatched in pristine condition, damage can sometimes occur in transit. <\/p><p>If your order is damaged, please take photos of the damaged tiles, sign the delivery note as “Damaged” and contact our customer services within 24 hours of delivery.<\/p>"
+          }
+        },
+        "5cc3836d-122c-4e82-acf2-73d0301f8a33": {
+          "type": "accordion",
+          "settings": {
+            "title": "What happens if my order is missing something?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "What happens if my order is missing something?",
+            "accordion_body": "<p>If you think something if missing from your order, please contact customer services immediately. We aim to resolve these issues within 48 hours.<\/p><p>Please note that if your order contains different items, these may be delivered separately.<\/p>"
+          }
+        },
+        "cbeecdd5-2fa8-4996-8a51-b770c88ea7e8": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is your return policy?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "What is your return policy?",
+            "accordion_body": "<p>If you change your mind, don’t worry. You can return your full order to us within 30 days of delivery, as long as packaging is unopened and tiles are unused. <\/p><p>Please note that you’ll need to arrange delivery back to our warehouse and we can’t cover the cost of this.<\/p><p>For further information, please see our Returns page.<\/p>"
+          }
+        },
+        "4e8f4fdf-ecb1-4f63-a6a8-4cbc0a62eec0": {
+          "type": "accordion",
+          "settings": {
+            "title": "I’ve returned my order. How long will my refund take?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "I’ve returned my order. How long will my refund take?",
+            "accordion_body": "<p>We’ll refund you immediately once we receive and check your returned order. However, it may take up to ten working days to receive your refund.<\/p>"
+          }
+        },
+        "a4a87a67-d8c9-43fa-81ea-14b181bd92c1": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can I send back part of my order?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "Can I send back part of my order?",
+            "accordion_body": "<p>Unfortunately we can only accept returns on your full original order.<\/p>"
+          }
+        },
+        "045e3e52-7e9c-4aab-8d44-a0da83498194": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I cancel or change my order?",
+            "parent_title": "Delivery & Returns",
+            "category_title": "",
+            "accordion_title": "How do I cancel or change my order?",
+            "accordion_body": "<p>Please contact us within two hours of placing your order. If your order has been dispatched, redelivery charges (back to our premises) may apply.<br\/><\/p>"
+          }
+        },
+        "034c0703-299c-4076-ad02-1e7b3b172432": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I know how many tiles to order?",
+            "parent_title": "Ordering",
+            "category_title": "",
+            "accordion_title": "How do I know how many tiles to order?",
+            "accordion_body": "<p>We recommend that your tiler or builder calculates how many tiles you’ll need. <\/p><p>However, if you’d like to measure up yourself, you’ll need a tape measure, a calculator and an optional cup of tea:<\/p><p>For floors, use the tape to measure the length and width of the room in centimetres. <br\/>Multiply these together and divide by 100, to obtain the area in metres squared.<\/p><p>For walls, use the tape to measure the length and height in centimetres.<br\/>Multiply these together and divide by 100, to obtain the area in metres squared. <br\/>Repeat for all other walls and add together - don’t forget to subtract any doors or windows!<\/p><p>We generally recommend ordering 10% extra, to cover waste and cuts. <\/p><p>If this summary wasn't enough, head over to our blog post that tells you the ins and outs of measuring your rooms for tiles!<\/p>"
+          }
+        },
+        "4bad5d87-265d-4077-9613-3910442afab8": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I order my tiles?",
+            "parent_title": "Ordering",
+            "category_title": "",
+            "accordion_title": "How do I order my tiles?",
+            "accordion_body": "<p>Simply head to your chosen product page and enter the amount of square metres you wish to purchase into the Ordering box. Remember to include an extra 10% to cover waste and cuts!<\/p><p>Our website will automatically calculate how many boxes of tiles you’ll need - we’ll always round this up to the nearest full box.<\/p><p>At the checkout, you’ll be able to choose a convenient delivery date for your order.<\/p>"
+          }
+        },
+        "5e46a022-cbc2-4c1c-9b5a-82f9758472c8": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can you store my tiles?",
+            "parent_title": "Ordering",
+            "category_title": "",
+            "accordion_title": "Can you store my tiles?",
+            "accordion_body": "<p>If you’d like to order your tiles but don’t need delivery immediately, we can store your tiles in our warehouse for up to two months, free of charge. Please contact us for further details.<\/p>"
+          }
+        },
+        "ee7f7ed0-0e90-4bb2-ae1c-6cae34a07d96": {
+          "type": "accordion",
+          "settings": {
+            "title": "How can I pay?",
+            "parent_title": "Ordering",
+            "category_title": "",
+            "accordion_title": "How can I pay?",
+            "accordion_body": "<p>We offer a great range of payment options online, including:<\/p><p>All major credit and debit cards, including American Express<br\/>Apple Pay<br\/>Klarna<\/p><p>Please contact us if you’d like to pay by bank transfer.<\/p>"
+          }
+        },
+        "c6c3ba5b-a2ad-4029-9825-545a823d4386": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can you send a quote?",
+            "parent_title": "Ordering",
+            "category_title": "",
+            "accordion_title": "Can you send a quote?",
+            "accordion_body": "<p>Please contact us if you’d like to receive a quote. <\/p><p>We’ll need to know your:<\/p><p>Delivery address<br\/>Delivery date<br\/>Email address <br\/>Contact number<br\/>Tiles and quantity<\/p>"
+          }
+        },
+        "37a548c7-c685-42a4-8b25-570265c25dd6": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you offer quantity discounts?",
+            "parent_title": "Ordering",
+            "category_title": "",
+            "accordion_title": "Do you offer quantity discounts?",
+            "accordion_body": "<p>We may be able to offer volume discounts on orders over 100 square metres. Please contact us for further information.<\/p>"
+          }
+        },
+        "3cada2d0-fb5f-4f48-9653-221384e555fe": {
+          "type": "accordion",
+          "settings": {
+            "title": "What’s the difference between ceramic and porcelain tiles?",
+            "parent_title": "Tiles",
+            "category_title": "Tiles",
+            "accordion_title": "What’s the difference between ceramic and porcelain tiles?",
+            "accordion_body": "<p>Porcelain and ceramic tiles are part of the same family and share many similarities.<\/p><p>Technically, porcelain tiles are a version of ceramic with a water absorption rate of 0.5% or less. This means they’re virtually non-porous, while ceramic tiles may absorb some water.<\/p><p>Porcelain tiles are also produced differently to ceramic tiles - they’re fired at higher temperatures using finer raw materials. This gives them a denser body, making porcelain tiles more durable and resistant to wear and tear than traditional ceramic tiles.<\/p><p>For more information, why not read our information page on porcelain and ceramic tiles?<\/p>"
+          }
+        },
+        "83ee0692-88fd-48c9-b1c0-66dc45422691": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is the difference between a glazed and unglazed tile?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "What is the difference between a glazed and unglazed tile?",
+            "accordion_body": "<p>Most tiles have a glazed finish, where a layer of liquid glass is fired onto to the ceramic or porcelain body at extremely high temperatures. <\/p><p>This glaze can be glossy or matt and can take almost any appearance - technological advances mean that incredibly realistic marble, stone and wood designs can be digitally printed onto a tile.<\/p><p>Some tiles are unglazed, so they don’t have this glazed finish. They tend to be more durable than glazed tiles, making them more suitable for high-traffic commercial floors.<\/p>"
+          }
+        },
+        "977fe933-494e-4584-ac5b-481d287f4837": {
+          "type": "accordion",
+          "settings": {
+            "title": "Where can I use porcelain tiles?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "Where can I use porcelain tiles?",
+            "accordion_body": "<p>Porcelain tiles are extremely versatile. <\/p><p>As they’re so hard-wearing, they’re ideal for high traffic areas such as kitchens and hallways. And because they’re non-porous, they’re also a great choice for wet walls such as back-splashes and showers. <\/p><p>Porcelain tiles are frostproof, so they can also be laid outside - depending on their finish!<\/p>"
+          }
+        },
+        "f5f57f5f-48f9-4e0c-8213-3a8047392e93": {
+          "type": "accordion",
+          "settings": {
+            "title": "Where can I use ceramic tiles?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "Where can I use ceramic tiles?",
+            "accordion_body": "<p>Ceramic tiles are a great choice for family homes. <\/p><p>While they’re not as durable as porcelain, they still offer a beautiful finish that’s highly resistant to water and stains. This means they’re a popular choice for kitchen and bathroom walls in particular - especially for DIY projects.<\/p>"
+          }
+        },
+        "c93c01f3-afac-49f2-8b8b-5eaba3e0196f": {
+          "type": "accordion",
+          "settings": {
+            "title": "What are rectified tiles?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "What are rectified tiles?",
+            "accordion_body": "<p>During production, a tile may have its edges ground to a clean and very-precise finish. These are known as rectified tiles.<\/p><p>Because the edges are so sharp, you can use a smaller grout joint than you would with normal, non-rectified tiles - we usually recommend a 2mm joint for rectified tiles. This offers a more seamless and contemporary finish.<\/p>"
+          }
+        },
+        "f2dee24b-19cc-4adc-92f3-621e974d8b88": {
+          "type": "accordion",
+          "settings": {
+            "title": "What does slip rating mean?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "What does slip rating mean?",
+            "accordion_body": "<p>To help you choose the right tile for your project, floor tiles are given a slip resistance rating. These will help you to make the right choice - for example, a textured tile with high slip-resistance is generally more suitable for a wet area than a polished design with a low slip rating.<\/p><p>A number of different slips tests may be used, with the two most common being the Ramp Test and Pendulum Test Value. For further information, please read our guide to slip ratings.<\/p>"
+          }
+        },
+        "37b516d8-ec1e-4a19-aef9-12d520f39612": {
+          "type": "accordion",
+          "settings": {
+            "title": "What does PEI rating mean?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "What does PEI rating mean?",
+            "accordion_body": "<p>When you’re choosing tiles, it’s important to consider how hard-wearing different tiles are. The PEI rating measures how easily the surface of a tile will scratch, so it’s a good way to determine how durable your tiles will be.<\/p><p>There are six PEI ratings, from 0 to 5:<\/p><p>Tiles rated PEI 0 are for wall use only.<br\/>Tiles rated PEI 5 are very tough, and can be laid over commercial floors.<\/p><p>For further information, please read our guide to the PEI Rating.<\/p>"
+          }
+        },
+        "57246909-c163-4899-916f-923e8de8dc47": {
+          "type": "accordion",
+          "settings": {
+            "title": "Are porcelain tiles hard?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "Are porcelain tiles hard?",
+            "accordion_body": "<p>Produced using fine raw materials and fired at high temperatures, porcelain tiles are extremely dense. This makes them far harder than traditional ceramic tiles and they’re highly resistant to stresses or stains.<\/p>"
+          }
+        },
+        "25e6a24d-2589-49a1-baa4-ca561c407672": {
+          "type": "accordion",
+          "settings": {
+            "title": "What tiles can be used with underfloor heating?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "What tiles can be used with underfloor heating?",
+            "accordion_body": "<p>All our porcelain and ceramic floor tiles can be safely used with underfloor heating. <\/p><p>Thanks to their high thermal conductivity, they’ll quickly transfer heat from your underfloor heating system through to your floor - helping your room warm up faster. They also retain heat well, making your system more efficient and lowering your energy bills! <\/p>"
+          }
+        },
+        "cb793baf-222f-4b87-8fd3-f6d4ebf012fc": {
+          "type": "accordion",
+          "settings": {
+            "title": "What should you consider when buying floor or wall tiles?",
+            "parent_title": "Tiles",
+            "category_title": "",
+            "accordion_title": "What should you consider when buying floor or wall tiles?",
+            "accordion_body": "<p>When you’re buying tiles, it’s natural to be swayed by the design. After all, the style and size is what you’ll be looking at, day in, day out.<\/p><p>However, you’ll also need to consider the technical qualities and how they’re suited to your project. For example:<\/p><p>What finish does the tile have? Glossy tiles will make a space appear larger, while textured can add depth to your room.<\/p><p>Is the tile slippery? For wet areas, you should choose a tile with a slip-resistant finish.<\/p><p>How durable will it be? A floor tile must be resistant to foot traffic, while a wall tile experiences fewer daily stresses.<\/p><p>What joint size and grout colour will work with the tile? You can co-ordinate or contrast your grout colour, depending on the look you wish to achieve.<\/p><p>How easy will it be to maintain? Generally, porcelain tiles are low maintenance, especially when compared to natural stone and marbles.<\/p>"
+          }
+        },
+        "0ee7352a-ca31-4816-a143-544d2f7fe5d2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Where are your tiles made?",
+            "parent_title": "About Us",
+            "category_title": "About Us",
+            "accordion_title": "Where are your tiles made?",
+            "accordion_body": "<p>Knowing where our product comes from is very important to us. That’s why we source over 95% of our tiles from specialist factories in Italy and Spain that we have personally visited.<\/p><p>Some of these are the largest tile factories in Europe, while others are boutique design houses that specialise in one particular product. Either way, our strong supplier relationships guarantees you the best quality tiles for a great price.<\/p>"
+          }
+        },
+        "ce0b1409-dbd9-4106-8db8-2db0337c1f57": {
+          "type": "accordion",
+          "settings": {
+            "title": "Why are your prices so good?",
+            "parent_title": "About Us",
+            "category_title": "",
+            "accordion_title": "Why are your prices so good?",
+            "accordion_body": "<p>All our tiles are fantastic quality and are far less expensive than comparable tiles on the high street.<\/p><p>We’re able to offer such great prices because we source in volume directly from the factory and don’t operate traditional showrooms. With fewer overheads and no middlemen to pay, we can pass great savings directly onto you, our customer.<\/p>"
+          }
+        },
+        "018c3bc9-374f-45b1-bee8-c6617bf276c7": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can I speak to someone?",
+            "parent_title": "About Us",
+            "category_title": "",
+            "accordion_title": "Can I speak to someone?",
+            "accordion_body": "<p>Please call 0330 094 0304 during normal working hours and we’ll be happy to help.<\/p>"
+          }
+        },
+        "eabaed48-0720-43e1-a46d-b435a60a88e3": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I install my tiles?",
+            "parent_title": "Installing tiles",
+            "category_title": "Installing tiles",
+            "accordion_title": "How do I install my tiles?",
+            "accordion_body": "<p>The best way to install tiles, in any case, is to get someone to do it for you, they are professionals after all. But, if you want to let your DIY dreams go wild, there are many places to get the instructions. We recommend you look at our <a href=\"https:\/\/www.porcelainsuperstore.co.uk\/blogs\/tile101\" target=\"_blank\">blog<\/a> which has pieces dedicated to everything tile, from <a href=\"https:\/\/www.porcelainsuperstore.co.uk\/blogs\/tile101\/tagged\/category_inspiration\" target=\"_blank\">inspiration<\/a> to installation!<\/p>"
+          }
+        },
+        "12fd4149-7ee9-4c53-becd-d9dff1a929ec": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you offer a fitting service?",
+            "parent_title": "Installing tiles",
+            "category_title": "",
+            "accordion_title": "Do you offer a fitting service?",
+            "accordion_body": ""
+          }
+        },
+        "a80eacc1-5a4a-4741-9562-4d174b028956": {
+          "type": "accordion",
+          "settings": {
+            "title": "What preparation does my floor \/ wall need?",
+            "parent_title": "Installing tiles",
+            "category_title": "",
+            "accordion_title": "What preparation does my floor \/ wall need?",
+            "accordion_body": ""
+          }
+        },
+        "ce9e025a-7f75-4786-bfc8-dfeef982bf0b": {
+          "type": "accordion",
+          "settings": {
+            "title": "What grout colour should I use?",
+            "parent_title": "Installing tiles",
+            "category_title": "",
+            "accordion_title": "What grout colour should I use?",
+            "accordion_body": ""
+          }
+        },
+        "36a98e93-dfc7-413d-a8aa-cac8a5f5b299": {
+          "type": "accordion",
+          "settings": {
+            "title": "What adhesive do I use for porcelain tiles?",
+            "parent_title": "Installing tiles",
+            "category_title": "",
+            "accordion_title": "What adhesive do I use for porcelain tiles?",
+            "accordion_body": ""
+          }
+        },
+        "b33116fb-7777-4ea3-b295-6e269621da28": {
+          "type": "accordion",
+          "settings": {
+            "title": "What adhesive do I use for ceramic tiles?",
+            "parent_title": "Installing tiles",
+            "category_title": "",
+            "accordion_title": "What adhesive do I use for ceramic tiles?",
+            "accordion_body": ""
+          }
+        },
+        "ea8625fb-afa6-4d5b-820d-ac4b2ec42c61": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I install ceramic \/ porcelain \/ floor \/. wall tiles?",
+            "parent_title": "Installing tiles",
+            "category_title": "",
+            "accordion_title": "How do I install ceramic \/ porcelain \/ floor \/ wall tiles?",
+            "accordion_body": ""
+          }
+        },
+        "2642b34f-47ab-43a9-8813-edce2494c3df": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I keep my floor tiles clean?",
+            "parent_title": "Cleaning Tiles",
+            "category_title": "Cleaning Tiles",
+            "accordion_title": "How do I keep my floor tiles clean?",
+            "accordion_body": "<p>Compared to other floor coverings, porcelain floor tiles are very easy to live with. They’re often referred to as ‘low maintenance’ and with good reason - they generally only need a little care to look their best. There’s nowhere for dust to hide, so it’s easy to brush any dirt up.<\/p><p>For general cleans we’d recommend mopping your floor with a white vinegar diluted in warm water. <\/p><p>For deeper cleans, you can use a mild household detergent or a specialist tile cleaning product. Be sure to test the product on a sample area first.<\/p><p>While porcelain is virtually non-porous and difficult to stain, we recommend wiping any spills up immediately, just to be safe.<\/p>"
+          }
+        },
+        "c523a067-6090-4185-b325-8490f7260135": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I keep my wall tiles clean?",
+            "parent_title": "Cleaning tiles",
+            "category_title": "",
+            "accordion_title": "How do I keep my wall tiles clean?",
+            "accordion_body": "<p>Although they don’t experience foot traffic, wall tiles do need a clean from time to time. <\/p><p>First, wipe away any dust and dirt using a dry microfibre cloth. Next, use warm water and a clean cloth to gently wipe your tiles again. Buff the tiles dry to avoid any water streaks.<\/p><p>For more stubborn stains on ceramic wall tiles, you can create a mild detergent using a 50:50 mix of warm water and white vinegar.<\/p>"
+          }
+        },
+        "34ef463a-d33f-4f2c-8474-9033f8189b88": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do I need to seal my tiles?",
+            "parent_title": "Cleaning Tiles",
+            "category_title": "",
+            "accordion_title": "Do I need to seal my tiles?",
+            "accordion_body": "<p>Virtually all of our ceramic and porcelain tiles do not need to be sealed. <\/p><p>We do have a number of crackled glaze tiles and natural stone mosaics that do require sealing - you can find this information in the Tile Specifications tab on each product page.<\/p>"
+          }
+        },
+        "74669b32-aa78-48a8-8288-42d7b21af68b": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do I need to seal my grout?",
+            "parent_title": "Cleaning tiles",
+            "category_title": "",
+            "accordion_title": "Do I need to seal my grout?",
+            "accordion_body": "<p>Most tile grouts are made from cement, which is porous. Left unsealed, they will absorb stains and may discolour over time. <\/p><p>Therefore, we recommend sealing your grout joints to ensure they look new, for longer. <\/p>"
+          }
+        },
+        "e5c39855-3c99-48f1-a89d-f4cc94fc05d4": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is grout haze?",
+            "parent_title": "Cleaning tiles",
+            "category_title": "",
+            "accordion_title": "What is grout haze?",
+            "accordion_body": "<p>Grout haze is a very fine layer of cement, that’s inadvertently left to dry on the tiles during installation. This can be almost invisible and will trap dirt and dust, making your new tiles look dirty.<\/p><p>Prevention is always better than cure, so it’s best to ensure grout haze doesn’t happen by thoroughly cleaning your tiles before any grout or adhesive fully sets. <\/p><p>If you do experience grout haze, we’d recommend using a specialist grout haze remover product.<\/p>"
+          }
+        },
+        "e723f27d-23ca-439e-9743-be1b53eb475d": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I clean grout?",
+            "parent_title": "Cleaning tiles",
+            "category_title": "",
+            "accordion_title": "How do I clean grout?",
+            "accordion_body": "<p>How often you clean your grout joints depends on how dirty your grout gets. A pale grout on your hallway floor is likely to stain more than a darker grout on your bathroom walls, for example.<\/p><p>That said, we recommend you clean all your grout joints at least once a month, to keep them looking their best.<\/p><p>You can use a specialist grout cleaning product or make your own at home. <\/p><p>To make your own, make a paste using two parts bicarbonate of soda to one part water. Spread this over your grout joints and gently scrub with an old toothbrush. Spray over white vinegar and scrub again, before rinsing with clean water.<\/p>"
+          }
+        },
+        "ccf0c45e-37ae-4e87-b454-168ddbccd30c": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you offer trade discounts?",
+            "parent_title": "Ordering",
+            "category_title": "",
+            "accordion_title": "Do you offer trade discounts?",
+            "accordion_body": "<p>If you’re a tiler, builder or developer, why not open a trade account with us to enjoy exclusive trade prices on all our products? <\/p><p>For further information, please visit our Trade page.<\/p>"
+          }
+        },
+        "88db9752-0d12-4a9a-9f06-594db93ca412": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you source your tiles sustainably?",
+            "parent_title": "About us",
+            "category_title": "",
+            "accordion_title": "Do you source your tiles sustainably?",
+            "accordion_body": "<p>We source over 95% of our tiles from trusted suppliers in Italy and Spain. These factories conform to strict EU standards regarding the environment, incorporating waste tiles into production and reusing almost all wastewater.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ee7f186e-2a82-4a0c-8d0c-7b3c7d97f861",
+        "572e83f4-0dda-49eb-8619-fefd994fe16c",
+        "3406a384-91d5-4b95-9358-61f4ed7a5acd",
+        "46c30c4f-f19c-4aa4-ba0a-aca328717849",
+        "b5bc1756-d7f9-45f0-9098-4bdc51bd447d",
+        "079cc7b1-2cf7-4349-9f6b-a0e0f0b9dc2b",
+        "f057cf25-beee-46c6-9cc5-0cdedad4c1c5",
+        "5cc3836d-122c-4e82-acf2-73d0301f8a33",
+        "cbeecdd5-2fa8-4996-8a51-b770c88ea7e8",
+        "4e8f4fdf-ecb1-4f63-a6a8-4cbc0a62eec0",
+        "a4a87a67-d8c9-43fa-81ea-14b181bd92c1",
+        "045e3e52-7e9c-4aab-8d44-a0da83498194",
+        "034c0703-299c-4076-ad02-1e7b3b172432",
+        "4bad5d87-265d-4077-9613-3910442afab8",
+        "5e46a022-cbc2-4c1c-9b5a-82f9758472c8",
+        "ee7f7ed0-0e90-4bb2-ae1c-6cae34a07d96",
+        "c6c3ba5b-a2ad-4029-9825-545a823d4386",
+        "37a548c7-c685-42a4-8b25-570265c25dd6",
+        "3cada2d0-fb5f-4f48-9653-221384e555fe",
+        "83ee0692-88fd-48c9-b1c0-66dc45422691",
+        "977fe933-494e-4584-ac5b-481d287f4837",
+        "f5f57f5f-48f9-4e0c-8213-3a8047392e93",
+        "c93c01f3-afac-49f2-8b8b-5eaba3e0196f",
+        "f2dee24b-19cc-4adc-92f3-621e974d8b88",
+        "37b516d8-ec1e-4a19-aef9-12d520f39612",
+        "57246909-c163-4899-916f-923e8de8dc47",
+        "25e6a24d-2589-49a1-baa4-ca561c407672",
+        "cb793baf-222f-4b87-8fd3-f6d4ebf012fc",
+        "0ee7352a-ca31-4816-a143-544d2f7fe5d2",
+        "ce0b1409-dbd9-4106-8db8-2db0337c1f57",
+        "018c3bc9-374f-45b1-bee8-c6617bf276c7",
+        "eabaed48-0720-43e1-a46d-b435a60a88e3",
+        "12fd4149-7ee9-4c53-becd-d9dff1a929ec",
+        "a80eacc1-5a4a-4741-9562-4d174b028956",
+        "ce9e025a-7f75-4786-bfc8-dfeef982bf0b",
+        "36a98e93-dfc7-413d-a8aa-cac8a5f5b299",
+        "b33116fb-7777-4ea3-b295-6e269621da28",
+        "ea8625fb-afa6-4d5b-820d-ac4b2ec42c61",
+        "2642b34f-47ab-43a9-8813-edce2494c3df",
+        "c523a067-6090-4185-b325-8490f7260135",
+        "34ef463a-d33f-4f2c-8474-9033f8189b88",
+        "74669b32-aa78-48a8-8288-42d7b21af68b",
+        "e5c39855-3c99-48f1-a89d-f4cc94fc05d4",
+        "e723f27d-23ca-439e-9743-be1b53eb475d",
+        "ccf0c45e-37ae-4e87-b454-168ddbccd30c",
+        "88db9752-0d12-4a9a-9f06-594db93ca412"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,75 @@
+{% comment %} 
+  {% render 'content-and-video',
+    id: block.id,
+    with_play_icon: true
+    thumbnail_link: thumbnail
+    video_iframe: video_iframe %}
+
+  to replace play button with content + CTA:
+  
+  {% render 'content-and-video',
+    id: block.id,
+    video_iframe: video_iframe
+    with_play_icon: false
+    thumbnail: thumbnail
+    title: title
+    title_color: title_color
+    cta_text: cta_text
+    background_color: background_color
+    accent_color: accent_color
+    accent_contrast_color: accent_contrast_color
+    text_color: text_color %}
+{% endcomment %}
+
+{% if thumbnail %}
+  {% assign thumbnail_image = thumbnail | img_url: '128x', crop: 'center' %}
+  {% assign one_x_image = thumbnail | img_url: '1280x', crop: 'center' %}
+  {% assign two_x_image = thumbnail | img_url: '2560x', crop: 'center' %}
+{% elsif thumbnail_link %}
+  {% assign thumbnail_image = thumbnail_link %}
+  {% assign one_x_image = thumbnail_link %}
+  {% assign two_x_image = thumbnail_link %}
+{% endif %}
+
+<section class="content-and-video-section" id="content-and-video-section-{{ id }}">
+    <div class="content-and-video-inner">
+      <div class="thumbnail-container" data-click-toggle='{"target": "body", "add": "modal-visible,modal-video"}'>
+        {% if with_play_icon %}
+          {% render 'icon-play' %}
+        {% elsif title and cta_text %}
+          <div class="le-content">
+            {% if title %}
+              <h2 class="heading-2" style="color: {{ title_color }}">{{ title }}</h2>
+            {% endif %}
+            {% if cta_text %}
+              <button role="button" type="button" class="btn btn--primary">{{ cta_text }}</button>
+            {% endif %}
+          </div>
+        {% endif %}
+        <img class="thumbnail"
+          data-lazy-load
+          src="{{ thumbnail_image }}"
+          data-src="{{ one_x_image }}"
+          data-srcset="{{ one_x_image }} 1x, {{ two_x_image }} 2x,"
+          alt="{{ title }}" />
+      </div>
+    </div>
+  <div id="video-container-{{ id }}" data-yt-video>
+    {{ video_iframe }}
+  </div>
+  <style>
+    #content-and-video-section-{{ id }} .btn {
+      background: {{ accent_color | color_modify: 'alpha', 0.8 }};
+      border: {{ accent_color }};
+
+      {% if accent_contrast_color == 'light' %}
+        color: #FFFFFF;
+      {% else %}
+        color: #434944;
+      {% endif %}
+    }
+    #content-and-video-section-{{ id }}:hover .btn {
+      background: {{ accent_color }};
+    }
+  </style>
+</section>

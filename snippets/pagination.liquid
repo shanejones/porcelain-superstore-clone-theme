@@ -1,0 +1,59 @@
+{%- comment -%}
+  {% render 'pagination', paginate: paginate %}
+{%- endcomment -%}
+
+{%- if paginate.pages > 1 -%}
+<footer class="pagination-snippet" role="navigation">
+  <div class="container">
+    <ol>
+      {%- if paginate.previous-%}
+        <li class="previous">
+          <a href="{{ paginate.previous.url }}">
+            <span aria-hidden="true">&laquo;</span>
+            {{"general.pagination.previous" | t}}<span class="visually-hidden">page</span>
+          </a>
+        </li>
+      {%- else -%}
+        <li class="previous disabled">
+          <span aria-hidden="true">&laquo;</span>
+          {{"general.pagination.previous" | t}}<span class="visually-hidden">page</span>
+        </li>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+          <li>
+            <a href="{{ part.url }}">
+              <span class="visually-hidden">page</span> <span>{{ part.title }}</span>
+            </a>
+          </li>
+        {%- else -%}
+          {%- if part.title == paginate.current_page -%}
+            <li class="active" aria-current="page">
+              <span class="visually-hidden">page</span> <span>{{ part.title }}</span>
+            </li>
+          {%- else -%}
+            <li>
+              <span class="visually-hidden">page</span> <span>{{ part.title }}</span>
+            </li>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if paginate.next -%}
+        <li class="next">
+          <a href="{{ paginate.next.url }}">
+            {{ "general.pagination.next" | t }}<span class="visually-hidden">page</span>
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      {%- else -%}
+        <li class="next disabled">
+          {{ "general.pagination.next" | t }}<span class="visually-hidden">page</span>
+          <span aria-hidden="true">&raquo;</span>
+        </li>
+      {%- endif -%}
+    </ol>
+  </div>
+</footer>
+{% endif %}

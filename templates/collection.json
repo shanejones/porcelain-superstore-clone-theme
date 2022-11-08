@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-main",
+      "settings": {
+        "character_limit": 180,
+        "infinite": true,
+        "use_load_more_button": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

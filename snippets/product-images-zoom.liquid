@@ -1,0 +1,28 @@
+{% comment %}
+  Modal with Image Zoom (triggered on gallery click)
+{% endcomment %}
+
+{% assign featured_image = current_variant.featured_image.src %}
+{% if featured_image == blank %}
+  {% assign featured_image = product.featured_image.src %}
+{% endif %}
+
+<div class="product-image-zoom-container">
+  {% comment %} Content {% endcomment %}
+  <div class="product-image-slideshow">
+    <div class="btn-close" data-click-toggle='{"target": "body", "remove": "modal-visible,modal-product-image-zoom"}'>
+      {% render 'icon-close' %}
+    </div>
+    <div data-main-product-image-wrapper class="slideshow-featured-image">
+      <img data-main-product-image data-raw-src="{{ featured_image | img_url: 'master' }}" src="{{ featured_image | img_url: '1000x1000' }}">
+    </div>
+
+    <div class="product-image--thumbnails">
+      {% for image in product.images %}
+        <div class="product-image--thumbnail">
+          <img data-product-thumbnail-index="{{ forloop.index }}" src="{{ image | img_url: '80x80' }}" alt="{{ image.alt }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

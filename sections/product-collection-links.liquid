@@ -1,0 +1,36 @@
+{% if product.vendor != blank or product.type != blank %}
+  <div class="product-collection-links-snippet {% if product.vendor == blank or product.type == blank %}full-width{% endif %}">
+    {% if product.vendor != blank %}
+      <div class="collection-link">
+        <p>{{ 'products.product.shop_more_label' | t }}</p>
+        {% if setion.settings.links_to_page %}
+          <a href="/pages/{{ product.vendor | handleize }}" class="cta">{{ product.vendor }}</a>
+        {% else %}  
+          <a href="/collections/{{ product.vendor | handleize }}" class="cta">{{ product.vendor }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if product.type != blank %}
+      <div class="collection-link">
+        <p>{{ 'products.product.shop_more_label' | t }}</p>
+        <a href="/collections/{{ product.type | handleize }}" class="cta">{{ product.type }}</a>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Page links",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "links_to_page",
+        "label": "Link to page",
+        "info": "Tick this if you would like to link to the product vendor page instead of the product listing.",
+        "default": false
+      }
+    ],
+    "blocks": []
+  }
+{% endschema %}

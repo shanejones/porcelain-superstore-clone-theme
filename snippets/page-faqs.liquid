@@ -1,0 +1,69 @@
+<section class="faqs container">
+  <div class="inner-container">
+    <h1 class="heading-5 bold">{{ page.title }}</h1>
+    <h5 class="heading-2 bold">{{ 'faqs.general.title' | t }}</h1>
+  </div>
+  {% assign parent_cats = '' %}
+  {% assign active = '' %}
+    <section class="faqs-content">
+      <main class="faqs-accordion-container container">
+        {% for block in section.blocks %}
+          {% assign data = block.settings %}
+          {% if forloop.first %}
+          {% assign active = data.parent_title | downcase %}
+          {% endif %}
+          {% assign active_compare = data.parent_title | downcase %}
+            <div data-child-index="{{ data.parent_title | handleize }}" {% if active == active_compare %}
+              class="active"
+              {% else %}
+                class="visually-hidden"
+            {% endif %}>
+              {% if data.category_title != blank and data.parent_title != blank %}
+                {%- assign parent_cats = parent_cats | append: data.parent_title | downcase | append: ',' -%}
+                <h2 class="heading-3">{{ data.category_title }}</h2>
+              {% endif %}
+              <div class="accordion" data-accordion-item="true">
+                <h3 class="heading-5 accordion__title" data-accordion-title="faqs">{{ data.accordion_title }}</h3>
+                <div class="accordion__body">{{ data.accordion_body }}</div>
+              </div>
+            </div>
+        {% endfor %}
+      </main>
+      <article class="faqs-accordion-nav">
+        {% assign parent_cats = parent_cats | split: ',' | uniq %}
+        <ul>
+          {% for cat in parent_cats %}
+            <li data-parent-index="{{ cat | handleize }}" data-mobile="false" {% if active == cat %}
+            class="active"
+          {% endif %}>{{ cat | capitalize }}</li>
+          {% endfor %}
+        </ul>
+        <select data-mobile-select>
+          {% for cat in parent_cats %}
+            <option data-parent-index="{{ cat | handleize }}" data-mobile="true" {% if active == cat %}
+            class="active"
+          {% endif %} value={{  cat | handleize }}>{{ cat | capitalize }}</option>
+          {% endfor %}
+        </select>
+      </article>
+  </section>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {% for block in section.blocks %}
+    {
+      "@type": "Question",
+      "name": "{{ block.settings.accordion_title }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ block.settings.accordion_body | remove: '"' }}"
+      }
+    }{% if forloop.last %}{% else %},{% endif %}
+  {% endfor %}
+  ]
+}
+</script>

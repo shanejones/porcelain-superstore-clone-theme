@@ -1,0 +1,6 @@
+{% for block in section.blocks %}
+    {% assign data = block.settings %}
+    {% if data.page == page.handle %}
+        <header class="header-standard-snippet {{ class_name }}" role="banner" {% if data.image != blank %} style="background-image: url('{{ data.image | img_url: "1440x"}}');background-repeat: no-repeat;background-size: cover;"{% endif %}></header>
+    {% endif %}
+{% endfor %}

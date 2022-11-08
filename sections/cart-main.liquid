@@ -1,0 +1,272 @@
+{% assign has_preorder_items = false %}
+{% assign sample_num = 0 %}
+
+{% render 'date-selector' %}
+
+{% for item in cart.items %}
+  {%- comment -%}check if its a sample{%- endcomment -%}
+  {% assign isASample = false %}
+  {% for option in item.options_with_values %}
+    {% if option.value contains 'Sample' %}
+      {% assign isASample = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if isASample %}
+    {% assign quantity = item.quantity | times: 1 %}
+    {% assign sample_num = sample_num | plus: quantity %}
+  {% endif %}
+{% endfor %}
+
+<section class="cart-section">
+  <div class="container">
+  {% if cart.item_count > 0 %}
+  <div class="cart-header">
+    <h1 class="heading-2 page-title">{{ 'cart.general.title' | t }}</h1>
+    <p class="sample-limit">{{ 'cart.general.free_sample_limit' | t: sample_num: sample_num }}</p>
+  </div>
+  
+  <form action="/cart" method="post" novalidate data-bb-ds-cart-form>
+    <div class="cart-content">
+      <div class="cart-items-container">
+        <ul class="cart-items" data-aid="cart-items">
+          {% for item in cart.items %}
+            {% assign is_pre_order_item = false %}
+            {% assign pre_order_message = '' %}
+            {% for tag in item.product.tags %}
+              {% assign tag_to_compare = tag | downcase %}
+              {% if tag_to_compare == 'sticker preorder' %}
+                {% assign has_preorder_items = true %}
+                {% assign is_pre_order_item = true %}
+                {% assign pre_order_message = item.product.metafields.preorder.message %}
+                {% break; %}
+              {% endif %}
+            {% endfor %}
+          
+            <li class="cart-item" data-aid="cart-item">
+              <div class="cart-item--details-left">
+                <div class="cart-item-image">
+                  <a href="{{ item.url | within: collections.all }}" class="img-container">
+                    {{ item | img_url: '150x150' | img_tag: item.title, 'cart-item--image' }}
+                  </a>
+                </div>
+                <div class="cart-item-details cart-item-details--title">
+                  <div class="cart-item--title box-flex">
+                    <div class="box-details">
+                      <h5 class="heading-5">
+                        <a href="{{ item.url }}">{{ item.product.title }}</a>
+                      </h5>
+                      <div class="box-details-info">
+                        {%- comment -%}check if its a sample{%- endcomment -%}
+                        {% assign isASample = false %}
+                        {% for option in item.options_with_values %}
+                          {% if option.value contains 'Sample' %}
+                            {% assign isASample = true %}
+                            {% break %}
+                          {% endif %}
+                        {% endfor %}
+
+                        {% unless isASample == true %}
+                          <p class="box-details-info--ppm">
+                            {%- assign ppm = item.product.metafields.product.price_per_meter_squared | times: 100 -%}
+                            {% if item.variant.metafields.product.price_per_meter_squared != blank  %}
+                              {%- assign ppm = item.variant.metafields.product.price_per_meter_squared | times: 100 -%}
+                            {% endif %}
+
+                            {% if ppm > 0 %}
+                              <span>{{ ppm | money_without_trailing_zeros }} {{ 'cart.general.price_per_meter_html' | t }}</span>
+                            {% endif %}
+                            
+                            {% if item.variant.metafields.product.size_dimensions != blank %}
+                              <span class="bullet"></span>
+                              {% assign sd = item.variant.metafields.product.size_dimensions %}
+                              <span>{{ 'products.product.size' | t: size_dimensions: sd }}</span>
+                            {% endif %}
+
+                            {%- comment -%}show the option value unless it is being shown elsewhere on the cart{%- endcomment -%}
+                            {% for opt in item.options_with_values %}
+                              {% unless opt.value == 'Box' or  opt.value == 'Sheet' or opt.value == 'Sample' or  opt.name == 'Size' %}
+                                <span class="bullet"></span>
+                                <span>{{ opt.value }}</span>
+                              {% endunless %}
+                            {% endfor %}
+                          </p>
+
+                          {% assign box_qu = item.quantity | times: 1 %}
+                          {% assign msq = item.variant.metafields.product.per_box_size | times: box_qu %}
+                          {% assign boxpl = 'products.product.box' | t %}
+                            {% if box_qu > 1 %}
+                              {% assign boxpl = 'products.product.boxes' | t %}
+                            {% endif %}
+                            {% if msq > 0 %}
+                              <p class="box-details-info--area">{{ 'cart.general.box_cover' | t: qu: box_qu, boxpl: boxpl, msq: msq }} {{ 'cart.general.length_squared_html' | t }}</p>
+                            {% endif %}
+                        {% endunless %}
+                      </div>
+                      {% if is_pre_order_item %}
+                        <span class="preorder-notice">{{ pre_order_message }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="cart-item--details-right">
+              {% unless item.product.has_only_default_variant %}
+                {% if item.variant.title contains 'Box' %}
+                  <p class="variant-title">{{ 'cart.general.boxes' | t }}:</p>
+                {% elsif item.variant.title contains 'Sample' %}
+                  <p class="variant-title">{{ 'cart.general.sample' | t }}:</p>
+                {% elsif item.variant.title contains 'Sheet' %}
+                  <p class="variant-title">{{ 'cart.general.sheets' | t }}:</p>  
+                {% else %}
+                  <p class="pseudo-space"></p> 
+                {% endif %}
+              {% endunless %}
+            <div class="cart-item-details cart-item-details--quantity">
+              {% render 'quantity-selector', item: item %}
+              <div class="update-btn-container">
+                <button type="submit"
+                  class="cta anchor input-cart-update input-cart-update-{{ item.id }} hide">
+                  {{ 'cart.general.update' | t }}
+                </button>
+              </div>
+            </div>
+
+            <div class="cart-item-details cart-item-details--price">
+              {{ item.original_line_price | money }}
+            </div>
+
+            <div class="cart-item-details cart-item-details--remove">
+              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cta">
+                {{ 'cart.general.remove' | t }}
+              </a>
+            </div>
+            </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <div class="cart-summary-container">
+        <div class="cart-summary white-container">
+          <h2 class="heading-2">{{ 'cart.general.summary_title' | t }}</h2>
+
+          <div class="subtotal flex">
+            {% assign item_text = cart.item_count | pluralize: 'item', 'items' %}
+            <p class="heading-4">{{ 'cart.general.subtotal' | t: item_count: cart.item_count, item_text: item_text }}</p>
+            <p class="heading-4">{{ cart.original_total_price | money }}</p>
+          </div>
+          {% if cart.total_discounts > 0 %}
+            <div class="savings flex">
+              <p class="heading-4">{{ 'cart.general.savings' | t }}</p>
+              <p class="heading-4">{{ cart.total_discounts | money }}</p>
+            </div>
+          {% endif %}
+          
+          <div class="total flex">
+            <p class="heading-3">{{ 'cart.general.total' | t }}</p>
+            <p class="heading-3">{{ cart.total_price | money }}</p>
+          </div>
+
+          {% if has_preorder_items %}
+            <p class="preorder-notice">{{ 'cart.general.preorder_notice' | t }}</p>
+          {% endif %}
+
+          {% if cart.item_count != sample_num %}
+            {% comment %} hide date selector button if all samples {% endcomment %}
+            <button type="button" class="btn btn-secondary bb-ds-btn-modal-trigger" data-bb-ds-modal-triggers data-bb-ds-modal-cart-trigger-text="{{'products.product.bb_ds_delivery' | t}}" data-bb-ds-modal-cart-trigger-text-success="{{'products.product.bb_ds_postcode_button_change' | t}}">
+              {{'products.product.bb_ds_delivery' | t}}
+            </button>
+            <input type="hidden" name="attributes[_sample_order_only]" value="false">
+          {% else %}
+            <input type="hidden" name="attributes[_sample_order_only]" value="true">
+            <div data-bb-dd-sample-order data-bb-dd-sample-pcode="{{ 'products.product.bb_ds_sample_postcode' | t }}" class="hide"></div>
+          {% endif %}
+
+          <div data-bb-ds-error-output="{{ 'products.product.bb_ds_checkout_error_html' | t }}" class="alert-error bb-ds-hide"></div>
+
+          <button disabled type="submit" name="checkout" class="btn btn--primary bb-ds-btn-checkout"
+            data-bb-ds-btn-checkout
+          >{{ 'cart.general.checkout' | t }}
+          </button>
+
+          {% render 'cart-shipping-bands' %}
+
+          {% if settings.cart_notes_enable %}
+            <div class="courier-message-container">
+              <h3 class="heading-3">{{ 'cart.general.note' | t }}</h3>
+              <label class="hide" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+              <textarea class="text-input"
+                rows="5"
+                placeholder="{{ 'cart.general.note_placeholder' | t }}"
+                name="note"
+                id="CartSpecialInstructions"
+                data-validate-input data-max-chars={{ settings.cart_notes_max_characters }}>{{ cart.note }}</textarea>
+              <p>{{ 'cart.general.note_support_text' | t: max: settings.cart_notes_max_characters }}</p>
+            </div>
+          {% endif %}
+
+          <div class="need-help">
+            <h3 class="heading-3">{{ 'cart.general.need_help_title' | t }}</h3>
+            <p>{{ 'cart.general.need_help_description_html' | t }}</p>
+          </div>
+
+          <div class="payment-icons-container">
+            {% render 'payment-icons', no_title: true %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  {% else %}
+    <h1 class="heading-1 text-center">{{ 'cart.general.title' | t }}</h1>
+
+    {% comment %}
+    Cart empty state
+    {% endcomment %}
+    <div class="supports-cookies text-center">
+      <div class="rte">
+        <p>{{ 'cart.general.empty' | t }}</p>
+        <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+      </div>
+    </div>
+
+    {% comment %}
+    Cart no cookies state
+    ---------------------
+    Browser cookies are required to use the cart. If cookies aren't enabled in the
+    browser a message is displayed prompting the user to enable them.
+    {% endcomment %}
+    <div class="no-cookies-warning">
+      <p>{{ 'cart.general.cookies_required' | t }}</p>
+    </div>
+  {% endif %}
+</div>
+</section>
+
+{% schema %}
+  {
+    "name": "Shipping Text",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "shipping_band",
+        "name": "Shipping Information Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,52 @@
+{% layout none %}
+
+{% assign handles = product.metafields.product.upsell_minicart | split: ',' %}
+{% capture product_array %}
+[
+  {% for handle in handles %}
+  {% assign handle = handle | strip %}
+  {
+    "product": {{ all_products[handle] | json }},
+    "areaCovered": {{ all_products[handle].metafields.product.area_covered | times: 1 | json }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
+{%- capture pricePer -%}
+{%- if product.metafields.product.price_per_ -%}
+{{- product.metafields.product.price_per_ -}},
+{%- else -%}
+{{- product.metafields.product.price_per_meter_squared -}},
+{%- endif -%}
+{%- endcapture -%}
+
+{% capture boxSize %}
+{%- if product.variants.first != blank -%}
+{{- product.variants.first.metafields.product.per_box_size -}}
+{%- else -%}
+{{- product.metafields.product.per_box_size.value -}}
+{%- endif -%}
+{% endcapture %}
+
+{% capture perUnit %}
+{%- if product.variants.first != blank -%}
+{{- product.variants.first.title -}}
+{%- elsif product.metafields.product.per_unit_type != blank -%}
+{{- product.metafields.product.per_unit_type -}}
+{%- else -%}
+m2
+{%- endif -%}
+{% endcapture %}
+
+
+{
+  "sizeDimensions": {{ product.metafields.product.size_dimensions | json }},
+  "pricePerMeterSquared": {{ pricePer | remove: '£' | times: 100 | json }},
+  "perBoxSize": {{ boxSize | times: 1 | json }},
+  "productUpsell": {{ product_array }},
+  "perUnit": {{ perUnit | json}}
+  {%- if product.variants.first.metafields.product.grout_per_m2 != blank -%}  
+  ,"groutNeeded": {{ product.variants.first.metafields.product.grout_per_m2 | json }}
+  {%- endif -%}
+}

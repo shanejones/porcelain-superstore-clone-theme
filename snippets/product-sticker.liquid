@@ -1,0 +1,33 @@
+{% comment %}
+  {% render 'product-sticker', product: product %}
+{% endcomment %}
+<ul class="stickers">
+  {% for tag in product.tags %}
+    {% assign tag_to_compare = tag | downcase %}
+    {% if tag_to_compare contains 'sticker ' %}
+      {% comment %} Default sticker background colour {% endcomment %}
+      {% assign text_color = '#212A2F' %}
+      {% assign label = tag %}
+      
+      {% comment %} Let's check if there's a custom colour set for this sticker {% endcomment %}
+      {% for i in (1..10) %}
+        {% assign name_key = 'sticker_tag_' | append: i %}
+        {% assign name_to_compare = settings[name_key] | downcase %}
+
+        {% if name_to_compare == tag_to_compare %}
+          {% comment %} Found the tag. Populate the sticker {% endcomment %}
+          {% assign color_key = 'sticker_color_' | append: i %}
+          {% assign label_key = 'sticker_label_' | append: i %}
+          {% assign text_color = settings[color_key] %}
+          {% assign label = settings[label_key] %}
+          {% break %}
+        {% endif %}
+
+      {% endfor %}
+
+      <li class="sticker text-center">
+        <p style="color: {{ text_color }}">{{ label }}</p>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

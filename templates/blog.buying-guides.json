@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-main",
+      "blocks": {
+        "1296e111-a535-4d44-88fd-ec9a985e1f75": {
+          "type": "tag",
+          "settings": {
+            "tag": "Buying Guide",
+            "color": "#f4f4f4",
+            "text_color": "#000000"
+          }
+        },
+        "e34e2c7c-e302-4745-8768-c68ef0d0de67": {
+          "type": "tag",
+          "settings": {
+            "tag": "Get the look",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "762b3bfa-a30b-45fa-89d5-081f3ad1af38": {
+          "type": "tag",
+          "settings": {
+            "tag": "How to",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "2457f1ef-1ef5-438e-bdc4-b6efb09e551c": {
+          "type": "tag",
+          "settings": {
+            "tag": "Inspiration",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "166a3200-2b3b-4a76-b528-d480a3563ade": {
+          "type": "tag",
+          "settings": {
+            "tag": "Tile Trivia",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "1296e111-a535-4d44-88fd-ec9a985e1f75",
+        "e34e2c7c-e302-4745-8768-c68ef0d0de67",
+        "762b3bfa-a30b-45fa-89d5-081f3ad1af38",
+        "2457f1ef-1ef5-438e-bdc4-b6efb09e551c",
+        "166a3200-2b3b-4a76-b528-d480a3563ade"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/floor_3840x_762bf56b-f6b0-4852-afd9-7546c873b5bb.jpg",
+        "title": "Tile Buying Guides",
+        "content": "From tones to textures, there’s a lot to consider when you’re looking for new tiles. Our buying guides will tell you everything you need to know, helping you make the right choice from your home.",
+        "text_limit": 280,
+        "display_feature": false,
+        "feature_image": "shopify:\/\/shop_images\/wood-effect_1536x_crop_center_4dfbd56f-be2b-4360-9694-17cf138cc394.jpg",
+        "article": "buying-guides\/buyers-guide-wood-effect-tiles"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  {%- for variant in variants -%}
+    {% assign availabilityFlag = 'oos' %}
+    {%- if variant.available -%}
+      {%- if variant.inventory_quantity < low_stock_limit -%}
+        {%- assign availabilityFlag = 'low' -%}
+      {%- else -%}
+        {%- assign availabilityFlag = 'available' -%}
+      {%- endif -%}
+    {%- endif  -%}
+    "{{ variant.id }}": {{ availabilityFlag | json }}{% unless forloop.last %},{% endunless %} 
+  {%- endfor -%}
+  }

@@ -1,0 +1,103 @@
+{% if product.metafields.upsells.handles %}
+  <div class="product-upsells-snippet">
+    {% assign upsell_products = product.metafields.upsells.handles %}
+    {% assign upsell_products = upsell_products | split: ',' %}
+
+    <h3 class="heading-5">{{ 'products.product.upsell_container_title' | t }}</h3>
+    
+    <ul class="product-upsells">
+      {% for handle in upsell_products %}      
+        {% assign stripped_handle = handle | strip %}
+        {% assign upsell_product = all_products[stripped_handle] %}
+    
+        {% if upsell_product != blank %}
+          <li class="product-upsells__item" data-upsell-item="{{ upsell_product.id }}" data-aid="product-upsell">
+            <div class="product-upsells__item-inner">
+              <div class="product-upsells__item__image">
+              <img data-upsell-image
+                src="{{ upsell_product | img_url: '64x64' }}"
+                alt="{{ upsell_product.title }}">
+                
+              </div>
+              <div class="product-upsells__item__description">
+                <p class="product-upsells__item__title">
+                  <a href="/products/{{ stripped_handle }}">{{ upsell_product.title }}</a>
+                </p>
+                <p class="product-upsells__item__price" data-upsell-price>
+                  <span>{{ upsell_product.price | money }}</span>
+                  {% if on_sale %}
+                    <s>({{ upsell_product.compare_at_price | money }})</s>
+                  {% endif %}
+                </p>
+      
+                {% assign atc_button_text = 'products.product.sold_out' | t %}
+                {% assign is_disabled = true %}
+                {% if upsell_product.available %}
+                  {% assign atc_button_text = 'products.product.upsell_add_to_cart' | t %}
+                  {% assign is_disabled = false %}
+                {% endif %}
+              </div>
+
+              <div class="product-upsells__item__btn-container">
+                {% comment %} Multiple variant selector {% endcomment %}
+                {% if upsell_product.variants.size > 1 %}
+                  <button type="button" class="btn btn--secondary" data-product-upsell-trigger="{{ upsell_product.id }}">
+                    {{ 'products.product.upsell_choose' | t }}
+                  </button>
+                {% else %}
+                  {% form "product", upsell_product, data-product-form: stripped_handle %}
+                    <input type="hidden" value="1" id="upsell-quantity-{{ stripped_handle }}" name="quantity">
+                    <input type="hidden" name="id" value="{{ upsell_product.variants.first.id }}">
+                    <button
+                      {% if is_disabled == true %}disabled{% endif %}
+                      class="btn btn--secondary-inverted"
+                      data-aid="product-upsell-atc"
+                      data-add-to-cart
+                      data-atc-quantity-input="#upsell-quantity-{{ stripped_handle }}"
+                      data-atc-product-id="{{ upsell_product.variants.first.id }}"
+                      type="submit">
+                      {{ atc_button_text }}
+                    </button>
+                  {% endform %}
+                {% endif %}
+              </div>
+            </div>
+            {% if upsell_product.variants.size > 1 %}
+              {% form "product", upsell_product, class: "product-upsells__item-selection hide" %}
+                <input type="hidden" value="1" id="upsell-quantity-{{ stripped_handle }}" name="quantity">
+                
+                <div class="select-wrapper">
+                  <select data-upsell-option-selector="{{ upsell_product.id }}" name="id" class="select">
+                    <option selected value=""
+                      data-variant-price="{{ upsell_product.price | money }}"
+                      data-variant-image="{{ upsell_product.featured_image | img_url: '120x120' }}">
+                      {{ 'products.product.upsell_select' | t }}
+                    </option>
+                    {% for option in upsell_product.variants %}
+                      {% if option.available %}
+                        <option value="{{ option.id }}"
+                          data-variant-price="{{ option.price | money }}"
+                          data-variant-image="{{ option.image | img_url: '120x120' }}">{{ option.title }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+
+                <button disabled
+                  class="btn btn--secondary-inverted"
+                  data-aid="product-upsell-atc"
+                  data-add-to-cart
+                  data-add-to-cart-with-variant
+                  data-atc-quantity-input="#upsell-quantity-{{ stripped_handle }}"
+                  data-atc-product-id="{{ upsell_product.id }}"
+                  type="submit">
+                  {{ atc_button_text }}
+                </button>
+              {% endform %}
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

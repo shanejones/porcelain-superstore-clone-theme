@@ -1,0 +1,6 @@
+{%- comment -%}
+  {% render 'product-short-description', product: product %}
+{%- endcomment -%}
+<div class="rte product-short-description-snippet hide-mobile">
+  <p>{{ product.description | strip_html | truncate: 120, '...' }} <a class="cta" data-turbolinks="false" href="#product-description" data-scroll-smooth>more</a></p>
+</div>

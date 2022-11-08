@@ -1,0 +1,1154 @@
+{
+  "current": {
+    "color_accent": "#fff0e5",
+    "color_accent2": "#f4f4f4",
+    "color_accent3": "#fff0e5",
+    "color_body_text": "#212a2f",
+    "color_heading_text": "#212a2f",
+    "color_background_dark": "#212a2f",
+    "color_background_light": "#f4f4f4",
+    "border_colour": "#212a2f",
+    "btn_primary_color_text": "#ffffff",
+    "btn_primary_color_bg": "#212a2f",
+    "btn_primary_color_border": "#212a2f",
+    "btn_primary_color_text_hover": "#212a2f",
+    "btn_primary_color_bg_hover": "rgba(0,0,0,0)",
+    "btn_primary_color_border_hover": "#212a2f",
+    "btn_secondary_color_text": "#ffffff",
+    "btn_secondary_color_bg": "#ff878c",
+    "btn_secondary_color_border": "#ff878c",
+    "btn_secondary_color_text_hover": "#ff878c",
+    "btn_secondary_color_bg_hover": "#ffffff",
+    "btn_secondary_color_border_hover": "#ff878c",
+    "btn_tertiary_color_text": "#000000",
+    "btn_tertiary_color_bg": "#ffffff",
+    "btn_tertiary_color_border": "#ffffff",
+    "btn_tertiary_color_text_hover": "#212a2f",
+    "btn_tertiary_color_bg_hover": "#fafafa",
+    "btn_tertiary_color_border_hover": "#fafafa",
+    "date_selector_btn_border_color": "#27ae60",
+    "font_heading": "helvetica_n4",
+    "font_body": "helvetica_n4",
+    "sticker_tag_1": "sticker new",
+    "sticker_label_1": "New In!",
+    "sticker_color_1": "#212930",
+    "sticker_tag_2": "sticker stock",
+    "sticker_label_2": "In Stock!",
+    "sticker_color_2": "#3e611e",
+    "sticker_tag_3": "sticker sale",
+    "sticker_label_3": "On Sale!",
+    "sticker_color_3": "#ff0000",
+    "sticker_tag_4": "",
+    "sticker_label_4": "",
+    "sticker_color_4": "",
+    "sticker_tag_5": "",
+    "sticker_label_5": "",
+    "sticker_color_5": "",
+    "sticker_tag_6": "",
+    "sticker_label_6": "",
+    "sticker_color_6": "",
+    "sticker_tag_7": "",
+    "sticker_label_7": "",
+    "sticker_color_7": "",
+    "sticker_tag_8": "",
+    "sticker_label_8": "",
+    "sticker_color_8": "",
+    "sticker_tag_9": "",
+    "sticker_label_9": "",
+    "sticker_color_9": "",
+    "sticker_tag_10": "",
+    "sticker_label_10": "",
+    "sticker_color_10": "",
+    "share_image": "",
+    "social_twitter_link": "",
+    "social_twitter_img": "shopify:\/\/shop_images\/Group_773.png",
+    "social_facebook_link": "https:\/\/www.facebook.com\/porcelainsuperstore\/",
+    "social_facebook_img": "shopify:\/\/shop_images\/Group_771_small_709cdeb8-7ae4-435b-bf9a-d7627fab7928.png",
+    "social_pinterest_link": "",
+    "social_pinterest_img": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/porcelainsuperstore",
+    "social_instagram_img": "shopify:\/\/shop_images\/Group_772_small_83314500-9cb3-45db-a1e6-9c70313d6932.png",
+    "social_snapchat_link": "",
+    "social_snapchat_img": "",
+    "social_tumblr_link": "",
+    "social_tumblr_img": "",
+    "social_youtube_link": "",
+    "social_youtube_img": "",
+    "social_vimeo_link": "",
+    "social_vimeo_img": "",
+    "turbolinks_enabled": false,
+    "cart_notes_enable": true,
+    "cart_notes_max_characters": "50",
+    "minicart": false,
+    "extra_payment_icons": "klarna",
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "klaviyo_id": "WZmiqD",
+    "jira_enabled": false,
+    "yotpo_app_key": "3sdEZgKeTKlXX9C7OKeGh2tBaNARa0yr9NYOXOcX",
+    "show_reviews": true,
+    "gtm_enabled": true,
+    "gtm_code": "GTM-NC9RD7D",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/ps-logo-pink.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#212930",
+    "checkout_button_color": "#212930",
+    "checkout_error_color": "#e32c2b",
+    "btn_primary_disabled_color_bg": "#b6b9ba",
+    "btn_primary_disabled_color_text": "#ffffff",
+    "btn_secondary_disabled": "#212a2f",
+    "btn_secondary_disabled_color_text": "#b6b9ba",
+    "color_text": "#3a3a3a",
+    "color_sale_text": "#ea0606",
+    "color_button": "#3a3a3a",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3a3a3a",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#cccccc",
+    "color_text_field": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#685858",
+    "image_overlay_opacity": 40,
+    "color_borders": "#ebebeb",
+    "color_body_bg": "#ffffff",
+    "type_header_font": "helvetica_n7",
+    "type_header_base_size": 26,
+    "type_base_font": "helvetica_n4",
+    "type_base_size": 15,
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "enable_ajax": true,
+    "cta_colour": "#f05423",
+    "brand_image_1": "",
+    "brand_url_1": "",
+    "brand_name_1": "",
+    "brand_image_2": "",
+    "brand_url_2": "",
+    "brand_name_2": "",
+    "brand_image_3": "",
+    "brand_url_3": "",
+    "brand_name_3": "",
+    "brand_image_4": "",
+    "brand_url_4": "",
+    "brand_name_4": "",
+    "brand_image_5": "",
+    "brand_url_5": "",
+    "brand_name_5": "",
+    "brand_image_6": "",
+    "brand_url_6": "",
+    "brand_name_6": "",
+    "brand_image_7": "",
+    "brand_url_7": "",
+    "brand_name_7": "",
+    "brand_image_8": "",
+    "brand_url_8": "",
+    "brand_name_8": "",
+    "brand_image_9": "",
+    "brand_url_9": "",
+    "brand_name_9": "",
+    "brand_image_10": "",
+    "brand_url_10": "",
+    "brand_name_10": "",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "announcement_bar_enabled": true,
+          "announcement_bar_home_page_only": false,
+          "bkgColor": "#212a2f",
+          "textColor": "#ffffff",
+          "announcement_bar_text": "Free Express Delivery on all orders over £500!",
+          "announcement_bar_link": "shopify:\/\/pages\/deliveries",
+          "logo": "shopify:\/\/shop_images\/logo.jpg",
+          "logo_mobile": "shopify:\/\/shop_images\/logo_mobile_240x_png.webp",
+          "menu": "main-menu-new",
+          "highlighted_link": "Clearance",
+          "highlighted_colour": "#ff4b4b",
+          "title": "Have a question?",
+          "text": "<p>help@porcelainsuperstore.co.uk<\/p><p>0330 094 0304<\/p><p><a href=\"\/pages\/contact\" title=\"Contact\">Contact us<\/a><\/p><p><a href=\"\/pages\/trade\" title=\"Trade\">Trade signup<\/a> <\/p>"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "8046b635-82bd-4ac2-9b22-8ede7e2f4a08": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/elle.jpg",
+              "text": "",
+              "url": ""
+            }
+          },
+          "a1eb2a5f-ccf6-4641-bac1-89a76b855e20": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/house.jpg",
+              "text": "",
+              "url": ""
+            }
+          },
+          "4ee82975-4bd6-4454-aa7a-878404080083": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/ideal.jpg",
+              "text": "",
+              "url": ""
+            }
+          },
+          "15ebabd9-b11a-4edc-aff1-99211ce35d27": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/living.jpg",
+              "text": "",
+              "url": ""
+            }
+          },
+          "0b53bef4-3494-451a-8d63-ed491d6c136f": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/homes_gardens.jpg",
+              "text": "",
+              "url": ""
+            }
+          },
+          "1b43dbcc-0435-4c50-bf69-023ac0cd296e": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/goodhomes.jpg",
+              "text": "",
+              "url": ""
+            }
+          },
+          "5d421a2c-d00d-4e46-9e83-ece685ee3463": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/times.jpg",
+              "text": "",
+              "url": ""
+            }
+          },
+          "18d9328c-5ba9-4a40-a62f-2b9d3b9ee3cf": {
+            "type": "featured_block",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/hello.jpg",
+              "text": "",
+              "url": ""
+            }
+          }
+        },
+        "block_order": [
+          "8046b635-82bd-4ac2-9b22-8ede7e2f4a08",
+          "a1eb2a5f-ccf6-4641-bac1-89a76b855e20",
+          "4ee82975-4bd6-4454-aa7a-878404080083",
+          "15ebabd9-b11a-4edc-aff1-99211ce35d27",
+          "0b53bef4-3494-451a-8d63-ed491d6c136f",
+          "1b43dbcc-0435-4c50-bf69-023ac0cd296e",
+          "5d421a2c-d00d-4e46-9e83-ece685ee3463",
+          "18d9328c-5ba9-4a40-a62f-2b9d3b9ee3cf"
+        ],
+        "settings": {
+          "title": "Have a question?",
+          "text": "<p><\/p><p>Call:<br\/>0330 094 0304 <br\/><br\/><strong>Monday - Friday:<\/strong><br\/>9:00am - 5:00pm<\/p><p>Email:<br\/><a href=\"mailto:help@porcelainsuperstore.co.uk\" title=\"mailto:help@porcelainsuperstore.co.uk\">help@porcelainsuperstore.co.uk<br\/><\/a><a href=\"\/pages\/contact\" title=\"Contact\">Contact us here.<\/a><a href=\"mailto:help@porcelainsuperstore.co.uk\" title=\"mailto:help@porcelainsuperstore.co.uk\"><br\/><\/a><br\/><\/p>",
+          "footer_linklist": "footer-menu-new",
+          "show_payment_icons": true,
+          "show_featured_banner": true,
+          "banner_title": "As featured in:"
+        }
+      },
+      "footer-scripts": {
+        "type": "footer-scripts",
+        "settings": {
+        }
+      },
+      "1612956442369ba9bf": {
+        "type": "hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/homepage.jpg",
+          "mob_image": "shopify:\/\/shop_images\/HOME-MOBILE.jpg",
+          "text_color": "#ffffff",
+          "text_position": "center",
+          "text_vertical_position": "flex-end",
+          "text_alignment": "center",
+          "title": "Time for a change?",
+          "text": "Discover our collection of beautiful tiles designed for easy living.",
+          "cta_text": "SHOP FLOOR TILES",
+          "link": "shopify:\/\/collections\/floor-tiles",
+          "cta_colour": "#ff878c",
+          "cta_text_colour": "#ffffff"
+        }
+      },
+      "16129593238540884c": {
+        "type": "image-with-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/harlequin.jpg",
+          "layout": "left",
+          "title": "Making tiles easy",
+          "text": "<p>Whether you&#x27;re after the latest terrazzo trend or an old favourite, we&#x27;ve got you covered.<br\/><br\/><\/p><p>Beautiful wall and floor tiles to make your home look great, without breaking the bank.<\/p><p><\/p>",
+          "button_label": "ABOUT US",
+          "button_link": "shopify:\/\/pages\/about-us"
+        }
+      },
+      "161295933227c9aea2": {
+        "type": "collections-showcase",
+        "blocks": {
+          "9477b2ff-9864-48bb-8934-2a32f8d2fa2a": {
+            "type": "category",
+            "settings": {
+              "title": "White Tiles",
+              "title_color": "",
+              "link": "shopify:\/\/collections\/white-tiles",
+              "image": "shopify:\/\/shop_images\/white-cat.jpg",
+              "dt_width": "one_third",
+              "show_on_mobile": true
+            }
+          },
+          "1c108035-bc07-4ea1-bfbe-362d90ada315": {
+            "type": "category",
+            "settings": {
+              "title": "Mosaic Tiles",
+              "title_color": "",
+              "link": "shopify:\/\/collections\/mosaics",
+              "image": "shopify:\/\/shop_images\/mosaic-cat.jpg",
+              "dt_width": "one_third",
+              "show_on_mobile": true
+            }
+          },
+          "3de891eb-1375-48cf-a862-56f7b7ded61a": {
+            "type": "category",
+            "settings": {
+              "title": "Green Tiles",
+              "title_color": "",
+              "link": "shopify:\/\/collections\/green-tiles",
+              "image": "shopify:\/\/shop_images\/green-cat.jpg",
+              "dt_width": "one_third",
+              "show_on_mobile": true
+            }
+          },
+          "b62a7539-0880-4e17-a328-33cae02a574a": {
+            "type": "category",
+            "settings": {
+              "title": "Marble tiles",
+              "title_color": "#ffffff",
+              "link": "shopify:\/\/collections\/marble-effect-floor-tiles",
+              "image": "shopify:\/\/shop_images\/white-marbles.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/white-marbles.jpg",
+              "dt_width": "one_third",
+              "show_on_mobile": true
+            }
+          },
+          "9c8f6498-d94b-4a68-b46e-9c42b275693f": {
+            "type": "category",
+            "settings": {
+              "title": "Terrazzo tiles",
+              "title_color": "#ffffff",
+              "link": "shopify:\/\/collections\/terrazzo-tiles",
+              "image": "shopify:\/\/shop_images\/terrazzo_2d156577-a487-4841-b514-61e2daa902c5.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/terrazzo.jpg",
+              "dt_width": "two_thirds",
+              "show_on_mobile": true
+            }
+          },
+          "62a1968b-4a03-4b79-aec3-2d8200a07523": {
+            "type": "category",
+            "settings": {
+              "title": "Wood Effect tiles",
+              "title_color": "#ffffff",
+              "link": "shopify:\/\/collections\/wood-effect-tiles",
+              "image": "shopify:\/\/shop_images\/woodeffect.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/wood-effect.jpg",
+              "dt_width": "two_thirds",
+              "show_on_mobile": true
+            }
+          },
+          "1ea200e3-6372-4896-a37f-d4998e0c7741": {
+            "type": "category",
+            "settings": {
+              "title": "Victorian tiles",
+              "title_color": "#ffffff",
+              "link": "shopify:\/\/collections\/victorian-tiles",
+              "image": "shopify:\/\/shop_images\/victorian.jpg",
+              "dt_width": "one_third",
+              "show_on_mobile": true
+            }
+          }
+        },
+        "block_order": [
+          "9477b2ff-9864-48bb-8934-2a32f8d2fa2a",
+          "1c108035-bc07-4ea1-bfbe-362d90ada315",
+          "3de891eb-1375-48cf-a862-56f7b7ded61a",
+          "b62a7539-0880-4e17-a328-33cae02a574a",
+          "9c8f6498-d94b-4a68-b46e-9c42b275693f",
+          "62a1968b-4a03-4b79-aec3-2d8200a07523",
+          "1ea200e3-6372-4896-a37f-d4998e0c7741"
+        ],
+        "settings": {
+          "title": "",
+          "link": "",
+          "background_color": "#ffffff"
+        }
+      },
+      "1612961469a00a244b": {
+        "type": "popular-products",
+        "blocks": {
+          "48f820a4-e0b0-4ecf-9dea-2e468dda8a38": {
+            "type": "popular_product",
+            "settings": {
+              "product": "abbey-decor-black"
+            }
+          },
+          "ff6f9331-e5e0-4cb0-9ae7-ad81b5fe03ef": {
+            "type": "popular_product",
+            "settings": {
+              "product": "antique-marble"
+            }
+          },
+          "3a6f2cca-e524-4ce4-90ed-4ce9201abb3b": {
+            "type": "popular_product",
+            "settings": {
+              "product": "palm-springs-pink"
+            }
+          },
+          "50ae8390-c910-4ca7-bf1a-401e6d6f6388": {
+            "type": "popular_product",
+            "settings": {
+              "product": "arlo-light"
+            }
+          }
+        },
+        "block_order": [
+          "48f820a4-e0b0-4ecf-9dea-2e468dda8a38",
+          "ff6f9331-e5e0-4cb0-9ae7-ad81b5fe03ef",
+          "3a6f2cca-e524-4ce4-90ed-4ce9201abb3b",
+          "50ae8390-c910-4ca7-bf1a-401e6d6f6388"
+        ],
+        "settings": {
+          "title": "Top trending tiles",
+          "url": "shopify:\/\/collections\/trending-tiles",
+          "use_collection": false,
+          "collection": "trending-tiles"
+        }
+      },
+      "1612972915de4ecc9f": {
+        "type": "blog-posts",
+        "settings": {
+          "title": "Discover tips and tiling inspiration",
+          "blog": "",
+          "featured_article_1": "tile101\/romantic-tiling",
+          "featured_article_2": "tile101\/trending-terrazzo",
+          "blog_show_date": false,
+          "cta": "shopify:\/\/blogs\/inspiration"
+        }
+      },
+      "161297336465de97c5": {
+        "type": "rich-text",
+        "settings": {
+          "title": "Tile shopping, made simple",
+          "text": "<p>We make tile shopping easy with curated designs, free samples and premium tiles delivered to your door.<\/p>"
+        }
+      },
+      "1613731000a4234b30": {
+        "type": "full-width-image",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/samples_9e5da504-4af3-40e0-8c74-c9b7b9c42c0a.jpg",
+          "mob_image": "shopify:\/\/shop_images\/samples-mobile_6e409cf4-157e-43c3-80d5-829032201dd5.jpg",
+          "text_color": "#212a2f",
+          "text_position": "flex-start",
+          "text_vertical_position": "center",
+          "text_alignment": "flex-start",
+          "title": "Find your match,<br>for free",
+          "text": "Be inspired with our free sample service.<br>Your home will thank you.",
+          "cta_text": "LEARN MORE",
+          "link": "shopify:\/\/pages\/samples",
+          "cta_colour": "#212a2f",
+          "cta_text_colour": "#ffffff"
+        }
+      },
+      "1613738851defb2362": {
+        "type": "reviews-carousel",
+        "blocks": {
+          "b079dfea-a548-4d2a-b119-5f231997e513": {
+            "type": "carousel_image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/artiste2.jpg",
+              "quote": "“Everyone loves my new tiles. <br>They're so unique and actually look handmade.”",
+              "info": "<p>Lucy H on  <strong>Artiste Azul Mix<\/strong><\/p>",
+              "cta": "shopify:\/\/products\/artiste-azul-mix"
+            }
+          },
+          "77d3b096-9f07-45d7-b77d-6a3aa4cfde21": {
+            "type": "carousel_image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/review-2.jpg",
+              "quote": "“The sample service was so quick and easy to use. <br>And best of all they were free!“",
+              "info": "<p>Elizabeth E on <strong>Marais Rose<\/strong><\/p>",
+              "cta": "shopify:\/\/products\/marais-rose"
+            }
+          },
+          "54cd1e01-f6fd-4864-857b-cd2ddf1959d0": {
+            "type": "carousel_image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/review-3.jpg",
+              "quote": "“Any questions I had were answered super quick.<br>Really impressive customer service“",
+              "info": "<p>Simon R. on <strong>Harmony Sky Decor<\/strong><\/p>",
+              "cta": "shopify:\/\/products\/harmony-sky-decor"
+            }
+          }
+        },
+        "block_order": [
+          "b079dfea-a548-4d2a-b119-5f231997e513",
+          "77d3b096-9f07-45d7-b77d-6a3aa4cfde21",
+          "54cd1e01-f6fd-4864-857b-cd2ddf1959d0"
+        ],
+        "settings": {
+          "background_color": "#ffe5d4",
+          "text_color": "#212a2f",
+          "cta_text": "SHOP NOW"
+        }
+      },
+      "1614080994a6240d26": {
+        "type": "mascot-and-text",
+        "blocks": {
+          "2b9cb891-dc46-4c27-b761-548ebe24d4bc": {
+            "type": "mascot_and_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mable1.png",
+              "link": "shopify:\/\/pages\/samples",
+              "title": "Your Perfect Samples",
+              "text": "<p>With our free and speedy sample service, it&#x27;s super easy to find the tile you&#x27;ll love.<\/p>"
+            }
+          },
+          "45048606-b5d3-421b-8337-2cd45d7e9865": {
+            "type": "mascot_and_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mable2.png",
+              "link": "shopify:\/\/pages\/contact",
+              "title": "Friendly Advice",
+              "text": "<p>Need some help? Our awesome customer service team can answer any of your tile questions.<\/p>"
+            }
+          },
+          "0392e351-36dd-4ec3-a7ae-aeeabc9cdb77": {
+            "type": "mascot_and_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mable3.png",
+              "link": "shopify:\/\/pages\/about-us",
+              "title": "Better For Less",
+              "text": "<p>We handpick our tiles to make sure you&#x27;ll get better tiles, at better prices, than you&#x27;ll find elsewhere.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "2b9cb891-dc46-4c27-b761-548ebe24d4bc",
+          "45048606-b5d3-421b-8337-2cd45d7e9865",
+          "0392e351-36dd-4ec3-a7ae-aeeabc9cdb77"
+        ],
+        "settings": {
+        }
+      },
+      "cart-shipping-bands": {
+        "type": "cart-shipping-bands",
+        "settings": {
+        }
+      },
+      "product-collection-links": {
+        "type": "product-collection-links",
+        "settings": {
+          "links_to_page": false
+        }
+      },
+      "product-additional-details": {
+        "type": "product-additional-details",
+        "blocks": {
+          "4a3e2135-3ccd-4035-9726-799e692a1bc2": {
+            "type": "product_related_products",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "4a3e2135-3ccd-4035-9726-799e692a1bc2"
+        ],
+        "settings": {
+        }
+      },
+      "1615544922a96cbdaf": {
+        "type": "yotpo-instagram-gallery",
+        "settings": {
+          "yotpo": "604b398b1b07c34b3e97abcc",
+          "title": "Shop Instagram",
+          "text": "Share your #tilelove and tag @porcelainsuperstore for a chance to be featured on our site"
+        }
+      },
+      "page-contact": {
+        "type": "page-contact",
+        "blocks": {
+          "b36283b5-6137-4264-a445-f7f1b7978f33": {
+            "type": "reason",
+            "settings": {
+              "reason": "Pre-order enquiry"
+            }
+          },
+          "ca8003aa-6a49-4559-9a9f-3949bf305888": {
+            "type": "reason",
+            "settings": {
+              "reason": "Order query"
+            }
+          },
+          "7c034ce6-52f7-4c10-9950-00b431aee857": {
+            "type": "reason",
+            "settings": {
+              "reason": "Deliveries and returns"
+            }
+          }
+        },
+        "block_order": [
+          "b36283b5-6137-4264-a445-f7f1b7978f33",
+          "ca8003aa-6a49-4559-9a9f-3949bf305888",
+          "7c034ce6-52f7-4c10-9950-00b431aee857"
+        ],
+        "settings": {
+          "title": "Contact Us",
+          "content": "<p>We&#x27;re here to help with any queries you may have.<\/p>",
+          "row1_col1": "<p><strong>By Email<br\/><\/strong><a href=\"mailto:help@porcelainsuperstore.co.uk\" title=\"help@porcelainsuperstore.co.uk\">help@porcelainsuperstore.co.uk<\/a><\/p>",
+          "row1_col2": "",
+          "row1_col3": "",
+          "row2_col1": "",
+          "row2_col2": "",
+          "row2_col3": "",
+          "row3_col1": "<p><strong>By phone<br\/><\/strong>0330 094 0304<br\/><br\/>We&#x27;re open Monday - Friday; 9am - 5pm<br\/>Our lines are closed weekends and Bank holidays<\/p>",
+          "row4_col1": "<p><strong>On Instagram<br\/><\/strong>@porcelainsuperstore<\/p>",
+          "row5_col1": "<p><strong>Main Warehouse<br\/><\/strong>Unit 7<br\/>Millbrook Industrial Estate<br\/>Floats Road<br\/>Manchester<br\/>M23 9WT<\/p>",
+          "row5_col2": "<p><strong>Please Note<\/strong><br\/>This warehouse is for customer collections only and we do not have a showroom<\/p>",
+          "row5_col3": "",
+          "form_title": "Alternatively, fill out our contact form and we'll get back as soon as possible.",
+          "form_content": ""
+        }
+      },
+      "1618477960e7a9c845": {
+        "type": "rich-text",
+        "settings": {
+          "title": "What our customers are saying...",
+          "text": ""
+        }
+      },
+      "404": {
+        "type": "404",
+        "settings": {
+          "menu": ""
+        }
+      },
+      "trade": {
+        "type": "trade",
+        "settings": {
+          "text_1": "",
+          "text_2": ""
+        }
+      },
+      "page-faqs": {
+        "type": "page-faqs",
+        "blocks": {
+          "99d1cdc1-4784-421e-9a66-ce4ce1275911": {
+            "type": "accordion",
+            "settings": {
+              "title": "Our tiles",
+              "parent_title": "Our tiles",
+              "category_title": "Our tiles",
+              "accordion_title": "Can I get a sample?",
+              "accordion_body": "<p>Of course!  We understand it’s really important to test the colour and texture of a tile at home. That’s why it’s super easy to order samples from Porcelain Superstore. <\/p><p>To start your Porcelain Superstore journey, simply click the Add Free Sample button on each product page - you can order up to 4 different samples at once. <\/p><p>When you’re ready, head to the checkout - we aim to deliver most sample orders within 5 working days.<\/p><p>And best of all, our samples are completely free - you won’t even pay a penny for shipping. <\/p>"
+            }
+          },
+          "8169e6d7-244a-41f0-b948-495b22b207ab": {
+            "type": "accordion",
+            "settings": {
+              "title": "Our tiles",
+              "parent_title": "Our tiles",
+              "category_title": "",
+              "accordion_title": "Where are your tiles made?",
+              "accordion_body": "<p>We’re able to offer a really exciting range by working with a variety of tile producers, from small family-run firms, through to the largest manufacturers in Europe.<\/p><p>Most of our supply chain is based in Italy and Spain, although a few are a little further afield in Vietnam and China. We only work with top-quality producers, so you can rest assured that your tiles are designed and made to last.<\/p>"
+            }
+          },
+          "c6e53060-7fc9-4143-b855-e0ec1713b5eb": {
+            "type": "accordion",
+            "settings": {
+              "title": "Our tiles",
+              "parent_title": "Our tiles",
+              "category_title": "",
+              "accordion_title": "Do I need to seal your tiles?",
+              "accordion_body": "<p>Most of our wall and floor tiles don’t need to be sealed.<\/p><p>If a tile does require sealing, we’ll tell you in the Tile Specifications tab found on each product page. If this is the case, we usually recommend applying a high quality sealer before and after grouting. <\/p>"
+            }
+          },
+          "e24424fa-158b-4417-9612-acc54033d61a": {
+            "type": "accordion",
+            "settings": {
+              "title": "FAQ Title",
+              "parent_title": "How to order",
+              "category_title": "How to order",
+              "accordion_title": "How do I order?",
+              "accordion_body": "<p>We&#x27;ve made it really quick and easy to order your tiles.<\/p><p>Most of our wall and floor tiles are sold by the full box. On the product page, just enter how many square metres you&#x27;ll need in the checkbox and we&#x27;ll tell you how many boxes you&#x27;ll need to order - we&#x27;ll round this up to the nearest full box.<\/p><p>Some tiles are available in different sizes, so you&#x27;ll need to pick your required size before entering your required quantity.<\/p><p>Our mosaics are sold by the sheet, so simply enter how many individual sheets you will need.<\/p><p>Please remember to include an additional 10% extra when ordering, to cover cuts and wastage.<\/p>"
+            }
+          },
+          "cc309a45-9e18-4afc-9a23-1445c6269370": {
+            "type": "accordion",
+            "settings": {
+              "title": "How to order",
+              "parent_title": "How to order",
+              "category_title": "",
+              "accordion_title": "Do you sell individual tiles?",
+              "accordion_body": "<p>We only sell most of our tiles by the full box quantity - this helps keep our prices (and waste!) low.<\/p><p>Some tiles are sold individually, such as mosaics and trim pieces.<\/p><p>The number of tiles and square metre per box is listed on each product page.<\/p>"
+            }
+          },
+          "e27df2d2-ec9f-4f9f-82b9-a7f50f10da0b": {
+            "type": "accordion",
+            "settings": {
+              "title": "Damages and Returns",
+              "parent_title": "Damages and Returns",
+              "category_title": "Damages",
+              "accordion_title": "What happens if my order is damaged?",
+              "accordion_body": "<p>Every order is thoroughly checked before it leaves our warehouse and thankfully, damage during transit is very rare.<\/p><p>When your order arrives, please inspect the pallet for any sign of damage.<\/p><p><strong>If you suspect or see any sign of damage please:<\/strong><\/p><p>1. Mark &#x27;DAMAGED&#x27; on the delivery note<br\/>2. Take photos that clearly show all the damaged tiles<br\/>3. Inform us within 24 hours of delivery by completing our <a href=\"\/pages\/damages\" title=\"Damages\">Damages Form<\/a><\/p><p><strong>Please note, we can only send out free replacements if the delivery note is marked as DAMAGED.<\/strong><\/p><p>We cannot send out free replacements if the delivery note is signed for as &#x27;Unchecked&#x27;.<\/p>"
+            }
+          },
+          "c998337c-ec17-4a95-9dfc-535bd8a22a96": {
+            "type": "accordion",
+            "settings": {
+              "title": "Delivery",
+              "parent_title": "Delivery",
+              "category_title": "Delivery",
+              "accordion_title": "Where do you deliver to?",
+              "accordion_body": "<p>We deliver to all areas of the UK including Northern Ireland, Scottish Highlands and remote postcodes.<\/p>"
+            }
+          },
+          "99bc731b-b69d-4da1-98ca-36f9c0b73322": {
+            "type": "accordion",
+            "settings": {
+              "title": "Our tiles",
+              "parent_title": "Our tiles",
+              "category_title": "",
+              "accordion_title": "What are your tiles made from?",
+              "accordion_body": "<p>The majority of our tiles are made from either ceramic or porcelain. Some products - especially our mosaics - are made other materials such as glass, natural stone and metal.<\/p><p>You’ll find this information listed on each product page.<\/p>"
+            }
+          },
+          "b3470843-5dab-4b75-8a14-42a65f0b1160": {
+            "type": "accordion",
+            "settings": {
+              "title": "Our tiles",
+              "parent_title": "Our tiles",
+              "category_title": "",
+              "accordion_title": "Can your products be used in commercial areas?",
+              "accordion_body": "<p>If you’d like to know whether a particular tile can be laid in your commercial project, please contact help@porcelainsuperstore.co.uk<\/p>"
+            }
+          },
+          "d8692d8c-944f-42c5-8b22-50d4e2c2a148": {
+            "type": "accordion",
+            "settings": {
+              "title": "Our tiles",
+              "parent_title": "Our tiles",
+              "category_title": "",
+              "accordion_title": "How can I find out more details about your tiles?",
+              "accordion_body": "<p>You’ll find everything you need to know in the Tile Specifications tab on each product page. <\/p><p>If there&#x27;s something else you&#x27;d like to know, please click the Ask a Question button on the product page. You&#x27;ll be notified by email as soon as we answer your query.<\/p><p>This way, future customers will be able to see your question and our answer.<\/p><p>Alternatively, please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> and we&#x27;ll do our very best to help.<\/p>"
+            }
+          },
+          "a0c909af-7c2e-4d1b-a50a-0543f42ab875": {
+            "type": "accordion",
+            "settings": {
+              "title": "FAQ Title",
+              "parent_title": "How to order",
+              "category_title": "",
+              "accordion_title": "Can you send a quote?",
+              "accordion_body": "<p>Please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> if you’d like to receive a quote before placing an order.<\/p>"
+            }
+          },
+          "d52e61c1-2b0c-4ea0-b5ec-9242b71cef32": {
+            "type": "accordion",
+            "settings": {
+              "title": "FAQ Title",
+              "parent_title": "",
+              "category_title": "",
+              "accordion_title": "",
+              "accordion_body": ""
+            }
+          },
+          "5ffcfc5f-b785-419a-9f34-b32bbe13e9b9": {
+            "type": "accordion",
+            "settings": {
+              "title": "FAQ Title",
+              "parent_title": "",
+              "category_title": "",
+              "accordion_title": "",
+              "accordion_body": ""
+            }
+          },
+          "473fedf9-e6ac-4b50-a670-2c0d305689ad": {
+            "type": "accordion",
+            "settings": {
+              "title": "Payment",
+              "parent_title": "How to order",
+              "category_title": "",
+              "accordion_title": "How can I pay?",
+              "accordion_body": "<p>Online, we accept card payments from all major providers, including American Express.<\/p><p>We’ll soon be launching payment by Klarna.<\/p><p>If you’d like to pay by bank transfer, we’ll send over a quote that contains our bank details.<\/p>"
+            }
+          },
+          "6ec38396-7e91-4109-8cba-cd568d8480af": {
+            "type": "accordion",
+            "settings": {
+              "title": "Measurements",
+              "parent_title": "How to order",
+              "category_title": "",
+              "accordion_title": "Can you help me with my measurements?",
+              "accordion_body": "<p>Sure! Please email <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> with a measured plan of your space and we’ll be able to assist.<\/p>"
+            }
+          },
+          "d7017d73-57ca-42e8-9ee5-b5299fdb2120": {
+            "type": "accordion",
+            "settings": {
+              "title": "Extra",
+              "parent_title": "How to order",
+              "category_title": "",
+              "accordion_title": "How much extra should I order?",
+              "accordion_body": "<p>We usually recommend adding 10% extra to your measurements, to allow for any cuts and wastage. <\/p><p>It&#x27;s always a good idea to have some tiles left over as spares - just in case they&#x27;re ever required.<\/p>"
+            }
+          },
+          "3dda0760-e778-4b69-9c13-d11c68b28159": {
+            "type": "accordion",
+            "settings": {
+              "title": "Good Prices",
+              "parent_title": "Prices",
+              "category_title": "Prices",
+              "accordion_title": "Why are your prices so good?",
+              "accordion_body": "<p>We believe that quality design should be accessible to everyone. <\/p><p>By being online only and working directly with our producers, we’re able to offer extremely competitive prices that you won’t find elsewhere.<\/p>"
+            }
+          },
+          "82333567-34e0-4f5f-a430-d9ff09b5dc63": {
+            "type": "accordion",
+            "settings": {
+              "title": "Trade",
+              "parent_title": "Prices",
+              "category_title": "",
+              "accordion_title": "Do you offer trade discounts?",
+              "accordion_body": "<p>Yes we do - Please take a look at our <a href=\"\/pages\/trade\" title=\"Trade\">Trade<\/a> page for further information.<\/p>"
+            }
+          },
+          "c98829c5-f37e-4b5c-917f-0aac4b76f506": {
+            "type": "accordion",
+            "settings": {
+              "title": "Volume",
+              "parent_title": "Prices",
+              "category_title": "",
+              "accordion_title": "Do you offer volume discounts?",
+              "accordion_body": "<p>Although our prices are extremely competitive, we may be able to offer discounted pricing on orders over 100 m2. <\/p><p>Please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> for further details.<\/p>"
+            }
+          },
+          "c07d305b-c22a-4330-adb2-2988b6b9fd2c": {
+            "type": "accordion",
+            "settings": {
+              "title": "VAT",
+              "parent_title": "Prices",
+              "category_title": "",
+              "accordion_title": "Do your prices include VAT?",
+              "accordion_body": "<p>Yes, all our online prices include VAT.<\/p>"
+            }
+          },
+          "fe3aede7-208a-485e-8c56-b6ef1a51853b": {
+            "type": "accordion",
+            "settings": {
+              "title": "Delivery Cost",
+              "parent_title": "Delivery",
+              "category_title": "",
+              "accordion_title": "How much does delivery cost?",
+              "accordion_body": "<p>Our Standard Delivery is free on most orders over £500.<br\/><br\/>For orders under £500, delivery is usually £30.<\/p><p>If you live in a remote or island postcode, we may have to charge a little extra for delivery.<\/p>"
+            }
+          },
+          "cd8ff27a-3d3c-4b7a-b4dd-9309539a6fcf": {
+            "type": "accordion",
+            "settings": {
+              "title": "Express",
+              "parent_title": "Delivery",
+              "category_title": "",
+              "accordion_title": "Do you offer an express delivery service?",
+              "accordion_body": "<p>Need your tiles quicker? At the checkout, you can opt for our Express delivery service.<\/p><p>Place your order before 11am and we’ll deliver in 2 working days.<\/p><p>Our Express delivery costs £50 and is available to most mainland postcodes, excluding some remote areas.<\/p>"
+            }
+          },
+          "1743e39a-629f-49cb-9605-e2ef32c10a72": {
+            "type": "accordion",
+            "settings": {
+              "title": "Part Order",
+              "parent_title": "Delivery",
+              "category_title": "",
+              "accordion_title": "I've only received part of my order",
+              "accordion_body": "<p>If you order two or more different tiles, they may be delivered separately. We usually advise this on the email we send when we dispatch your order.<\/p><p>If you’re unsure, please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> and we&#x27;ll be able to help.<\/p>"
+            }
+          },
+          "abd90a6c-2223-4408-8183-87ec3ace8029": {
+            "type": "accordion",
+            "settings": {
+              "title": "Returns",
+              "parent_title": "Damages and returns",
+              "category_title": "Returns",
+              "accordion_title": "What is your returns policy?",
+              "accordion_body": "<p>We offer a very generous 30 day return policy on your <strong>full order only. <\/strong><\/p><p>If you’d like to return, please complete our <a href=\"\/pages\/returns\" title=\"Returns\">Returns Form<\/a> and we’ll be in touch. Your order will need to be sent back to us at your own cost.<\/p><p>Unfortunately, we’re unable to accept returns on part-orders or leftover tiles. <\/p><p>It’s always a good idea to keep some tiles left over as spares - tiles can and do vary from batch to batch.<\/p>"
+            }
+          },
+          "e7e2ea6c-1a73-45f7-a6fa-fda48b8b4193": {
+            "type": "accordion",
+            "settings": {
+              "title": "Refunds",
+              "parent_title": "Damages and returns",
+              "category_title": "",
+              "accordion_title": "How long do refunds take?",
+              "accordion_body": "<p>We&#x27;ll process your refund once your returned order has been received into our warehouse. This may take up to 10 working days to reach your account.<\/p>"
+            }
+          },
+          "d11173c5-6998-46bd-8f46-50cb841c593d": {
+            "type": "accordion",
+            "settings": {
+              "title": "Collect",
+              "parent_title": "Delivery",
+              "category_title": "",
+              "accordion_title": "Do you offer Click and Collect?",
+              "accordion_body": "<p>You may be able to collect your order from our Manchester warehouse. Please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> for further information.<\/p>"
+            }
+          },
+          "a09a739c-5b73-4e4e-ba51-5a64bf6d7248": {
+            "type": "accordion",
+            "settings": {
+              "title": "Change or cancel",
+              "parent_title": "How to order",
+              "category_title": "",
+              "accordion_title": "Can I change or cancel my order?",
+              "accordion_body": "<p>Please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> immediately if you need to change or cancel your order.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "99d1cdc1-4784-421e-9a66-ce4ce1275911",
+          "8169e6d7-244a-41f0-b948-495b22b207ab",
+          "c6e53060-7fc9-4143-b855-e0ec1713b5eb",
+          "e24424fa-158b-4417-9612-acc54033d61a",
+          "cc309a45-9e18-4afc-9a23-1445c6269370",
+          "e27df2d2-ec9f-4f9f-82b9-a7f50f10da0b",
+          "c998337c-ec17-4a95-9dfc-535bd8a22a96",
+          "99bc731b-b69d-4da1-98ca-36f9c0b73322",
+          "b3470843-5dab-4b75-8a14-42a65f0b1160",
+          "d8692d8c-944f-42c5-8b22-50d4e2c2a148",
+          "a0c909af-7c2e-4d1b-a50a-0543f42ab875",
+          "d52e61c1-2b0c-4ea0-b5ec-9242b71cef32",
+          "5ffcfc5f-b785-419a-9f34-b32bbe13e9b9",
+          "473fedf9-e6ac-4b50-a670-2c0d305689ad",
+          "6ec38396-7e91-4109-8cba-cd568d8480af",
+          "d7017d73-57ca-42e8-9ee5-b5299fdb2120",
+          "3dda0760-e778-4b69-9c13-d11c68b28159",
+          "82333567-34e0-4f5f-a430-d9ff09b5dc63",
+          "c98829c5-f37e-4b5c-917f-0aac4b76f506",
+          "c07d305b-c22a-4330-adb2-2988b6b9fd2c",
+          "fe3aede7-208a-485e-8c56-b6ef1a51853b",
+          "cd8ff27a-3d3c-4b7a-b4dd-9309539a6fcf",
+          "1743e39a-629f-49cb-9605-e2ef32c10a72",
+          "abd90a6c-2223-4408-8183-87ec3ace8029",
+          "e7e2ea6c-1a73-45f7-a6fa-fda48b8b4193",
+          "d11173c5-6998-46bd-8f46-50cb841c593d",
+          "a09a739c-5b73-4e4e-ba51-5a64bf6d7248"
+        ],
+        "settings": {
+        }
+      },
+      "password-content": {
+        "type": "password-content",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/PS_Roundel_v1.png",
+          "background_image": "shopify:\/\/shop_images\/splash-image_62b7bdc6-11ab-4ecc-8056-027fae2e87bf.jpg",
+          "title": "Coming Soon",
+          "sub_text": "We are making some changes to our site and will be back very soon.",
+          "newsletter_text": "Sign up to recieve our latest news and updates.",
+          "text_color": "#ffffff",
+          "secondary_color": "#000",
+          "filter": "#212a2f",
+          "opacity": 0.3
+        }
+      },
+      "1624281348160d4995": {
+        "type": "content-dividers",
+        "settings": {
+          "height": "32",
+          "bkgColor": "#ffffff"
+        }
+      },
+      "peach-bar": {
+        "type": "peach-bar",
+        "blocks": {
+          "a8d7cb06-252e-4a68-b8fc-9aabd7dd8f66": {
+            "type": "icon_text",
+            "settings": {
+              "url": "shopify:\/\/pages\/samples",
+              "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0543\/7571\/0905\/files\/samples.png?v=1625565058",
+              "text": "Free Samples",
+              "color": "#000000"
+            }
+          },
+          "3c1964e0-b042-44f6-854b-bde3b6eae03a": {
+            "type": "icon_text",
+            "settings": {
+              "url": "shopify:\/\/pages\/deliveries",
+              "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0543\/7571\/0905\/files\/delivery.png?v=1625562097",
+              "text": "Quick Delivery",
+              "color": "#000000"
+            }
+          },
+          "3711f274-1cff-49a9-9d5e-401061332fe9": {
+            "type": "icon_text",
+            "settings": {
+              "url": "shopify:\/\/pages\/reviews",
+              "icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0543\/7571\/0905\/files\/5.0_1.svg?v=1625154694",
+              "text": "30k+ Verified Reviews",
+              "color": ""
+            }
+          }
+        },
+        "block_order": [
+          "a8d7cb06-252e-4a68-b8fc-9aabd7dd8f66",
+          "3c1964e0-b042-44f6-854b-bde3b6eae03a",
+          "3711f274-1cff-49a9-9d5e-401061332fe9"
+        ],
+        "settings": {
+          "icon_text_enabled": true,
+          "icon_text_background_color": "#fff0e5"
+        }
+      }
+    },
+    "content_for_index": [
+      "1612956442369ba9bf",
+      "1624281348160d4995",
+      "161295933227c9aea2",
+      "161297336465de97c5",
+      "1614080994a6240d26",
+      "1612961469a00a244b",
+      "16129593238540884c",
+      "1613731000a4234b30",
+      "1618477960e7a9c845",
+      "1613738851defb2362",
+      "1612972915de4ecc9f",
+      "1615544922a96cbdaf"
+    ],
+    "blocks": {
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        },
+        "hero-1": {
+          "type": "hero",
+          "settings": {
+          }
+        },
+        "hero-2": {
+          "type": "hero",
+          "settings": {
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_payment_icons": true
+          }
+        }
+      },
+      "content_for_index": [
+        "hero-1",
+        "hero-2"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": ""
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+          }
+        }
+      },
+      "content_for_index": [
+        "hero"
+      ]
+    }
+  }
+}

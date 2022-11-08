@@ -1,0 +1,20 @@
+{% assign class = "truncated-container" %}
+
+{% if section.settings.content.size <= section.settings.text_limit %}
+  {% assign class = "" %}
+{% endif %}
+
+
+<section class="blog-header-section">
+  <div class="container {{ class }}">
+    <h1 class="heading-1 bold">{{ section.settings.title }}</h1>
+    <p class="truncated">{{ section.settings.content | truncate: section.settings.text_limit, "..." }} <span data-click-toggle='{"target": ".container.truncated-container", "toggle": "truncated-container"}'>{{ 'blogs.article.read_more' | t}}</span></p>
+    <p class="full">{{ section.settings.content }}</p>
+
+    {% if blog.all_tags.size > 0 %}
+      <div class="tag-container">
+        {% render 'tags', tags: blog.all_tags %}
+      </div>
+    {% endif %}
+  </div>
+</section>

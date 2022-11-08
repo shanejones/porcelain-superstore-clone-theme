@@ -1,0 +1,9 @@
+<div class="page-brands-snippet">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'BLOCK_TYPE_GOES_HERE' %}
+        {% render 'SNIPPET_NAME_GOES_HERE' block: block %}
+      {% else %}
+    {% endcase %}
+  {% endfor %}
+</div>

@@ -1,0 +1,10 @@
+{%- comment -%}
+  {% render 'product-wishlist-button', product_id: product.id, variant_id: product.variants.first.id %}
+{%- endcomment -%}
+<div class="wishlist-button-wrapper">
+  <span {% if single != blank %}id="smartwishlist" class="icon icon-wishlist"{% else %}class="smartwishlist icon icon-wishlist"{% endif %} 
+    data-wishlist-button
+    data-product="{{ product_id }}"
+    data-variant="{{ variant_id }}">
+  </span>
+</div>

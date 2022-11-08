@@ -1,0 +1,80 @@
+{% render 'content-and-images', blocks: section.blocks %}
+
+{% schema %}
+  {
+    "name": "content-and-images",
+    "settings": [],
+    "blocks":
+      [
+        {
+          "type": "content-image-block",
+          "name": "Content + Image",
+          "settings" : [
+            {
+              "type": "select",
+              "id": "size",
+              "label": "Size",
+              "options": [
+                { "value": "", "label": "Full"},
+                { "value": "half", "label": "Half"}
+              ],
+              "default": ""
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "select",
+              "id": "text_position",
+              "label": "Text Position",
+              "options": [
+                { "value": "flex-start", "label": "left"},
+                { "value": "center", "label": "center"},
+                { "value": "flex-end", "label": "right"}
+              ],
+              "default": "center"
+            },
+            {
+              "type": "select",
+              "id": "textAlignment",
+              "label": "Text Alignment",
+              "options": [
+                { "value": "flex-start", "label": "left"},
+                { "value": "center", "label": "center"},
+                { "value": "flex-end", "label": "right"}
+              ],
+              "default": "center"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "color",
+              "id": "title_color",
+              "label": "Title Color"
+            },
+            {
+              "type": "text",
+              "id": "cta_text",
+              "label": "CTA Text",
+              "default": "Shop now"
+            },
+            {
+              "id": "link",
+              "type": "url",
+              "label": "CTA Link"
+            }
+          ]
+        }
+      ],
+      "presets": [{
+        "name": "Content + Images",
+        "category": "Homepage"
+      }]
+    }
+{% endschema %}
+  

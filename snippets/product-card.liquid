@@ -1,0 +1,69 @@
+{%- comment -%}
+    {% render 'product-card', product: product %}
+{%- endcomment -%}
+
+{% comment %}
+  "loading" is true when rendering a product lazy product card that'll be replaced, eg 
+  for previous-page placeholders in infinte scroll product listings
+  to counteract layout shift you will need to make sure that "loading" product cards 
+  take up the same amount of space as real product cards, this is especially important to make sure
+  that scroll position persists on back navigation
+{% endcomment %}
+
+<div class="cl-product-card">
+  {% if loading %}
+    <div class="cl-product-card-image">{% render 'loading' %}</div>
+  {% else %}
+    <a href="{{ product.url | within: collection }}"  title="{{ product.title }}" data-preloadlink="true">
+      {% render 'product-card-image', product: product %}
+    </a>
+  {% endif %}
+  
+  {%- comment -%}manage plp add sample and quick view buttons{%- endcomment -%}
+  {% if template == 'collection' %}
+    {% assign has_free_sample = false %}
+
+    {% if product.variants.size >= 1 %}
+      {% for option in product.options_with_values %}
+        {% if option.name == 'Sale-Size' %}
+          {% for variant in product.variants %}
+            {% if variant.option1 == 'Sample' %}
+              {% assign has_free_sample = true %}
+              {% break %}
+            {% endif %}
+            {% for sale_size in variant.options %}
+              {% assign size_unit = sale_size %}
+            {% endfor %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if product.images.size > 1 or has_free_sample %}
+      {% render 'collections-product-card-buttons', product: product, has_free_sample: has_free_sample %}
+    {% endif %}
+  {% endif %}
+
+  {% comment %} Description {% endcomment %} 
+  <div 
+    class="cl-product-card-info 
+    {% unless product.images.size > 1 %}single-image{% endunless %}
+    {% unless has_free_sample %}no_free_sample{% endunless %}">
+    {% unless loading %}
+      <a href="{{ product.url }}#yotpoReviewsWidget">
+        <div class="yotpo bottomLine"
+            data-product-id="{{ product.id }}"
+            data-url="{{ product.url }}">
+        </div> 
+      </a>
+      <h2 class="cl-product-card-name bold" data-aid="product-card">{{ product.title }}</h2>
+      {%- comment -%}m2 and size e.g. $6.25 per m2 - 10 x 28 cm{%- endcomment -%}
+      {% assign price_per_meter_squared = product.metafields.product.price_per_meter_squared %}
+      {% assign price_per_ = product.metafields.product.price_per_ %}
+      {% assign size_dimensions = product.metafields.product.size_dimensions %}
+      {% if price_per_meter_squared != blank or size_dimensions != blank %}
+      {% render 'product-m2-and-size', size_unit: size_unit, price_per_meter_squared: price_per_meter_squared, price_per_: price_per_, size_dimensions: size_dimensions %}
+      {% endif %}
+    {% endunless %}
+  </div>
+</div>

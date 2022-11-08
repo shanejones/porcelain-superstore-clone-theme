@@ -1,0 +1,73 @@
+<div class="country-selector">
+  <header class="modal-header">
+    <p>{% render 'icon-international' %} {{ section.settings.modal_title }}</p>
+    <div class="close-btn-wrapper"
+      data-click-toggle='{"target": "body", "remove": "modal-visible,modal-country-selector"}'>
+      {% render'icon-close' %}
+    </div>
+  </header>
+  <div class="modal-body">
+    <h2 class="heading-3 text-center">{{ section.settings.title }}</h2>
+    <ul class="country-list">
+      {% for block in section.blocks %}
+        {% assign data = block.settings %}
+        {%- capture logo_src -%}{{ data.img | img_url: '100x' }}{%- endcapture -%}
+        {%- capture full_src -%}{{ data.img | img_url: '200x' }}{%- endcapture -%}
+
+        <li class="{% if data.url contains shop.domain %}active{% endif %}">
+          <a href="{{ data.url }}">
+            <img data-lazy-load
+              src="{{ logo_src }}"
+              data-src="{{ full_src }}"
+              alt="{{ data.img.alt | default: data.name }}">
+            <p>{{ data.name }}</p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Country Selector",
+    "settings": [
+      {
+        "type": "text",
+        "id": "modal_title",
+        "label": "Modal Title",
+        "default": "Store Settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "What country are you in?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "country",
+        "name": "Country",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Country name"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

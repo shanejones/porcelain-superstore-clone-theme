@@ -1,0 +1,83 @@
+{%- comment -%}
+  This snippet will display cart recommendations based on the most expensive item in the cart.
+
+  {% render 'cart-recommendations', cart: cart, recommendations_count: 3 %}
+{%- endcomment -%}
+
+{% if cart.item_count %}
+
+  {%- comment -%}Find the most expensive product in the cart{%- endcomment -%}
+  {% assign expensive_item = blank %}
+  {% assign cart_item_handles = '' %}
+
+  {% for item in cart.items %}
+    {% assign cart_item_handles = cart_item_handles | append: item.product.handle | append: ',' %}
+    {% if expensive_item == blank %}
+      {% assign expensive_item = item %}
+    {% else %}
+      {% if item.original_price > expensive_item.original_price %}
+        {% assign item_product = item.product %}
+        {% assign expensive_item = item %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if expensive_item != blank %}
+
+    {% capture upsell_product_json %}
+      {%- comment -%} By default, upsells will be set as product metafields. Change this if they differ in your project {%- endcomment -%}
+      {% assign upsell_product_handles = expensive_item.product.metafields.upsells.handles %}
+
+      {% if upsell_product_handles != blank %}
+        {% assign upsell_product_handles = upsell_product_handles | split: ',' %}
+
+        {% for handle in upsell_product_handles %}
+          {% assign upsell_product = all_products[handle] %}
+
+          {% if upsell_product == blank or cart_item_handles contains handle %}
+            {% continue %}
+          {% endif %}
+          
+          {%- comment -%}Output the upsell in JSON format{%- endcomment -%}
+          ,{{ upsell_product | json }}
+
+        {% endfor %}
+
+      {% endif %}
+
+    {% endcapture %}
+    
+    <script type="text/javascript">
+      (function(window) {
+        window.theme.cart_upsells = [{{ upsell_product_json | strip | replace_first: ',', '' }}];
+      })(window);
+    </script>
+    
+    <div data-app-layer-portal="cart-recommendations"
+      data-base-url="{{ routes.product_recommendations_url }}"
+      data-product-id="{{ expensive_item.product.id }}"
+      data-title="{{ 'cart.general.recommendations_title' | t }}"
+      data-limit="{{ section.settings.cart_upsell_quantity }}"></div>
+
+  {% endif %}
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Cart Upsells",
+    "settings": [
+      {
+        "type": "range",
+        "id": "cart_upsell_quantity",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "itm",
+        "label": "Quantity",
+        "default": 3
+      }
+    ],
+    "blocks": []
+  }
+{% endschema %}

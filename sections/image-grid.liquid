@@ -1,0 +1,128 @@
+{%- comment -%}
+  Displays a grid of images
+{%- endcomment -%}
+<div class="image-grid section-with-header">
+  <div class="container">
+    <header>
+      <h2 class="heading-2">{{ section.settings.title }}</h2>
+      <a class="view-all cta" href="{{ section.settings.url }}">{{ 'general.listings.view_all_link' | t }}</a>
+    </header>
+    {% assign blocks_size = section.blocks | size %}
+    <ul class="image-grid-container" data-size="{{ blocks_size }}" >
+      {% for block in section.blocks %}
+        {% assign data = block.settings %}
+        <li class="grid-item {% if forloop.index == 1 and blocks_size > 5 %} grid-item--featured {% endif %}">
+          <img data-lazy-load
+            class="img-bg"
+            data-src="{{ data.bg_image | img_url: '500x500', crop: 'center' }}"
+            src="{{ data.bg_image | img_url: '100x100', crop: 'center' }}"
+            alt="{{ data.text }}">
+
+            <div class="overlay"></div>
+            
+            {% comment %} Make the whole block clickable if it's not featured {% endcomment %}
+            <a href="{{ data.cta_link }}" class="content">
+
+              {% if data.image != blank %}
+                <img class="img-icon"
+                  data-lazy-load
+                  src="{{ data.image | img_url: '100x', crop: 'center' }}" 
+                  data-src="{{ data.image | img_url: '200x', crop: 'center' }}" 
+                  alt="{{ data.image.alt }}">
+              {% endif %}
+                
+              <h3 class="heading-3"
+                style="color: {{ data.text_colour }}">
+                {{ data.text }}
+              </h3>
+
+              <button href="{{ data.cta_link }}"
+                class="btn btn--{{ data.cta_type }}"
+                {% if data.cta_text_colour != blank %}
+                  style="color: {{ data.cta_text_colour }}"
+                {% endif %}>
+                {{ data.cta_text }}
+              </button>
+            </a>
+
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image Grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "View All URL"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "grid_image",
+        "name": "Grid Image",
+        "settings": [
+          {
+            "id": "bg_image",
+            "label": "Background image",
+            "type": "image_picker"
+          },
+          {
+            "id": "image",
+            "label": "Icon",
+            "type": "image_picker"
+          },
+          {
+            "id": "text",
+            "label": "Text",
+            "type": "text"
+          },
+          {
+            "id": "text_colour",
+            "label": "Text Colour",
+            "type": "color",
+            "default": "#FFF"
+          },
+          {
+            "id": "cta_text",
+            "label": "CTA Text",
+            "type": "text"
+          },
+          {
+            "id": "cta_link",
+            "type": "url",
+            "label": "CTA Link"
+          },
+          {
+            "id": "cta_type",
+            "type": "select",
+            "label": "CTA Type",
+            "options": [
+                { "value": "primary", "label": "Primary"},
+                { "value": "secondary", "label": "Secondary"},
+                { "value": "tertiary", "label": "Tertiary"}
+            ]
+          },
+          {
+            "id": "cta_text_colour",
+            "type": "color",
+            "label": "CTA Text Colour Override"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Image Grid",
+      "category": "Baseline"
+    }]
+  }
+{% endschema %}

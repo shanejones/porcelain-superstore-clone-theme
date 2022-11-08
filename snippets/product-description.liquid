@@ -1,0 +1,23 @@
+{%- comment -%}
+  {% render 'product-description' %}
+{%- endcomment -%}
+{% assign class = "truncated-container" %}
+{% if product.description.size <= section.settings.character_limit %}
+  {% assign class = "" %}
+{% endif %}
+
+<section class="product-description-snippet" id="product-description">
+  <div class="product-description__description-container {{ class }}">
+    {% if product.metafields.product.short_description %}
+      <div class="product-description__heading-container">
+        <h2 class="heading-2 bold">{{ product.metafields.product.short_description }}</h2>
+      </div>
+    {% endif %}
+    <div class="rte">
+      <div class="truncated">{{ product.description | truncate: section.settings.character_limit, "..." }} <span data-click-toggle='{"target": ".product-description__description-container.truncated-container", "toggle": "truncated-container"}'>{{ 'blogs.article.read_more' | t}}</span></div>
+      <div class="full">{{ product.description }}</div>
+    </div>
+  </div>
+
+  {%- comment -%} Content for right hand side goes here {%- endcomment -%}
+</section>

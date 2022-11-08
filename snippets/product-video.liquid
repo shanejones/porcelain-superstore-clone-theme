@@ -1,0 +1,21 @@
+{% if product.metafields.video.link %}
+  {%- comment -%} Remove host {%- endcomment -%}
+  {% assign video_id = product.metafields.video.link | split: '?' %}
+  {% assign video_id = video_id[1] | replace: 'v=', '' %}
+
+  {% if video_id %}
+    <div class="container">
+      <div class="product-vide-snippet">
+        {% assign video_iframe = '<iframe width="560" height="550" src="https://www.youtube.com/embed/' %}
+        {% assign video_iframe = video_iframe | append: video_id %}
+        {% assign video_iframe = video_iframe | append: '?enablejsapi=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' %}
+  
+        {% render 'content-and-video',
+          id: 'product-video',
+          with_play_icon: true
+          thumbnail_link: product.metafields.video.thumbnail
+          video_iframe: video_iframe %}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}

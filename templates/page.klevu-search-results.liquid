@@ -1,0 +1,26 @@
+<div class="klevu-search">
+  <div class="klevu-search__header" role="banner">
+    <div class="text-container">
+      <h1 class="heading-2 bold">{{ page.title }} <span></span></h1>
+    </div>
+  </div>
+  <div class="klevuLanding"></div>
+</div>
+
+<script>
+  const searchValueOutput = document.querySelector('.klevu-search__header span');
+
+  const getSearchValueFromUrl = () => {
+    const searchValue = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    
+    let value = searchValue.q;
+
+    return value;
+  }
+
+  if (getSearchValueFromUrl() !== null) {
+    searchValueOutput.textContent = `for "${getSearchValueFromUrl()}"`
+  }
+</script>

@@ -1,0 +1,151 @@
+<footer class="footer-section">
+  {% render 'featured-in-banner' %}
+  <div class="footer-section-outer">
+    <div class="footer-section-container container">
+        {%- capture footer_logo_src -%}{{ 'logo-footer.svg' | asset_url }}{%- endcapture -%}
+        <div class="logo-footer-image-container">
+          <img class="opt_lazy"
+       data-src="{{ footer_logo_src }}"
+            alt="{{ section.settings.logo.alt | default: shop.name }}">
+        </div>
+      {%- comment -%}payment{%- endcomment -%}
+      <div class="brands-strip footer-section-brand-strip">
+        <div class="container">
+          {% render 'brands' %}
+        </div>
+      </div>
+
+      {%- comment -%}text block{%- endcomment -%}
+      {% render 'footer-text', title: section.settings.title, text: section.settings.text %}
+      
+      {%- comment -%}signup form{%- endcomment -%}
+      {% render 'newsletter-signup' %}
+
+      {%- comment -%}nav{%- endcomment -%}
+      {%- assign footer_linklist = linklists[section.settings.footer_linklist] -%}
+      <section class="footer-menu">
+        {% if footer_linklist.links.size > 0 %}
+          {% if linklist_header %}
+            <h3 class="heading-4">{{ linklist_header }}</h3>
+          {% endif %}
+          <ul>
+            {% for link in footer_linklist.links %}
+              <li id="footer-links-{{ link.title | handleize }}">
+                <h3 class="heading-5 bold text-upper"
+                  data-click-toggle='{"target": "#footer-links-{{ link.title | handleize }}", "toggle": "menu-open"}'>
+                  {{ link.title }}
+                </h3>
+                <ul>
+                    {% for child_link in link.links %}
+                      <li class="child-link">
+                        <p><a href="{{ child_link.url }}">{{ child_link.title }}</a></p>
+                      </li>
+                    {% endfor %}
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </section>
+
+      <div class="socials-and-payments">
+        {%- comment -%}socials{%- endcomment -%}
+        <div class="col col-socials flex">
+          {% render 'social-media-icons' %}
+        </div>
+        
+        {%- comment -%}payment{%- endcomment -%}
+        <div class="payment-icons-container footer">
+          {% render 'payment-icons', no_title: true %}
+        </div>
+      </div>
+
+    </div>
+
+    {%- comment -%}copyright{%- endcomment -%}
+    <footer class="footer-footer container">
+      <div class="footer-footer-inner">
+        <small>
+          {% assign date = 'now' | date: "%Y" %}
+          {{ 'layout.footer.copyright_text' | t: shop_name: shop.name, date: date }}
+        </small>
+      </div>
+    </footer>
+  </div>
+  {% render 'cookie-warning' %}
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Have a question?"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "First menu",
+        "default": "footer"
+      },
+      {
+        "type": "header",
+        "content": "Payment Icons"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show payment icons",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Featured In Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_featured_banner",
+        "label": "Show Featured Banner",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "banner_title",
+        "label": "Featured Banner Title",
+        "default": "As featured in:"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "featured_block",
+        "name": "Featured Banner",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Logo Title"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+  }
+
+{% endschema %}

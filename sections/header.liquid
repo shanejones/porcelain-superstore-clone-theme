@@ -1,0 +1,241 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available in the "Header" section in the theme editor.
+
+  Theme Store required settings
+  - Show announcement
+  - Text: message to announce
+  - Link: link of the announcement bar
+
+  Theme Store optional settings
+  - Home page only: only shows on the home page
+{%- endcomment -%}
+<header 
+  class="header-section 
+    {% if section.settings.announcement_bar_enabled %}
+      {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
+        announcement-bar-active
+      {%- endif -%}
+    {%- endif -%}
+  " 
+  data-section-id="{{ section.id }}" 
+  data-section-type="header" 
+  data-header
+>
+
+  {%- if section.settings.announcement_bar_enabled -%}
+    {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
+      <div style="background-color: {{section.settings.bkgColor}};" class="announcement-bar">
+        <div class="container">
+          {%- if section.settings.announcement_bar_link != blank -%}
+            <a 
+              href="{{ section.settings.announcement_bar_link }}"
+              style="color: {{section.settings.textColor}};"
+            >
+              {{ section.settings.announcement_bar_text | escape }}
+            </a>
+          {%- else -%}
+            <p
+              style="color: {{section.settings.textColor}};"
+            >{{ section.settings.announcement_bar_text | escape }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="main-bar">
+    <div class="container">
+      <a class="in-page-link skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    
+      <main class="header-section-inner" role="banner">
+        <header class="logo-image-container">
+          <a href="/" class="logo-image">
+            {% if section.settings.logo != blank %}
+            {%- capture lowres_src -%}{{ section.settings.logo | img_url: 'master' }}{%- endcapture -%}
+            {%- capture logo_src -%}{{ section.settings.logo | img_url: 'master' }}{%- endcapture -%}
+            {%- capture logo_srcset -%}{{ section.settings.logo | img_url: 'master' }} 1x, {{ section.settings.logo | img_url:
+            'master' }} 2x{%- endcapture -%}
+            {% else %}
+            {%- capture logo_src -%}{{ 'logo.svg' | asset_url }}{%- endcapture -%}
+            {% endif %}
+            <img {% comment %}data-lazy-load{% endcomment %} src="{{ lowres_src }}" data-src="{{ logo_src }}" {% if logo_srcset !=blank %}
+              data-srcset="{{ logo_srcset }}" {% endif %} alt="{{ section.settings.logo.alt | default: shop.name }}">
+          </a>
+        </header>
+    
+        <div id="site-search__wrapper">
+          <form action="/search" method="get" role="search">
+            <div class="search-inner">
+              <input type="search" name="q" id="site-search__input" data-site-search-input
+                value="{{ search.terms | escape }}" class="text-input" placeholder="{{ 'general.search.placeholder' | t }}">
+              <div id="site-search__icon-close"
+                data-click-toggle='{"target": "body", "remove": "search-open,modal-visible,modal-menu"}'>
+                {% render 'icon-close' %}
+              </div>
+            </div>
+          </form>
+        </div>
+        {% assign highlighted_link = section.settings.highlighted_link %}
+        {% assign highlighted_colour = section.settings.highlighted_colour %}
+        {% render 'navigation', highlighted_link: highlighted_link, highlighted_colour: highlighted_colour %}
+        <div class="flex flex-items-center right header-icons-wrapper">
+          {% render 'hamburger' %}
+          {% render 'header-icons-search' %}
+          <div class="logo-mobile-container">
+            <a href="/">
+              <img class="logo-mobile" src="{{ section.settings.logo_mobile | img_url: '240x' }}"
+                
+                alt="{{ section.settings.logo.alt | default: shop.name }}">
+            </a>
+          </div>
+          {% render 'header-icons-customer', button_only: true %}
+          {% render 'header-icons-cart' %}
+    
+        </div>
+      </main>
+    </div>
+  </div>
+</header> 
+
+{% render 'trade-messaging' %}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Announcement bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_bar_enabled",
+        "label": "Show announcement",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_bar_home_page_only",
+        "label": "Show on home page only",
+        "default": true
+      },
+      {
+        "type":      "color",
+        "id":        "bkgColor",
+        "label":     "Text Color",
+        "default":   "#785eec"
+      },
+      {
+        "type":      "color",
+        "id":        "textColor",
+        "label":     "Text Color",
+        "default":   "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "announcement_bar_text",
+        "label": "Announcement text",
+        "default": "Announce something here"
+      },
+      {
+        "type": "url",
+        "id": "announcement_bar_link",
+        "label": "Announcement link",
+        "info": "Optional"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_mobile",
+        "label": "Logo image Mobile"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "text",
+        "id": "highlighted_link",
+        "label": "Highlighted Link"
+      },
+      {
+        "type": "color",
+        "id": "highlighted_colour",
+        "label": "Highlighted Colour"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Have a question?"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ]
+  }
+{% endschema %}
+
+{%- assign organizationId = shop.url | append: "#organization" -%}
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.organization -%}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "@id": "{{ organizationId }}",
+  "name": "{{ shop.name }}",
+  "sameAs": [
+    "{{ settings.social_twitter_link }}",
+    "{{ settings.social_facebook_link }}",
+    "{{ settings.social_pinterest_link }}",
+    "{{ settings.social_instagram_link }}",
+    "{{ settings.social_tumblr_link }}",
+    "{{ settings.social_snapchat_link }}",
+    "{{ settings.social_youtube_link }}",
+    "{{ settings.social_vimeo_link }}"
+  ],
+  "url": "{{ shop.url }}{{ page.url }}"
+}
+{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
+
+{% if template.name == 'index' %}
+  {%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.website -%}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "{{ shop.url }}{{ page.url }}"
+    }
+  {%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
+{% endif %}

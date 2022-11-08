@@ -1,0 +1,19 @@
+<div class="section-shop-all section-shop-all-{{ id }}">
+  <div class="container">
+    <p class="heading-1">{{ data.text }}</p>
+    <a href="{{ data.cta_link }}" class="btn">{{ data.cta_text }}</a>
+  </div>
+</div>
+<style>
+  .section-shop-all-{{ id }} .btn {
+    background-color: {{ accent_color }};
+    {% if accent_contrast_color == 'light' %}
+      color: #FFFFFF;
+    {% else %}
+      color: #434944;
+    {% endif %}
+  }
+  .section-shop-all-{{ id }} .btn:hover {
+    background-color: {{ accent_color | color_modify: 'alpha', 0.8 }};
+  }
+</style>

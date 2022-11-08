@@ -1,0 +1,94 @@
+{%- comment -%}CHECK IF IT HAS A SAMPLE{%- endcomment -%}
+{% if product.variants.size > 1 %}
+  {% for option in product.options_with_values %}
+    {% if option.name == 'Sale-Size' %}
+      {% assign order_measurement = option.values.first %}
+      {% for variant in product.variants %}
+        {% if variant.option1 == 'Sample' %}
+          {% assign current_variant = variant %}
+          {% assign size_option = variant.id %}
+          <input type="hidden" id="option-{{option.position}}" data-option-select value="{{ order_measurement }}" />
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% continue %}
+    {% endif %}
+  {% endfor %}
+
+  <noscript>
+    <select name="id">
+      {% for variant in product.variants %}
+        <option {% if variant == current_variant.id %} selected="selected" {% endif %}  value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+      {% endfor %}
+    </select>
+  </noscript>
+{% endif %}
+
+{%- comment -%}SAMPLE LOGIC{%- endcomment -%}
+{% if has_free_sample %}
+  {%- comment -%} check if there is > 4 samples or an existing sample of the same in the cart {%- endcomment -%}
+  {% assign maxSamples = false %}
+  {% assign sampleInCart = false %}
+  {% assign sampleCount = 0 %}
+  {% for item in cart.items %}
+    {% if size_option == item.variant_id %}
+      {% assign sampleInCart = true %}
+      {% break %}
+    {% endif %}
+
+    {%- comment -%}check if its a sample{%- endcomment -%}
+    {% assign isASample = false %}
+    {% for option in item.options_with_values %}
+      {% if option.value contains 'Sample' %}
+        {% assign isASample = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if isASample %}
+      {% assign sampleCount = sampleCount | plus: 1 %}
+      {% if sampleCount == 4 %}
+        {% assign maxSamples = true %}
+        {% break %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {%- comment -%}ADD SAMPLE {%- endcomment -%}
+  {% if maxSamples == false and sampleInCart == false %}
+    <input type="hidden" data-free-sample-quantity-input max="1"/>
+    <button {% unless current_variant.available %}disabled{% endunless %} 
+    data-product-form-submit
+    data-in-stock-text="{{ 'products.product.add_to_cart' | t: unit: order_measurement }}"
+    data-unavailable-text="{{ 'products.product.unavailable' | t }}"
+    data-oos-text="{{ 'products.product.sold_out' | t }}"
+    data-success-text="{{ 'products.product.added_to_cart' | t }}"
+    data-add-to-cart
+    data-atc-quantity-input="[data-free-sample-quantity-input]"
+    data-atc-product-id="{{ size_option }}"
+    data-is-sample="true"
+    data-max-samples="{{ 'products.product.max_samples' | t }}"
+    data-sample-added-text="{{ 'products.product.sample_added' | t }}"
+    data-sample-added-error-toast-text="{{ 'products.product.sample_added_error_toast' | t }}"
+    type="submit"
+    class="btn--atc btn btn-primary">{{ 'products.product.add_to_cart_free_sample' | t }}</button>
+  {% else %}
+    <button 
+      disabled
+      data-max-samples="{{ 'products.product.max_samples' | t }}"
+      data-in-stock-text="{{ 'products.product.add_to_cart' | t: unit: order_measurement }}"
+      data-unavailable-text="{{ 'products.product.unavailable' | t }}"
+      data-oos-text="{{ 'products.product.sold_out' | t }}"
+      data-success-text="{{ 'products.product.added_to_cart' | t }}"
+      data-atc-product-id="{{ size_option }}"
+      data-is-sample="true"
+      type="submit"
+      class="btn--atc btn btn-primary">
+      {% if maxSamples %}
+        {{ 'products.product.max_samples' | t }}
+      {% else %}
+        {{ 'products.product.sample_added' | t }}
+      {% endif %}
+    </button>
+  {% endif %}
+{% endif %}

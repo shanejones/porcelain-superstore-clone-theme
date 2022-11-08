@@ -1,0 +1,181 @@
+
+
+<section class="blog-template">
+  {% render "blog-header" %}
+
+  <div class="container">
+    
+    {% render "blog-feature" %}
+    {% paginate blog.articles by 9 %}
+
+      {%- assign blog_title = blog.title -%}
+
+      {% if current_tags %}
+        {% capture blog_title %}{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}{% endcapture %}
+      {% endif %}
+
+      {% comment %}
+      Article Previews
+      ====================
+      {% endcomment %}
+
+      <main class="grid-list blog-grid">
+      {% for article in blog.articles %}
+        <article class="grid-item">
+          {% if article.image %}
+            <div class="article-image">
+              <a href="{{ article.url }}">
+                <div class="img-overlay">
+                  <img src="{{ article.image | img_url: "672x672", crop: 'center'}}" />
+                  <a class="read-more-btn" href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+                </div>
+              </a>
+            </div>  
+            </a>
+          {% endif %}
+
+          <div class="content-wrapper">
+            <section class="tags-snippet">
+              <ul>
+                {% for tag in article.tags %}
+                  {% unless tag contains 'Category_' %}
+                    {% continue %}
+                  {% endunless %}
+    
+                  {% assign background_color = blank %}
+                  {% assign text_color = blank %}
+                  {% assign tag_formatted = tag | replace: 'Category_', '' %}
+                  {% assign tag_formatted_article = tag | replace: 'Category_', '' %}
+                  {% if current_tags contains tag %}
+                  <li class="active">
+                    <a href="/blogs/{{ blog.handle }}/tagged/{{ tag }}" id="sticker" class="sticker sticker--{{ tag_formatted_article | replace: " ", "-" | downcase }}">{{ tag_formatted_article }}</a>
+                  </li>
+                  {% else %}
+                    {% for block in section.blocks %}
+                      {% assign data = block.settings %}
+                    
+                      {% if data.tag == tag_formatted_article %}
+                        {% assign background_color = data.color %}
+                        {% assign text_color = data.text_color %}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                    <li>
+                      <a href="/blogs/{{ blog.handle }}/tagged/{{ tag }}" id="sticker" class="sticker sticker--{{ tag_formatted_article | replace: " ", "-" | downcase }}">{{ tag_formatted_article }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </section>
+  
+            <h3 class="heading-5 bold">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h3>
+  
+            {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+            <p class="date">
+              {{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}
+            </p>
+          </div>
+        </article>
+        {% endfor %}
+      </main>
+
+      {% if paginate.pages > 1 %}
+        {% include 'pagination' %}
+      {% endif %}
+
+    {% endpaginate %}
+  </div>
+</section>
+{% for block in section.blocks %}
+  {% assign data = block.settings %}
+
+  <style>
+    .sticker--{{ data.tag | replace: " ", "-" | downcase }} {
+      background-color: {{ data.color }} !important;
+      color: {{ data.text_color }} !important;
+    }
+  </style>
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Blog",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Add custom background image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "range",
+        "id": "text_limit",
+        "label": "Text Limit",
+        "min": 150,
+        "max": 500,
+        "step": 5,
+        "default": 200
+      },
+      {
+        "type": "header",
+        "content": "Feature"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_feature",
+        "default": true,
+        "label": "Display Feature"
+      },
+      {
+        "type": "image_picker",
+        "id": "feature_image",
+        "label": "Add custom background image"
+      },
+      {
+        "type": "article",
+        "id": "article",
+        "label": "Article"
+      }
+    ],
+    "blocks":
+      [
+        {
+          "name": "Tag color",
+          "type": "tag",
+          "settings": [
+            {
+              "type": "text",
+              "id": "tag",
+              "label": "Tag"
+            },
+            {
+              "type": "color",
+              "id": "color",
+              "label": "Background color"
+            },
+            {
+              "type": "color",
+              "id": "text_color",
+              "label": " Text color"
+            }
+          ]
+        }
+      ]
+  }
+{% endschema %}
+  

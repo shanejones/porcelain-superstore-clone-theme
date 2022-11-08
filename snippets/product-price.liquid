@@ -1,0 +1,43 @@
+{%- comment -%}
+    {% render 'product-price', product: product %}
+{%- endcomment -%}
+{%- comment -%}
+  Default product is first. 
+{%- endcomment -%}
+{%- assign product_price = product.variants[0].price | money -%}
+
+<div class="product-price-snippet">
+  <p>
+    {% if product.compare_at_price > product.variants[0].price %}
+      <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+      <s>{{ product.compare_at_price | money }}</s>
+    {% endif %}
+    {% assign onSale = false %}
+    {% if product.compare_at_price > product.variants[0].price %}
+        {% assign onSale = true %}
+        {%- assign sale_price = product_price -%}
+        <span class="price-variation"> {{ 'products.product.on_sale_from_html' | t: price: sale_price }}</span>
+    {% else %}
+      {{ product_price }}
+    {% endif %}
+
+    {% if product.available %}
+    {% assign options = '' %}
+      {% for variant in product.variants %}
+        {% for option in variant.options %}
+          {% assign options = options | append: option %}
+        {% endfor %}
+      {% endfor %}
+
+      {% if options contains 'Box' %}
+        <span class="{% if onSale %}price-variation{% endif %}">{{ 'products.product.per_box' | t  }}</span>
+      {% elsif options contains 'Sheet' %}
+        <span class="{% if onSale %}price-variation{% endif %}">{{ 'products.product.per_sheet' | t  }}</span>
+      {% endif %}
+
+    {% endif %}
+    {% unless product.available %}
+      {{ 'products.product.sold_out' | t }}
+    {% endunless %}
+  </p>
+</div>

@@ -1,0 +1,88 @@
+
+{%- comment -%}
+  {% render 'date-selector' %}
+{%- endcomment -%}
+
+<section data-bb-ds-modal data-bb-ds-product-ids="{{product.id}}" data-bb-ds-variant-ids="{{ product.variants[0].id }}" class="bb-ds">
+  <div>
+    <header class="bb-ds-header">
+      <h3 class="heading-3 bold">
+        {{'products.product.bb_ds_title' | t}}
+      </h3>
+      <button
+      data-bb-ds-close-modal
+      aria-label="Close date selector" class="bb-ds-icon-close"></button>
+    </header>
+
+    <main>
+      <form data-bb-ds-postcode-form>
+        <label for="bb-ds-lookup" class="label">{{'products.product.bb_ds_description' | t }}</label>
+        <div class="bb-ds-input-btn-wrapper">
+          <input
+            placeholder="{{'products.product.bb_ds_postcode_placeholder' | t}}"
+            id="bb-ds-lookup" name="bb-ds-input" data-bb-ds-postcode-input class="text-input bb-ds-input">
+          <button type="submit" class="btn btn--primary">{{'products.product.bb_ds_postcode_button' | t}}</button>
+        </div>
+      </form>
+
+      <p
+        class="bb-ds-postcode-output" 
+        data-bb-ds-postcode-output 
+        data-bb-ds-postcode-output-success="{{'products.product.bb_ds_postcode_success' | t}}" 
+        data-bb-ds-postcode-output-not-found="{{'products.product.bb_ds_postcode_not_found' | t}}"
+        data-bb-ds-postcode-output-do-not-deliver="{{'products.product.bb_ds_postcode_do_not_deliver' | t}}"
+        data-bb-ds-postcode-output-no-available-dates="{{'products.product.bb_ds_postcode_no_available_dates' | t}}"
+        data-bb-ds-postcode-output-other-error="{{'products.product.bb_ds_postcode_other_error' | t}}"
+      ></p>
+
+      <p class="bb-ds-postcode-output" data-bb-ds-earliest-date="{{'products.product.bb_ds_postcode_earliest_date' | t}}"></p>
+
+      <form class="bb-ds-calendar-form" data-bb-ds-postcode-form>
+        <label for="bb-ds-calendar" class="heading-3 bold">{{'products.product.bb_ds_calendar_title' | t}}</label>
+        <div class="bb-ds-input-btn-wrapper">
+          <input 
+            disabled
+            placeholder="{{'products.product.bb_ds_calendar_placeholder' | t}}"
+            autocomplete="off" id="bb-ds-calendar" data-bb-ds-calendar class="text-input bb-ds-input" type="text">
+        </div>
+        <div data-bb-ds-loading-widget class="loading-widget"></div>
+        <p class="bb-ds-postcode-output" data-bb-ds-date-has-been-selected-message="{{'products.product.bb_ds_date_has_been_selected' | t}}"></p>
+      </form>
+          <button data-bb-ds-close-modal type="button" class="btn btn-primary bb-ds-btn-footer">{{'products.product.bb_ds_modal_confirm_button' | t}}</button>
+
+      <hr>
+
+      <div class="bb-ds-delivery-options">
+        <h3 class="heading-3 bold">{{ 'products.product.bb_ds_delivery_options_title' | t }}</h3>
+        <div class="bb-ds-delivery-section">
+          <h5 class="heading-5 bold">{{ 'products.product.bb_ds_delivery_standard_title' | t }}</h5>
+          <ul>
+            <li class="li-item">{{ 'products.product.bb_ds_delivery_standard_desc_1' | t }}</li>
+            <li class="li-item">{{ 'products.product.bb_ds_delivery_standard_desc_2' | t }}</li>
+            <li class="li-item">{{ 'products.product.bb_ds_delivery_standard_desc_3' | t }}</li>
+          </ul>
+        </div>
+
+        <div class="bb-ds-delivery-section">
+          <h5 class="heading-5 bold">{{ 'products.product.bb_ds_delivery_express_title' | t }}</h5>
+          <ul>
+            <li class="li-item">{{ 'products.product.bb_ds_delivery_express_desc_1' | t }}</li>
+          </ul>
+        </div>
+
+        <p>{{ 'products.product.bb_ds_delivery_additional_desc' | t }}</p>
+      </div>
+
+      <hr>
+
+      <div class="bb-ds-need-help">
+        <h3 class="heading-3 bold">{{ 'products.product.bb_ds_need_help_title' | t }}</h3>
+        <p>{{ 'cart.general.need_help_description_html' | t }}</p>
+      </div>
+
+    </main>
+  </div>
+
+
+</section>
+  

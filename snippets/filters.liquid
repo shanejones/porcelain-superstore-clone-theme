@@ -1,0 +1,20 @@
+<div class="filter-and-sort">
+  <div class="container">
+    <div class="btn-container">
+      <div id="cloud_search_filters_root">{{ 'collections.general.filter_button' | t }}</div>
+      {% comment %} <button class="btn-filter btn btn--outline btn--lg">{{ 'collections.general.filter_button' | t }}</button> {% endcomment %}
+    </div>
+    <div class="btn-container">
+      <select id="input-sort-by" class="select" data-sort-collection>
+        <option value="manual">{{ 'collections.general.sort_by_featured' | t }}</option>
+        <option value="price-ascending">{{ 'collections.general.sort_by_price_ascending' | t }}</option>
+        <option value="price-descending">{{ 'collections.general.sort_by_price_descending' | t }}</option>
+        <option value="title-ascending">{{ 'collections.general.sort_by_title_ascending' | t }}</option>
+        <option value="title-descending">{{ 'collections.general.sort_by_title_descending' | t }}</option>
+        <option value="created-ascending">{{ 'collections.general.sort_by_created_ascending' | t }}</option>
+        <option value="created-descending">{{ 'collections.general.sort_by_created_descending' | t }}</option>
+      </select>
+    </div>
+  </div>
+</div>  
+ 

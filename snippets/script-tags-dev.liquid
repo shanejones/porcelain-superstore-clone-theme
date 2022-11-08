@@ -1,0 +1,58 @@
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+    <script type="noscript-s" data-src="{{ 'bb-polyfills.dev.js' | asset_url }}"></script>
+    
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+    <script type="noscript-s" data-src="{{ 'bb-global.dev.js' | asset_url }}"></script>
+    
+
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+    <script type="noscript-s" data-src="{{ 'bb-app-layer.dev.js' | asset_url }}"></script>
+    
+
+  
+  
+  
+  
+    
+    
+      
+    
+  
+
+  
+  
+    {% if template contains 'product' %}
+      <script type="noscript-s" data-src="{{ 'bb-template.product.dev.js' | asset_url }}"></script>
+    {% else %}
+      <link rel="prefetch" data--href="{{ 'bb-template.product.dev.js' | asset_url }}" as="script">
+    {% endif %}
+    

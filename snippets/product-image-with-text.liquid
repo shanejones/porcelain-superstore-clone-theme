@@ -1,0 +1,76 @@
+{%- comment -%}
+
+This section uses style from image-with-text on the homepage.
+Content is displayed based on whether the product is a tile or not. 
+
+{%- endcomment -%}
+{% if 
+  section.settings.image != blank or 
+  section.settings.image_non_tile != blank or 
+  section.settings.title != blank or 
+  section.settings.title_non_tile != blank or 
+  section.settings.text != blank or 
+  section.settings.text_non_tile != blank 
+%}
+  <section class="image-with-text container flex section-margin-bottom">
+      {% capture image_layout %}
+        <div class="image-with-text__image">
+          {% assign image_src = section.settings.image %}
+          {% if product.type != 'Tile' %}
+            {% assign image_src = section.settings.image_non_tile %}
+          {% endif %}
+            {% if image_src != blank %}
+              <img
+                data-lazy-load
+                src="{{ image_src | img_url: '100x' }}"
+                data-src="{{ image_src | img_url: '768x460', crop: 'center' }}"
+                data-srcset="
+                {{ image_src | img_url: '768x460', crop: 'center' }} 1x,
+                {{ image_src | img_url: '1536x920', crop: 'center' }} 2x"
+                alt="{{ image_alt }}">
+            {% endif %}
+        </div>
+      {% endcapture %}
+    
+      {% if section.settings.layout == 'left' %}
+        {{ image_layout }}
+      {% endif %}
+    
+      <div class="image-with-text__text">
+        {% assign title = section.settings.title %}
+        {% if product.type != 'Tile' %}
+          {% assign title = section.settings.title_non_tile %}
+        {% endif %}
+        {% if title != blank %}
+          <h2 class="heading-2 bold">{{ title | escape }}</h2>
+        {% endif %}
+
+        {% assign text = section.settings.text %}
+        {% if product.type != 'Tile' %}
+          {% assign text = section.settings.text_non_tile %}
+        {% endif %}
+        {% if text != blank %}
+          <div>{{ text }}</div>
+        {% endif %}
+
+        {% assign button_label = section.settings.button_label %}
+        {% if product.type != 'Tile' %}
+          {% assign title = section.settings.button_label_non_tile %}
+        {% endif %}
+        {% assign button_link = section.settings.button_link %}
+        {% if product.type != 'Tile' %}
+          {% assign button_link = section.settings.button_link_non_tile %}
+        {% endif %}
+
+        {% if button_label != blank and button_link != blank %}
+          <a class="btn btn-primary" href="{{ button_link }}">
+            {{ button_label | escape }}
+          </a>
+        {% endif %}
+      </div>
+    
+      {% if section.settings.layout == 'right' %}
+        {{ image_layout }}
+      {% endif %}
+  </section>
+{% endif %}

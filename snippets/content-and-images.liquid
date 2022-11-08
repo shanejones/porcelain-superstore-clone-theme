@@ -1,0 +1,21 @@
+{% comment %} 
+  {% render 'content-and-images', blocks: section.blocks %}
+
+  or
+
+  {% render 'content-and-images', data: block.settings %}
+{% endcomment %}
+<section
+  class="content-and-images-section"
+  {% if id %}
+    id="content-and-images-section-{{ id }}"
+  {% endif %}
+>
+  <div class="container">
+    {% if blocks != blank %}
+      {% for block in blocks %}
+        {% render 'content-image-block' block: block %}  
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>

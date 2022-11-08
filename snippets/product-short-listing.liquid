@@ -1,0 +1,41 @@
+{%- comment -%}
+  Displays a list of popular products, with an option to view more.
+  
+  {% render 'product-short-listing', data: section.settings %}
+
+{%- endcomment -%}
+
+{% assign data = section.settings %}
+{% assign blocks = section.blocks %}
+
+<section class="section-short-listing section-with-header section-margin-bottom">
+  <div class="container">
+    <header>
+      <h2 class="heading-2 bold">{{ data.title }}</h2>
+      <a class="btn btn-secondary hide-mobile-inline-flex" href="{{ data.url }}">{{ 'general.listings.view_all_link' | t }}</a>
+    </header>
+    <div class="cl-product-card-container grid-list">
+      {% if data.use_collection != blank and data.collection != blank %}
+        {% assign collection = collections[data.collection] %}
+        {% for product in collection.products %}
+          <div class="grid-item">
+            {% render 'product-card', product: product %}
+          </div>
+          {% if forloop.index == 4 %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% elsif blocks.size > 0 %}
+        {% for block in blocks %}
+          {% if block.type == 'popular_product' %}
+            {% assign product = all_products[block.settings.product] %}
+            <div class="grid-item">
+              {% render 'product-card', product: product %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <a class="btn btn-secondary hide-desktop-inline-flex" href="{{ data.url }}">{{ 'general.listings.view_all_link' | t }}</a>
+  </div>
+</section>

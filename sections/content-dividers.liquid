@@ -1,0 +1,31 @@
+
+{% render 'dividers', settings: section.settings %}
+
+{% schema %}
+  {"name": "content-dividers",
+    "settings":
+      [
+        {
+          "type": "select",
+          "id": "height",
+          "label": "Divider Height",
+          "options": [
+              { "value": "16", "label": "thin"},
+              { "value": "32", "label": "thicker"},
+              { "value": "64", "label": "thickest"}
+          ]
+        },
+        {
+          "type":      "color",
+          "id":        "bkgColor",
+          "label":     "BackgroundColor",
+          "default":   "#ffffff"
+        }
+      ],
+      "presets": [{
+        "name": "Divider",
+        "category": "Baseline"
+      }]
+    }
+{% endschema %}
+  

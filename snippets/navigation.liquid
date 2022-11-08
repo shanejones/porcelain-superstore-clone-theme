@@ -1,0 +1,117 @@
+
+<section class="navigation-snippet">
+  <nav class="navigation-main" role="navigation">
+    {% comment %} Close nav button {% endcomment %}
+    <button
+      class="nav-close-btn"
+      role="button"
+      type="button"
+      data-click-toggle='{"target": "body", "remove": "mobile-nav-open"}'
+      aria-label="Navigation close"
+    >
+      {% render 'icon-close' %}
+    </button>
+
+    <div class="nav-mob-hierarchy-title"></div>
+
+    {% comment %} Hierarchy nav {% endcomment %}
+    <ul class="nav-first-level">
+      {% for link in linklists[section.settings.menu].links %}
+        {% if link.links != blank %}
+          <li id="nav-{{ link.title | handleify | downcase }}" data-nav-item="true">
+            <span class="btn-nav-first-level" data-nav-toggle>
+              <a data-nav-link-check href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </span>
+            <div class="nav-second-level-wrapper">
+                <div class="container">
+                  <div class="nav-mob-hierarchy-title">
+                    <button class="btn-back text-upper">{{ 'layout.general.back' | t }}</button>
+                    <small>{{ link.title }}</small>
+                  </div>
+                  <ul class="nav-second-level" data-nav-hover>
+                    <li class="mob-nav-header">
+                      <p data-nav-btn-back>{{ 'layout.general.menu'| t }}</p>
+                      <h3 class="heading-3 bold">{{ link.title }}</h3>
+                    </li>
+                    {%- comment -%}mobile view all{%- endcomment -%}
+                    <li>
+                      <a class="mob-view-all" href="/collections/{{ link.handle }}">
+                        {{ 'homepage.navigation_view_all_mobile' | t }}
+                      </a>
+                    </li>
+                    {% for childLink in link.links %}
+                    <li class="child-link">
+                      {% if forloop.first %}
+                        <a class="tablet-view-all" data-tablet-view-all href="{{ link.url }}">
+                          {{ 'homepage.navigation_view_all_mobile' | t }} {{ link.title }}
+                        </a>
+                      {% endif %}
+                      {% if childLink.url == '#' %}
+                        <h4 class="heading-4">
+                          {{ childLink.title }}
+                        </h4>
+                      {% else %}
+                        <a href="{{ childLink.url }}" data-preloadlink="true">
+                          <h4 class="heading-4">
+                            {{ childLink.title }}
+                          </h4>
+                        </a>
+                      {% endif %}
+                        <ul class="nav-third-level">
+                          {% for grandChildLink in childLink.links %}
+                          {% assign lowercase_title = grandChildLink.title | downcase %}
+                          <li {% if lowercase_title == 'size' %} class="nav-heading-styles"{% endif %}>
+                            {% if grandChildLink.url == '#' and lowercase_title == 'size' %}
+                              <h4 class="heading-4">{{ grandChildLink.title }}</h4>
+                            {% else %}
+                              <a href="{{ grandChildLink.url }}" data-preloadlink="true">
+                                {{ grandChildLink.title }}
+                              </a>
+                            {% endif %}
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+            </div>
+          </li>
+        {% else %}
+          <li id="nav-{{ link.title | handleify | downcase }}" data-nav-item="true">
+            <a href="{{ link.url }}" class="btn-nav-first-level {% if highlighted_link == link.title %} highlighted_link{% endif %}" data-preloadlink="true">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    
+
+    <div class="mobile-footer">
+      {% render 'footer-text', title: section.settings.title, text: section.settings.text %}
+      <div class="col col-socials flex">
+        {% render 'social-media-icons' %}
+      </div>
+    </div>
+
+    {% comment %} Mobile actions {% endcomment %}
+    <div class="nav-mob-actions">
+      {% render 'header-icons-customer', button_only: false %}
+      {% render 'header-icons-contact' %}
+    </div>
+  </nav>
+</section>
+
+<style>
+  a.btn-nav-first-level.highlighted_link {
+    color: {{ highlighted_colour }};
+  }
+
+  .navigation-snippet .nav-first-level > li > .btn-nav-first-level.highlighted_link:before {
+    background-color: {{ highlighted_colour }};
+  }
+</style>
+

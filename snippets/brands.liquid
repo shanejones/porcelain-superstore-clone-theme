@@ -1,0 +1,21 @@
+<ul class="brands-list">
+  {% for i in (1..10) %}
+    {% assign brand_image_key = 'brand_image_' | append: i %}
+    {% assign brand_url_key = 'brand_url_' | append: i %}
+    {% assign brand_name_key = 'brand_name_' | append: i %}
+    {% assign image = settings[brand_image_key] %}
+
+    {% if image != blank %}
+      <li class="brand">
+        <a href="{{ settings[brand_url_key] }}" data-preloadlink="true">
+          <span class="img-container">
+            {{ image | img_url: '150x75' | img_tag }}
+          </span>
+          {% if with_label %}
+            <p>{{ settings[brand_name_key] }}</p>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

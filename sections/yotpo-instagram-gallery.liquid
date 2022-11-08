@@ -1,0 +1,31 @@
+{% render 'yotpo-instagram-gallery', id: section.settings.yotpo, title: section.settings.title, text: section.settings.text  %}
+
+{% schema %}
+  {
+    "name": "Yotpo Gallery",
+    "settings": [
+    {
+      "type": "text",
+      "id": "yotpo",
+      "label": "Yotpo Gallery ID from Yotpo",
+      "info": "e.g. data-gallery-id='604b398b1b07c34b3e97abcc' would be 604b398b1b07c34b3e97abcc"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    }
+    ],
+    "presets": [
+      {
+        "name": "Yotpo Gallery",
+        "category": "Yotpo"
+      }
+    ]
+  }
+{% endschema %}

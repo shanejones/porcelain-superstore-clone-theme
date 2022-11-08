@@ -1,0 +1,137 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add the "Image with text" section in the theme editor.
+
+  Theme Store required settings
+  - Image
+  - Heading: title of the block
+  - Text: description of the block
+
+  Theme Store optional settings
+  - Button label: label associated with the button
+  - Button link: link of the button
+{%- endcomment -%}
+
+<section class="container section-margin-bottom">
+  {% for block in section.blocks %}
+  {% assign show_featured_block = false %}
+  {% for collection in product.collections %}
+    {% if block.settings.featured_collection.title contains collection.title %}
+      {% assign show_featured_block = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if show_featured_block %}
+    <div id="feature-block__{{ block.id }}" class="feature-block image-with-text flex">
+      {% capture image_layout %}
+        <div class="image-with-text__image">
+          {% if block.settings.image != blank %}
+            {% assign image_src = block.settings.image | img_url: '100x' %}
+            <img
+              data-lazy-load
+              src="{{ image_src }}"
+              data-src="{{ block.settings.image | img_url: '768x460', crop: 'center' }}"
+              data-srcset="
+              {{ block.settings.image | img_url: '768x460', crop: 'center' }} 1x,
+              {{ block.settings.image | img_url: '1536x920', crop: 'center' }} 2x"
+              alt="{{ image_alt }}">
+          {% endif %}
+        </div>
+      {% endcapture %}
+
+      {% if block.settings.layout == 'left' %}
+        {{ image_layout }}
+      {% endif %}
+
+      <div class="image-with-text__text">
+        {% if block.settings.title != blank %}
+          <h2 class="heading-2 bold">{{ block.settings.title | escape }}</h2>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <div>{{ block.settings.text }}</div>
+        {% endif %}
+        {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+          <a class="btn btn-primary" href="{{ block.settings.button_link }}">
+            {{ block.settings.button_label | escape }}
+          </a>
+        {% endif %}
+      </div>
+
+      {% if block.settings.layout == 'right' %}
+        {{ image_layout }}
+      {% endif %}
+    </div>
+    {% endif %}
+  {% endfor %}
+</section>
+
+{% schema %}
+  {
+    "name": "Image Text Feature Blocks",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "feature_blocks",
+          "name": "Feature Blocks",
+          "settings": [
+            {
+              "type": "collection",
+              "id": "featured_collection",
+              "label": "Collection"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image",
+              "info": "Recommended Size: 1536 x 920"
+            },
+            {
+              "type": "select",
+              "id": "layout",
+              "label": "Image alignment",
+              "default": "left",
+              "options": [
+                {
+                  "value": "left",
+                  "label": "Left"
+                },
+                {
+                  "value": "right",
+                  "label": "Right"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Heading",
+              "default": "Image with text"
+            },
+            {
+              "type": "richtext",
+              "id": "text",
+              "label": "Text",
+              "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+            },
+            {
+              "type": "text",
+              "id": "button_label",
+              "label": "Button label"
+            },
+            {
+              "type": "url",
+              "id": "button_link",
+              "label": "Button link"
+            }
+          ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Text Feature Blocks",
+        "category": "Baseline"
+      }
+    ]
+  }
+{% endschema %}

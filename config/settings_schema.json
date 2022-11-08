@@ -1,0 +1,716 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Porcelain Superstore",
+    "theme_version": "1.0.0",
+    "theme_author": "Blubolt",
+    "theme_documentation_url": "https:\/\/blubolt.com",
+    "theme_support_url": "https:\/\/blubolt.atlassian.net\/browse\/PS"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "default": "#bf3ff5",
+        "info": "Colour for special ornaments"
+      },
+      {
+        "type": "color",
+        "id": "color_accent2",
+        "label": "Accent 2",
+        "default": "#377ae5",
+        "info": "Colour for special ornaments"
+      },
+      {
+        "type": "color",
+        "id": "color_accent3",
+        "label": "Accent 3",
+        "default": "#024E6E",
+        "info": "Colour for special ornaments"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "Text",
+        "default": "#434944"
+      },
+      {
+        "type": "color",
+        "id": "color_heading_text",
+        "label": "Headings",
+        "default": "#434944"
+      },
+      {
+        "type": "color",
+        "id": "color_background_dark",
+        "label": "Background Dark",
+        "default": "#003541"
+      },
+      {
+        "type": "color",
+        "id": "color_background_light",
+        "label": "Background Light",
+        "default": "#f9f9f9"
+      },
+      {
+        "type": "color",
+        "id": "border_colour",
+        "label": "Borders",
+        "default": "#d4d4d4"
+      },
+      {
+        "type": "color",
+        "id": "border_light_colour",
+        "label": "Borders (Light)",
+        "default": "#E5E5E5"
+      },
+      {
+        "type": "color",
+        "id": "footer_color",
+        "label": "Footer Colour",
+        "default": "#212a2f"
+      }
+    ]
+  },
+  {
+    "name": "Buttons",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Button 1"
+      },
+      {
+        "type": "color",
+        "id": "btn_primary_color_text",
+        "label": "Text Colour",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "btn_primary_color_bg",
+        "label": "Background Color",
+        "default": "#3D4643"
+      },
+      {
+        "type": "color",
+        "id": "btn_primary_color_border",
+        "label": "Border Color",
+        "default": "#3D4643"
+      },
+      {
+        "type": "color",
+        "id": "btn_primary_color_text_hover",
+        "label": "Text Colour Hover"
+      },
+      {
+        "type": "color",
+        "id": "btn_primary_color_bg_hover",
+        "label": "Background Color Hover"
+      },
+      {
+        "type": "color",
+        "id": "btn_primary_color_border_hover",
+        "label": "Border Color Hover"
+      },
+      {
+        "type": "header",
+        "content": "Button 2"
+      },
+      {
+        "type": "color",
+        "id": "btn_secondary_color_text",
+        "label": "Text Colour",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "btn_secondary_color_bg",
+        "label": "Background Color",
+        "default": "#5e5b5c"
+      },
+      {
+        "type": "color",
+        "id": "btn_secondary_color_border",
+        "label": "Border Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "btn_secondary_color_text_hover",
+        "label": "Text Colour Hover"
+      },
+      {
+        "type": "color",
+        "id": "btn_secondary_color_bg_hover",
+        "label": "Background Color Hover"
+      },
+      {
+        "type": "color",
+        "id": "btn_secondary_color_border_hover",
+        "label": "Border Color Hover"
+      },
+      {
+        "type": "header",
+        "content": "Button 3"
+      },
+      {
+        "type": "color",
+        "id": "btn_tertiary_color_text",
+        "label": "Text Colour",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "btn_tertiary_color_bg",
+        "label": "Background Color",
+        "default": "#5e5b5c"
+      },
+      {
+        "type": "color",
+        "id": "btn_tertiary_color_border",
+        "label": "Border Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "btn_tertiary_color_text_hover",
+        "label": "Text Colour Hover"
+      },
+      {
+        "type": "color",
+        "id": "btn_tertiary_color_bg_hover",
+        "label": "Background Color Hover"
+      },
+      {
+        "type": "color",
+        "id": "btn_tertiary_color_border_hover",
+        "label": "Border Color Hover"
+      },
+      {
+        "type": "header",
+        "content": "Date Selector Button"
+      },
+      {
+        "type": "color",
+        "id": "date_selector_btn_color_bg",
+        "label": "Background Color",
+        "default": "#27AE60"
+      },
+      {
+        "type": "color",
+        "id": "date_selector_btn_border_color",
+        "label": "Border Color",
+        "default": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "low_stock_limit",
+        "label": "Low Stock Limit",
+        "default": "10"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "default": "helvetica_n4",
+        "label": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "default": "helvetica_n4",
+        "label": "Body text"
+      }
+    ]
+  },
+  {
+    "name": "Stickers",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Sticker 1"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_1",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_1",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_1",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 2"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_2",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_2",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_2",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 3"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_3",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_3",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_3",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 4"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_4",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_4",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_4",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 5"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_5",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_5",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_5",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 6"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_6",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_6",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_6",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 7"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_7",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_7",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_7",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 8"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_8",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_8",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_8",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 9"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_9",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_9",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_9",
+        "label": "Text Colour"
+      },
+      {
+        "type": "header",
+        "content": "Sticker 10"
+      },
+      {
+        "type": "text",
+        "id": "sticker_tag_10",
+        "label": "Tag"
+      },
+      {
+        "type": "text",
+        "id": "sticker_label_10",
+        "label": "Label"
+      },
+      {
+        "type": "color",
+        "id": "sticker_color_10",
+        "label": "Text Colour"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "da": "Billede til deling på sociale medier",
+          "de": "Social-Media-Button",
+          "en": "Social sharing image",
+          "es": "Imagen de redes sociales",
+          "fi": "Some-jakamiskuva",
+          "fr": "Image de partage social",
+          "hi": "सोशल शेयरिंग इमेज",
+          "it": "Immagine per condivisione social",
+          "ja": "SNSでシェアする画像",
+          "ko": "소셜 공유 이미지",
+          "nb": "Bilde for deling på sosiale medier",
+          "nl": "Afbeelding voor delen via social media.",
+          "pt-BR": "Imagem de compartilhamento em redes sociais",
+          "pt-PT": "Imagem de partilha nas redes sociais",
+          "sv": "Bild för social delning",
+          "th": "รูปภาพสำหรับแชร์ลงโซเชียล",
+          "zh-CN": "社交分享图片",
+          "zh-TW": "社群分享圖示"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": {
+          "da": "Billede",
+          "de": "Foto",
+          "en": "Image",
+          "es": "Imagen",
+          "fi": "Kuva",
+          "fr": "Image",
+          "hi": "इमेज",
+          "it": "Immagine",
+          "ja": "画像",
+          "ko": "이미지",
+          "nb": "Bilde",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "pt-PT": "Imagem",
+          "sv": "Bild",
+          "th": "รูปภาพ",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "info": {
+          "da": "Vis ved deling af link på sociale medier. [Få mere at vide](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) om miniaturebilleder.",
+          "de": "Wird angezeigt, wenn ein Link in den sozialen Medien geteilt wird. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) über Bild-Miniaturansichten.",
+          "en": "Shown when sharing a link on social media. [Learn more](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) about image thumbnails.",
+          "es": "Aparece cuando se comparte un enlace en una red social. [Más información sobre las miniaturas](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/).",
+          "fi": "Näkyy, kun jaat linkin sosiaaliseen mediaan. [Lisätietoja](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) kuvien pikkukuvista.",
+          "fr": "S'affiche lorsqu'un lien est partagé sur les réseaux sociaux. [En savoir plus sur](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) les images miniatures.",
+          "hi": "सोशल मीडिया पर लिंक शेयर करते समय दिखाना. [इमेज थंबनेल के बारे में](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) और अधिक जानें .",
+          "it": "Mostrata quando si condivide un link sui social media. [Maggiori informazioni](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) sulle immagini di anteprima.",
+          "ja": "ソーシャルメディアでリンクを共有すると表示されます。[サムネイル画像](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/)に関する詳細をご覧ください。",
+          "ko": "소셜 미디어에서 링크 공유 시 표시 이미지 썸네일에 대해 [자세히 알아보기](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/)",
+          "nb": "Vist når en kobling deles i sosiale medier. [Finn ut mer](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) om miniatyrbilder.",
+          "nl": "Wordt weergegeven wanneer je een link deelt via social media. [Meer informatie](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) over miniatuurafbeeldingen.",
+          "pt-BR": "Exibida ao compartilhar um link nas redes sociais. [Saiba mais](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) sobre miniaturas de imagens.",
+          "pt-PT": "Apresentada ao partilhar uma ligação nas redes sociais. [Saiba mais](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) sobre miniaturas de imagem.",
+          "sv": "Visas när du delar en länk på sociala medier. [Läs mer](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) om miniatyrbilder.",
+          "th": "แสดงเมื่อแชร์ลิงก์บนโซเชียลมีเดีย [ดูข้อมูลเพิ่มเติม](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) เกี่ยวกับรูปภาพขนาดย่อ",
+          "zh-CN": "在社交媒体上分享链接时显示。[详细了解](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/)缩略图。",
+          "zh-TW": "在社群媒體上分享連結時顯示。[深入瞭解圖片縮圖的相關資訊。](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/)"
+        }
+      },
+      {
+        "type": "header",
+        "content": "Sharing links"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_twitter_img",
+        "label": "Twitter image"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_facebook_img",
+        "label": "Facebook image"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_pinterest_img",
+        "label": "Pinterest image"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_instagram_img",
+        "label": "Instagram image"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_snapchat_img",
+        "label": "Snapchat image"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_tumblr_img",
+        "label": "Tumblr image"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "Youtube link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_youtube_img",
+        "label": "Youtube image"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo link"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_vimeo_img",
+        "label": "Vimeo image"
+      }
+    ]
+  },
+  {
+    "name": "Integrations",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "turbolinks_enabled",
+        "default": true,
+        "label": "Enable TurboLinks",
+        "info": "Enables TurboLinks"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable cart notes",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_notes_max_characters",
+        "label": "Cart note maximum characters",
+        "default": "50"
+      },
+      {
+        "type": "checkbox",
+        "id": "minicart",
+        "label": "Use Minicart",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_klarna_annoucement",
+        "label": "Show klarna Annoucement",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "extra_payment_icons",
+        "label": "Additional Payment Providers",
+        "info": "split with comma, eg klarna,paypal,facebook_pay"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
+  },
+  {
+    "name": "Klaviyo",
+    "settings": [
+      {
+        "type": "text",
+        "id": "klaviyo_id",
+        "label": "Klaviyo API Key"
+      }
+    ]
+  },
+  {
+    "name": "JIRA",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "jira_enabled",
+        "default": true,
+        "label": "Enable Jira Issue Tracker",
+        "info": "Enable Jira Issue Tracker"
+      }
+    ]
+  },
+  {
+    "name": "Yotpo",
+    "settings": [
+      {
+        "type": "text",
+        "id": "yotpo_app_key",
+        "label": "Yotpo App Key"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_reviews",
+        "label": "Show Yotpo product reviews",
+        "info": "Show\/hide all Yotpo product reviews",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "GTM",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "gtm_enabled",
+        "default": false,
+        "label": "Enable GTM",
+        "info": "Enables GTM"
+      },
+      {
+        "type": "text",
+        "id": "gtm_code",
+        "label": "GTM Code",
+        "info": "Insert the code provided by GTM (e.g. GTM-XXXXXX)"
+      }
+    ]
+  },
+  {
+    "name": "DEV",
+    "settings": [
+      {
+        "type": "text",
+        "id": "testing_site_url",
+        "label": "Testing Site URL",
+        "default": "porcelain-superstore-testing.myshopify.com",
+        "info": "For development purposes"
+      }
+    ]
+  }
+]

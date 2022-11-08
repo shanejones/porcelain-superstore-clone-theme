@@ -1,0 +1,51 @@
+{%- comment -%}
+  Displays a list of popular products, with an option to view more.
+{%- endcomment -%}
+{% render 'product-short-listing', section: section %}
+
+{% schema %}
+  {
+    "name": "Popular Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "most popular"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "View all link"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_collection",
+        "label": "Use products from collection",
+        "info": "If checked, the products displayed will be retrieved from the collection below, instead of the content blocks"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "popular_product",
+        "name": "Product",
+        "settings": [
+          {
+            "label": "Product",
+            "id": "product",
+            "type": "product"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Popular Products",
+      "category": "Baseline"
+    }]
+  }
+{% endschema %}

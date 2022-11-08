@@ -1,0 +1,57 @@
+{% if product.metafields.colorways != blank %}
+  {% assign title = product.metafields.colorways.title | handleize %}
+  {% assign options = product.metafields.colorways.options | split: ',' %}
+
+  {% assign product_complete_title = product.title | handleize %}
+  {% assign product_title = product.metafields.colorways.title | handleize %}
+  {% assign colour_name = product_complete_title | remove: product_title | replace: '-', ' ' | strip | capitalize %}
+
+  <p class="label product-swatches__label">
+    {{ 'products.product.option' | t: option: 'Colour' }} <span class="color-selected">{{ colour_name }}</span>
+  </p>
+  <ul class="product-swatches">
+    {% for option in options %}
+      {% assign option_slug = option | handleize %}
+      {% assign product_handle = option_slug | prepend: '-' | prepend: title %}
+      {% assign swatch_product = all_products[product_handle] %}
+
+      {% if swatch_product != blank %}
+        <li class="product-swatches__swatch {% if swatch_product.handle == product.handle %} product-swatches__swatch--selected {% endif %}">
+          
+          {% assign image_url = blank %}
+
+          {%- comment -%} Check if we have the asset stored {%- endcomment -%}
+          {%- comment -%}
+          {% assign stored_asset = option_slug | append: '.png' | asset_img_url %}
+          {% if stored_asset != blank %}
+            {% assign image_url = stored_asset %}
+          {% else %}
+            Add block logic here
+          {% endif %}
+          {%- endcomment -%}
+
+          {% for block in section.blocks %}
+            {% assign titles = block.settings.title | split: ',' %}
+            {% for block_title in titles %}
+            {% assign block_title_slug = block_title | handleize %}
+              {% if block_title_slug == option_slug %}
+                {% assign image_url = block.settings.image | img_url: '52x52' %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+
+          {% if image_url == blank %}
+            <a href="/products/{{ product_handle }}" data-preloadlink="true">
+              <span class="default-swatch">?</span>
+            </a>
+          {% else %}    
+            <a href="/products/{{ product_handle }}" data-preloadlink="true">
+              <img src="{{ image_url }}" alt="{{ product.metafields.colorways.title | append: ' ' | append: option }}">
+            </a>
+          {% endif %}
+          
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}

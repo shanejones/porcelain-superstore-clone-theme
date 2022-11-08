@@ -1,0 +1,360 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+{% assign current_variant = product.selected_variant %}
+{%- comment -%}if we can't get a selected variant get the first...{%- endcomment -%}
+{% if current_variant == blank %}
+  {% assign current_variant = product.variants.first %}
+{% endif %}
+
+{%- comment -%}handle variant information held in metafields for PDP{%- endcomment -%}
+{%- capture variant_info -%}
+  {
+    {%- for v in product.variants -%}
+      "{{- v.id -}}": {
+        "price_per_meter_squared": "{{- v.metafields.product.price_per_meter_squared | escape | strip -}}",
+        "per_box_size": "{{- v.metafields.product.per_box_size | escape | strip -}}",
+        "size_dimensions": "{{- v.metafields.product.size_dimensions | escape | strip -}}",
+        "spec": "{{- v.metafields.product.spec | escape | strip -}}"
+      }
+      {%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  }
+{%- endcapture -%} 
+<script>
+  function cleanRefURL(){
+    
+    let url = document.referrer;
+    let domain = document.location.origin;
+    let path = url.replace(domain,'');
+    let list = '';
+    let length;
+  
+    if(path.includes('?')){
+      let pos = path.indexOf('?');
+      list = path.slice(0,pos);
+    } else {
+      list = path;
+    }
+  
+    length = list.length;
+  
+    if(list.length > 1 && list.charAt(length-1) == '/'){
+      return list.slice(0,length-1);
+    } else if(list.length <= 1) {
+      return '/';
+    } else {
+      return list;
+    }
+  
+  }
+  
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({ ecommerce: null });
+  dataLayer.push({
+    event: 'dl_view_item',
+    ecommerce: {
+      currencyCode: '{{ shop.currency }}',
+      detail: {
+        actionField: {
+          list: cleanRefURL()
+        },   
+        products : [{
+          name: '{{ product.title }}',
+          variant: '{{ product.selected_or_first_available_variant.title }}', 
+          id: '{{ product.selected_or_first_available_variant.sku }}',
+          dimension2:'{{ product.id }}',
+          dimension3:'{{ product.selected_or_first_available_variant.id }}',
+          price:{{ product.price | divided_by: 100.00 }},
+          brand: '{{ product.vendor }}',
+          category: '{{ product.type }}',
+          list_name: cleanRefURL()
+        }]
+      }
+    }
+  });
+</script>
+
+<div 
+  id="shopify-section-product"
+  data-recently-viewed='{"handle": "{{ product.handle | escape }}", "title": "{{product.title}}", "url": "{{product.url}}", "image": "{{ product.featured_image | img_url: '280x280' | escape }}"}'
+  data-product-variant-info='{{ variant_info | strip_newlines }}'
+>
+{% render 'breadcrumbs' %}
+  <div class="product-details-upper">
+    {% render 'product-images', product: product %}   
+    {% render 'product-form-content', product: product, current_variant: current_variant %}
+    <div class="product-details-gallery-wrapper">
+      {% render 'product-description' %}
+      {% render 'accordions', product: product, section_settings: section.settings, blocks: section.blocks %}
+    </div>
+  </div>
+</div>
+
+{%- assign organizationId = shop.url | append: "#organization" -%}
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.product -%}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  "mpn": "{{- product.id -}}",
+  "sku": "{{ product.selected_or_first_available_variant.sku }}",
+  "description": "{{ product.description | strip_html | escape | strip_newlines }}",
+  "brand": {
+    "@type": "Thing",
+    "name": "{{ product.vendor | escape }}"
+  },
+  {%- if product.featured_image -%}
+    {% assign image_size = product.featured_image.width | append: 'x' %}
+    "image": [
+      "https:{{ product.featured_image.src | img_url: image_size }}"
+    ],
+  {%- endif -%} 
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "@id": "{{- canonical_url | append: '#rating' -}}",
+    "ratingValue": {{ product.metafields.yotpo.reviews_average }},
+    "ratingCount": {{ product.metafields.yotpo.reviews_count }},
+    "reviewCount": {{ product.metafields.yotpo.reviews_count }},
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  {%- if product.variants -%}
+    {%- assign variantsByPrice = product.variants | sort: 'price' -%}
+    {%- assign numAvailableVariants = product.variants | where: "available" | size %}
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "{{- shop.currency -}}",
+      "lowPrice": {{- variantsByPrice.first.price | divided_by: 100.0 -}},
+      "highPrice": {{- variantsByPrice.last.price | divided_by: 100.0 -}},
+      "availability": "{%- if numAvailableVariants > 0 -%}InStock{%- else -%}OutOfStock{%- endif -%}",
+      "offerCount": {%- if numAvailableVariants > 0 -%}{{- numAvailableVariants -}}{%- else -%}1{%- endif -%},
+      "seller": {
+        "@type": "Organization",
+        "@id": "{{ organizationId }}"
+      }
+    },
+    "model": [
+      {%- for variant in product.variants -%}
+        {
+          "@type" : "ProductModel",
+          "@id": "{{- canonical_url | append: '#productModel=' | append: variant.id -}}",
+          "url" : "{{ shop.url }}{{ variant.url }}",
+          "name": "{{- product.title | append: " " | append: variant.title | escape -}}",
+          "mpn": "{{- variant.id -}}",
+          {%- if variant.image -%}
+            {% assign variant_image_size = variant.image.width | append: 'x' %}
+            "image": "https:{{ variant.image.src | img_url: variant_image_size }}",
+          {%- elsif product.featured_image -%}
+            {% assign image_size = product.featured_image.width | append: 'x' %}
+            "image": "https:{{ product.featured_image.src | img_url: image_size }}",
+          {%- endif -%}
+          {%- if variant.sku != blank -%}
+            "sku": "{{ variant.sku }}",
+          {%- endif -%}
+          {% if variant.weight != blank -%}
+            "weight": {
+              "@type": "QuantitativeValue",
+              {%- if variant.weight_unit != blank -%}
+                "unitCode": "{{ variant.weight_unit }}",
+              {%- endif -%}
+              "value": "{{ variant.weight | weight_with_unit: variant.weight_unit }}"
+            },
+          {%- endif -%}
+          "brand": {
+            "@type": "Thing",
+            "name": "{{ product.vendor | escape }}"
+          },
+          "offers": {
+            "@type": "Offer",
+            "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+            "price" : "{{ variant.price | divided_by: 100.00 }}",
+            "priceCurrency" : "{{ shop.currency }}",
+            "url" : "{{ shop.url }}{{ variant.url }}",
+            "seller": {
+              "@type": "Organization",
+              "@id": "{{ organizationId }}"
+            }
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  {%- else -%}
+    "availability" : "http://schema.org/{% if selected_or_first_available_variant.available %}InStock{% else %}OutOfStock{% endif %}",
+    "price" : "{{ selected_or_first_available_variant.price | divided_by: 100.00 }}",
+    "priceCurrency" : "{{ shop.currency }}",
+  {%- endif -%}
+}
+{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Product Description",
+    "settings":
+      [
+        {
+          "type": "header",
+          "content": "Description"
+        },
+        {
+          "type": "range",
+          "id": "character_limit",
+          "label": "Character Limit",
+          "min": 200,
+          "max": 800,
+          "step": 10,
+          "default": 300
+        },
+        {
+          "type": "header",
+          "content": "Accordions"
+        },
+        {
+          "type": "richtext",
+          "id": "delivery",
+          "label": "Delivery and Returns for tiles"
+        },
+        {
+          "type": "richtext",
+          "id": "delivery_non_tiles",
+          "label": "Delivery and Returns for non-tiles"
+        },
+        {
+          "type": "image_picker",
+          "id": "tile_icon",
+          "label": "Tile Icon"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_product_code",
+          "label": "Hide product code tag in specifications accordion",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Yotpo Instagram"
+        },
+        {
+          "type": "text",
+          "id": "yotpo",
+          "label": "Yotpo Gallery ID from Yotpo",
+          "info": "e.g. data-gallery-id='604b398b1b07c34b3e97abcc' would be 604b398b1b07c34b3e97abcc"
+        },
+        {
+          "type": "header",
+          "content": "Image with text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image - Tile",
+          "info": "Recommended Size: 1536 x 920"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_non_tile",
+          "label": "Image - Non Tile",
+          "info": "Recommended Size: 1536 x 920"
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Image alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading - Tile"
+        },
+        {
+          "type": "text",
+          "id": "title_non_tile",
+          "label": "Heading - Non Tile"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text - Tile"
+        },
+        {
+          "type": "richtext",
+          "id": "text_non_tile",
+          "label": "Text - Non Tile"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label - Tile"
+        },
+        {
+          "type": "text",
+          "id": "button_label_non_tile",
+          "label": "Button label - Non Tile"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link - Tile"
+        },
+        {
+          "type": "url",
+          "id": "button_link_non_tile",
+          "label": "Button link - Non Tile"
+        }
+      ],
+    "blocks": [
+      {
+        "name": "Suitable for Image",
+        "type": "suitable_for",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "info": "Suitable for title"
+          }
+        ]
+      },
+      {
+        "type": "swatch",
+        "name": "Swatch",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Colour name"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Swatch Image",
+            "info": "Recommended size: 52x52"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

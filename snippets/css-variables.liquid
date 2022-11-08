@@ -1,0 +1,52 @@
+<style>
+  {{ settings.font_heading | font_face }}
+  {{ settings.font_body | font_face }}
+  
+  {%- assign font_body_bold = settings.font_body | font_modify: 'weight', 'bolder' -%}
+  {%- assign font_body_bold_italic = font_body_bold | font_modify: 'style', 'italic' -%}
+  
+  {{ font_body_bold | font_face }}
+  {{ font_body_bold_italic | font_face }}
+
+  :root {
+    --color-accent: {{ settings.color_accent }};
+    --color-accent-2: {{ settings.color_accent2 }};
+    --color-accent-3: {{ settings.color_accent3 }};
+    --color-body-text: {{ settings.color_body_text }};
+    --color-heading-text: {{ settings.color_heading_text }};
+    --color-background-dark: {{ settings.color_background_dark }};
+    --color-background-light: {{ settings.color_background_light }};
+    --color-border: {{ settings.color_body_text | color_lighten: 50 }};
+
+    --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
+    --font-family: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
+
+    --btn-font-color-1: {{ settings.btn_primary_color_text }};
+    --btn-bg-color-1: {{ settings.btn_primary_color_bg }};
+    --btn-border-color-1: {{ settings.btn_primary_color_border }};
+    --btn-font-color-1-hover: {{ settings.btn_primary_color_text_hover }};
+    --btn-bg-color-1-hover: {{ settings.btn_primary_color_bg_hover }};
+    --btn-border-color-1-hover: {{ settings.btn_primary_color_border_hover }};
+
+    --btn-font-color-2: {{ settings.btn_secondary_color_text }};
+    --btn-bg-color-2: {{ settings.btn_secondary_color_bg }};
+    --btn-border-color-2: {{ settings.btn_secondary_color_border }};
+    --btn-font-color-2-hover: {{ settings.btn_secondary_color_text_hover }};
+    --btn-bg-color-2-hover: {{ settings.btn_secondary_color_bg_hover }};
+    --btn-border-color-2-hover: {{ settings.btn_secondary_color_border_hover }};
+
+    --btn-font-color-3: {{ settings.btn_tertiary_color_text }};
+    --btn-bg-color-3: {{ settings.btn_tertiary_color_bg }};
+    --btn-border-color-3: {{ settings.btn_tertiary_color_border }};
+    --btn-font-color-3-hover: {{ settings.btn_tertiary_color_text_hover }};
+    --btn-bg-color-3-hover: {{ settings.btn_tertiary_color_bg_hover | color_modify: 'alpha', 0.8 }};
+    --btn-border-color-3-hover: {{ settings.btn_tertiary_color_border_hover }};
+
+    --date-selector-btn-bg: {{ settings.date_selector_btn_color_bg }};
+    --date-selector-btn-border-color: {{ settings.date_selector_btn_border_color }};
+      
+    --border-color: {{ settings.border_colour }};
+    --border-light-color: {{ settings.border_light_colour }};
+    --footer-color: {{ settings.footer_color }};
+  }
+</style>

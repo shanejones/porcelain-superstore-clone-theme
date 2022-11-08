@@ -1,0 +1,88 @@
+<section class="icon-text-section"
+  style="background-color: {{section.settings.background-color}};"
+>
+  <ul class="icon-text-inner">
+    {% for block in section.blocks %}
+    {% assign data = block.settings %}
+
+    <li class="icon-text-item
+      {% if section.blocks.size > 2 %}
+        icon-text-item-thirds
+        {% else %}
+        icon-text-item-single-or-double
+      {% endif %}"
+      style="border-top: 1px solid {{section.settings.border-color}};"
+    >
+      <a href="{{data.url}}"
+        {% unless forloop.last %}
+          style="border-right: 1px solid {{section.settings.border-color}};"
+        {% endunless %}
+      >
+        {% if data.icon %}
+          <img fetchpriority="high" src="{{data.icon}}" alt="{{data.icon.alt}}">
+        {% endif %}
+        <span {% if data.color %} style="color: {{data.color}};" {% endif %}>
+          {% if data.text %}
+            {{data.text}}
+          {% endif %}
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "icon-text",
+  "max_blocks": 3,
+  "settings":
+  [
+    {
+      "type": "color",
+      "id": "background-color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "border-color",
+      "label": "Border Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_text",
+      "name": "Icon with text",
+      "settings": [
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Copy & paste image link from 'Files' in Shopify Settings."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Colour"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon text row",
+      "category": "Homepage"
+    }
+  ]
+}
+{% endschema %}

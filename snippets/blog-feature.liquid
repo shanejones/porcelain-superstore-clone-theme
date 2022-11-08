@@ -1,0 +1,47 @@
+{% assign article = articles[section.settings.article] %}
+
+{% if section.settings.display_feature == true %}
+<section class="blog-feature-section">
+  <main class="grid-list">
+      <article class="grid-item image">
+
+        <a href="{{ article.url }}">
+          <div class="img-overlay">
+            <img src="{{ section.settings.feature_image | img_url: '672x' }}" />
+            <a class="read-more-btn" href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+          </div>
+        </a>
+      </article>
+      <article class="grid-item content">
+        {% for tag in article.tags %}
+          {% unless tag contains 'Category_' %}
+            {% continue %}
+          {% endunless %}
+
+          {% assign background_color = blank %}
+          {% assign text_color = blank %}
+          {% assign tag_formatted = tag | replace: 'Category_', '' %}
+          {% assign tag_formatted_article = tag | replace: 'Category_', '' %}
+          {% if current_tags contains tag %}
+            {% for block in section.blocks %}
+              {% assign data = block.settings %}
+              {% if data.tag == tag_formatted_article %}
+                {% assign background_color = data.color %}
+                {% assign text_color = data.text_color %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            <li>
+              <a href="/blogs/{{ blog.handle }}/tagged/{{ tag }}" id="sticker" class="sticker sticker--{{ tag_formatted_article | replace: " ", "-" | downcase }}">{{ tag_formatted_article }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        <a href="/blogs/{{ blog.handle }}/tagged/{{ tag }}" id="sticker" class="sticker sticker--{{ tag_formatted_article | replace: " ", "-" | downcase }}">{{ tag_formatted_article }}</a>
+        <h2 class="heading-1 bold">{{ article.title }}</h2>
+        <p>{{ article.content | truncatewords: 20, '...' }}</p>
+        <a href="{{ article.url }}" class="btn btn-primary">Read more</a>
+      </article>
+    </main>
+</section>
+{% endif %}

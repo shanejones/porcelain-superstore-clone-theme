@@ -1,0 +1,16 @@
+
+{%- comment -%}
+  {% render 'trade-messaging' %}
+{%- endcomment -%}
+
+{% for tag in customer.tags %}
+  {% if tag == 'trade' %}
+    <section data-trade-messaging class="trade-messaging-snippet">
+      <div>
+        <p>{{ 'layout.trade.trade_discount' | t }}</p>
+      </div>
+    </section>
+    {% break %}
+  {% endif %}
+{% endfor %}
+  

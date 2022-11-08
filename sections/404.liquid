@@ -1,0 +1,40 @@
+<div class="four-0-four">
+  <div class="four-0-four-inner">
+    <div class="container">
+      <h1 class="heading-2 bold text-center">{{ 'general.404.title' | t }}</h1>
+      <div class="rte text-center">
+        {{ 'general.404.subtext_html' | t }}
+      </div>
+
+      <div class="four-0-four-inner-actions">
+        <input type="search" name="q" id="site-search__input" data-site-search-input="" value="" class="text-input" placeholder="Search for products" autocomplete="off">
+        <span>or</span>
+        <a href="/" class="btn btn-primary">{{ 'general.404.button_text' | t }}</a>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      {% if section.settings.menu != blank %}
+        <h3 class="heading-3">{{ 'general.404.suggested_links' | t }}</h3>
+        <ul class="recommended-links">
+          {% for link in linklists[section.settings.menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+  {% schema %}
+{
+  "name": "404",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main Menu"
+    }
+  ]
+}
+{% endschema %}

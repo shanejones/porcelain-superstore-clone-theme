@@ -1,0 +1,18 @@
+{% for block in section.blocks %}
+  {% assign data = block.settings %}
+  {% if data.collection == collection.handle %}
+    {% assign cdata = data %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<section class="collection-section" style="background-color: {{ cdata.background_color }}">
+  {% render 'header-collections',
+    class_name: 'collection-header',
+    collection_image: collection.image,
+    title: collection.title,
+    description: collection.description,
+    text_color: cdata.text_color,
+    character_limit: section.settings.character_limit
+  %}
+</section>

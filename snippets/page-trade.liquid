@@ -1,0 +1,185 @@
+
+<section class="trade-section container">
+  <div class="rte">
+    {{ page.content }}
+  </div>
+
+  <div class="trade-form-container">
+    <h2 id="tradeFormTitle" class="heading-2">{{ 'customer.register.trade_form_title' | t }}</h2>
+    <div data-trade-form>
+    {% form 'create_customer' %}
+      {{ form.errors | default_errors }}
+
+      <div class="input-container">
+        <label for="FirstName" class="label hide">
+          {{ 'customer.register.first_name' | t }}
+        </label>
+        <input 
+          type="text"
+          class="text-input"
+          name="customer[first_name]"
+          id="FirstName"
+          placeholder="{{ 'customer.register.first_name' | t }}"
+          autofocus
+          required
+          {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+      </div>
+
+      <div class="input-container">
+        <label for="LastName" class="label hide">
+          {{ 'customer.register.last_name' | t }}
+        </label>
+        <input 
+          type="text"
+          class="text-input"
+          name="customer[last_name]"
+          id="LastName"
+          placeholder="{{ 'customer.register.last_name' | t }}"
+          required
+          {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+      </div>
+
+      <div class="input-container">
+        <label class="label hide" for="tradeInfo">{{ 'customer.register.business_name' | t }}</label>
+        <input
+          pattern="^[a-zA-Z0-9.-_/ ]*$"
+          type="text"
+          class="text-input"
+          id="businessName"
+          placeholder="Business Name"
+        />
+        <small>{{ 'customer.register.characters' | t }}</small>
+      </div>
+
+      <div class="input-container">
+        <label class="label hide" for="companyRegistration">{{ 'customer.register.company_registration' | t }}</label>
+        <input
+          pattern="^[a-zA-Z0-9.-_/ ]*$"
+          type="text"
+          class="text-input"
+          id="businessReg"
+          placeholder="Company Registration"
+        />
+        <small>{{ 'customer.register.characters' | t }}</small>
+      </div>
+
+      <div class="input-container">
+        <label class="label hide" for="address1">
+          {{ 'customer.addresses.address1' | t }}
+        </label>
+        <input type="text"
+          class="text-input"
+          id="address1"
+          value="{{ form.address1 }}"
+          placeholder="{{ 'customer.addresses.address1' | t }}"
+          required
+          autocapitalize="words">
+      </div>
+
+      <div class="input-container">
+        <label class="label hide" for="address2">
+          {{ 'customer.addresses.address2' | t }}
+        </label>
+        <input type="text"
+          class="text-input"
+          id="address2"
+          value="{{ form.address2 }}"
+          placeholder="{{ 'customer.addresses.address2' | t }}"
+          autocapitalize="words">
+      </div>
+
+      <div class="input-container">
+        <label class="label hide" for="addressCity">
+          {{ 'customer.addresses.city' | t }}
+        </label>
+        <input type="text"
+          class="text-input"
+          required
+          id="addressCity"
+          value="{{ form.city }}"
+          placeholder="{{ 'customer.addresses.city' | t }}"
+          autocapitalize="words">
+      </div>
+
+      <div class="input-container">
+        <label class="label hide" for="addressPostcode">
+          {{ 'customer.addresses.zip' | t }}
+        </label>
+        <input type="text"
+          class="text-input"
+          id="addressPostcode"
+          value="{{ form.zip }}"
+          placeholder="{{ 'customer.addresses.zip' | t }}"
+          required
+          autocapitalize="characters">
+        </div>
+      
+      <div class="input-container">
+        <label class="label hide" for="phone">
+          {{ 'customer.addresses.phone' | t }}
+        </label>
+        <input type="tel"
+          class="text-input"
+          id="phone"
+          value="{{ form.phone }}"
+          placeholder="{{ 'customer.addresses.phone' | t }}"
+          pattern="[0-9\-]*">
+      </div>
+  
+      <div class="input-container">
+        <label for="Email" class="label hide">
+          {{ 'customer.register.email' | t }}
+        </label>
+        <input
+          type="email"
+          class="text-input"
+          name="customer[email]"
+          id="Email"
+          class="{% if form.errors contains 'email' %}input-error{% endif %}"
+          placeholder="{{ 'customer.register.email' | t }}"
+          value="{% if form.email %}{{ form.email }}{% endif %}"
+          spellcheck="false"
+          autocomplete="off"
+          required
+          autocapitalize="off">
+      </div>
+
+      <div class="input-container">
+        <label for="CreatePassword" class="label hide">
+          {{ 'customer.register.password' | t }}
+        </label>
+        <input 
+          type="password"
+          required
+          class="text-input"
+          name="customer[password]"
+          id="CreatePassword"
+          class="{% if form.errors contains 'password' %}input-error{% endif %}"
+          placeholder="{{ 'customer.register.password' | t }}">
+      </div>
+
+      <div class="input-container">
+        <label class="label hide" for="tradeInfo">{{ 'customer.register.trade_info' | t }}</label>
+        <input
+          pattern="^[a-zA-Z0-9.-_/ ]*$"
+          type="text"
+          class="text-input"
+          id="tradeInfo"
+          placeholder="{{ 'customer.register.trade_info' | t }}"
+        />
+        <small>{{ 'customer.register.characters_2' | t }}</small>
+      </div>
+      
+      <p>{{ 'customer.register.trade_process' | t }}</p>
+
+      <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn-primary">
+      <input type="hidden" name="customer[tags]" value="trade_enquiry"/>
+      <input id="customerNotes" type="hidden" name="customer[note][moreInfo]"/>
+
+      <div class="supporting-text">
+        {{ 'customer.register.login_html' | t }}
+      </div>
+    {% endform %}
+    </div>
+  </div>
+</section>

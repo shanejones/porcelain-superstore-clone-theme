@@ -1,0 +1,77 @@
+{% if section.settings.icon_text_enabled %}
+  <section class="icon-text-section" style="background-color: {{section.settings.icon_text_background_color}};">
+    <ul class="icon-text-inner">
+      {% for block in section.blocks %}
+      {% assign data = block.settings %}
+  
+      <li class="icon-text-item
+        {% if section.blocks.size > 2 %}
+          icon-text-item-thirds
+        {% else %}
+          icon-text-item-single-or-double
+        {% endif %}" style="border-top: 1px solid {{section.settings.border-color}};">
+        <a href="{{data.url}}" {% unless forloop.last %}
+          style="border-right: 1px solid {{section.settings.border-color}};" {% endunless %}>
+          {% if data.icon %}
+          <img src="{{data.icon}}" alt="{{data.icon.alt}}">
+          {% endif %}
+          <span {% if data.color %} style="color: {{data.color}};" {% endif %}>
+            {% if data.text %}
+            {{data.text}}
+            {% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Top Icon Bar",
+    "settings": [
+    {
+      "type": "checkbox",
+      "id": "icon_text_enabled",
+      "label": "Show Icon with Text",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "icon_text_background_color",
+      "label": "Image With Text Background Colour",
+      "default": "#000000"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "icon_text",
+        "name": "Icon with text",
+        "settings": [
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "icon",
+            "label": "Icon",
+            "info": "Copy & paste image link from 'Files' in Shopify Settings...."
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "label": "Colour"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

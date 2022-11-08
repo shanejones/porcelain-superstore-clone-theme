@@ -1,0 +1,35 @@
+{%- comment -%}
+@todo: pagination amount from setting
+{%- endcomment -%}
+
+{%- comment -%}
+FILTER SWATCHES
+This is held in a metafield (shop.metafields.collections.colors) and done here as metafields aren't accessible in cloudsearch.scss.liquid
+Example colors. Add your color names followed by colon and hex codes: 
+{% assign colors = 'Blue: #3792cb, Brick: #dc5539, Black: #000, Green: #228B22, White: #FFFFFF' %}
+{%- endcomment -%}
+
+{% assign colors= shop.metafields.collections.colors %}
+{% assign colors_array = colors|split:',' %}
+<style>
+  {% for color in colors_array %}
+    {% assign name = color|split:':'|first|strip %}
+    {% assign color_hex = color|split:':'|last %}
+      [data-filter-value="{{ name }}"] input[type="checkbox"] {
+        background-color: {{ color_hex }} !important;
+      }
+  {% endfor %}
+</style>
+
+{% assign pagination = 20 %}
+
+{% render 'filters', current_tags: current_tags, all_tags: collection.all_tags %}
+
+{%- capture product_list -%}{% render 'product-list', pagination: pagination, infinite: section.settings.infinite, use_load_more_button: section.settings.use_load_more_button %}{%- endcapture -%}
+{% assign product_count = collection.product_count %}
+
+<main class="collection-list-wrapper">
+<div class="container">
+    {{ product_list | strip_newlines }}
+  </div>
+</main>

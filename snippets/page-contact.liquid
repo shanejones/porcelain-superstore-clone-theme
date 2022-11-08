@@ -1,0 +1,163 @@
+<h1 class="heading-2 bold">{{ section.settings.title }}</h1>
+<div class="rte">
+  {{ section.settings.content }}
+
+  <div class="row no-border">
+    <div class="col">      
+      {{ section.settings.row1_col1 }}
+    </div>
+    <div class="col">
+      {{ section.settings.row1_col2 }}
+    </div>
+    <div class="col">
+      {{ section.settings.row1_col3 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{ section.settings.row2_col1 }}
+    </div>
+    <div class="col">
+      {{ section.settings.row2_col2 }}
+    </div>
+    <div class="col">
+      {{ section.settings.row2_col3 }}
+    </div>
+  </div>
+
+
+
+  <div class="row no-border full-width">
+    <div class="col">
+      {{ section.settings.row3_col1 }}
+    </div>
+  </div>
+
+  <div class="row full-width">
+    <div class="col">
+      {{ section.settings.row4_col1 }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      {{ section.settings.row5_col1 }}
+    </div>
+    <div class="col">
+      {{ section.settings.row5_col2 }}
+    </div>
+    <div class="col">
+      {{ section.settings.row5_col3 }}
+    </div>
+  </div>
+</div>
+
+<div class="form-container">
+  <h2 class="heading-2 bold">{{ section.settings.form_title }}</h2>
+  <div class="rte">
+    {{ section.settings.form_content }}
+    
+  </div>
+
+  {% form 'contact' %}
+
+    {% if form.posted_successfully? %}
+      <p class="form-success">
+        {{ 'contact.form.post_success' | t }}
+      </p>
+    {% endif %}
+
+    <div class="row">
+      <div class="col">
+        <label class="label" for="ContactFormName">{{ 'contact.form.first_name' | t }}<span class="asterisk">*</span></label>
+        <input type="text"
+          class="text-input"
+          name="contact[first_name]"
+          id="ContactFormName"
+          placeholder="{{ 'contact.form.first_name' | t }}"
+          required
+          value="{% if form[first_name] %}{{ form[first_name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+      </div>
+      <div class="col">
+        <label class="label" for="ContactFormLastName">{{ 'contact.form.last_name' | t }}<span class="asterisk">*</span></label>
+        <input type="text"
+          class="text-input"
+          name="contact[last_name]"
+          id="ContactFormLastName"
+          placeholder="{{ 'contact.form.last_name' | t }}"
+          required
+          value="{% if form[last_name] %}{{ form[last_name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+      </div>
+      <div class="col">
+        <label class="label" for="ContactFormEmail">{{ 'contact.form.email' | t }}<span class="asterisk">*</span></label>
+        <input type="email"
+          name="contact[email]"
+          id="ContactFormEmail"
+          class="text-input"
+          placeholder="{{ 'contact.form.email' | t }}"
+          required
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label class="label" for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
+        <input type="tel"
+          name="contact[phone]"
+          id="ContactFormPhone"
+          class="text-input"
+          placeholder="{{ 'contact.form.phone' | t }}"
+          value="{% if form[phone] %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          pattern="[0-9\-]*">
+      </div>
+
+      <div class="col">
+        <label class="label" for="ContactFormOrderNumber">{{ 'contact.form.order_number' | t }}</label>
+        <input type="tel"
+          name="contact[order_number]"
+          id="ContactFormOrderNumber"
+          class="text-input"
+          placeholder="{{ 'contact.form.order_number' | t }}"
+          value="{% if form[order_number] %}{{ form.order_number }}{% endif %}">
+      </div>
+      
+      <div class="col">
+        <label class="label" for="ContactFormReason">{{ 'contact.form.reason' | t }}</label>
+    
+        <div class="select-wrapper">
+          <select name="contact[reason]" id="ContactFormReason" class="select">
+            <option value="">{{ 'contact.form.reason' | t }}</option>
+            {% for block in section.blocks %}
+              <option value="{{ block.settings.reason }}">{{ block.settings.reason }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <label class="label" for="ContactFormMessage">{{ 'contact.form.message' | t }}<span class="asterisk">*</span></label>
+    <textarea rows="10"
+      name="contact[body]"
+      id="ContactFormMessage"
+      class="text-input"
+      required
+      placeholder="{{ 'contact.form.message' | t }}">
+      {%- if form.body -%}
+        {{- form.body -}}
+      {%- endif -%}
+    </textarea>
+
+    <input type="submit"
+      class="btn btn-primary"
+      value="{{ 'contact.form.send' | t }}"
+      data-click-toggle='{"target": ".form-container", "add": "validated"}'>
+
+    <div class="contact-errors">{{ form.errors | default_errors }}</div>
+  {% endform %}
+</div>

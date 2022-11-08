@@ -1,0 +1,36 @@
+
+{%- comment -%}
+  {% render 'accordions', 
+    product: product, 
+    section_settings: section.settings, 
+    blocks: section.blocks %}
+{%- endcomment -%}
+
+{%- comment -%}data from product tags{%- endcomment -%}
+{% assign suitable_for = '' %}
+{% assign specifications = '' %}
+{% for tag in product.tags %}
+  {% if tag contains 'suitable-for'  %}
+    {% assign suitable_for = suitable_for | append: tag | append: ',' %}
+  {% elsif tag contains 'spec::' %}
+    {% assign specifications = specifications | append: tag | append: ',' %}
+  {% endif %}
+{% endfor %}
+
+<section class="product-accordions-section">
+  <ul class="accordions">
+    {% if specifications != blank %}
+      {% render 'accordion', product: product, type: 'specifications', data: specifications, blocks: blocks, section_settings: section_settings %}
+    {% endif %}
+    {% if suitable_for != blank %}
+      {% render 'accordion', product: product, type: 'suitable-for', data: suitable_for, blocks: blocks %}
+    {% endif %}
+    {% render 'accordion', product: product, type: 'delivery-and-returns', section_settings: section_settings %}
+    {% if product.metafields.product.how_to_measure != 'NA' %}
+      {% render 'accordion', product: product, type: 'measure' %}
+    {% endif %}
+    {% if product.metafields.product.how_to_install != 'NA' %}
+      {% render 'accordion', product: product, type: 'install' %}
+    {% endif %}
+  </ul>
+</section>

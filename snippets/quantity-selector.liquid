@@ -1,0 +1,54 @@
+{% unless template == 'cart' %}
+  <label class="label">{{ 'products.product.quantity' | t }}</label>
+{% endunless %}
+
+{% assign isASample = false %}
+{% for option in item.options_with_values %}
+  {% if option.value contains 'Sample' %}
+    {% assign isASample = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="quantity-selector-wrapper" data-quantity-selector>
+  {% unless isASample and template == 'cart' %}
+    <button role="button"
+      type="button"
+      data-quantity-dec
+      class="btn-quantity-selector btn-dec"
+      aria-label="decrease quantity"
+      data-click-toggle='{"target": ".input-cart-update-{{ item.id }}", "remove": "hide"}'></button>
+  {% endunless %}
+
+  <input 
+    pattern=" 0+\.[0-9]*[1-9][0-9]*$" 
+    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+    type="number"
+    class="text-input input-quantity"
+    value="{{ item.quantity | default: 1 }}"
+    name="updates[]"
+    min="1"
+    data-quantity-input
+    data-product-price="{{ item.price }}"
+    {% if product.metafields.product.per_box_size %}
+    data-product-area-quantity-calc="{{ product.metafields.product.per_box_size }}"
+    {% endif %}
+    {% unless isASample and template == 'cart' %}
+      data-click-toggle='{"target": ".input-cart-update-{{ item.id }}", "remove": "hide"}'
+    {% endunless %}
+    {% if isASample and template == 'cart' %}
+      data-prevent-type-sample="true"
+      max="1"
+    {% endif %}
+    aria-label="{{ 'cart.general.item_quantity' | t }}"
+    >
+
+  {% unless isASample and template == 'cart' %}
+    <button role="button"
+      type="button"
+      data-quantity-inc
+      class="btn-quantity-selector btn-inc"
+      aria-label="increase quantity"
+      data-click-toggle='{"target": ".input-cart-update-{{ item.id }}", "remove": "hide"}'></button>
+  {% endunless %}
+</div>

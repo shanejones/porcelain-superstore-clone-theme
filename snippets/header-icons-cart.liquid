@@ -1,0 +1,13 @@
+
+<section class="header-icons-cart-snippet header-icon">
+  <a
+    aria-label="Cart icon"
+    href="/cart"
+    {% if settings.minicart %}
+      onclick="window.blubolt.minicart.clickOpen(event)"
+    {% endif %}
+    class="icon-wrapper">
+    {% render 'icon-cart' %}
+    <div data-app-layer-portal="cart-count-badge"></div>
+  </a>
+</section>

@@ -1,0 +1,11 @@
+<div class="product-m2-and-size flex">
+  <p class="size-dimensions bold">{{ 'products.product.size' | t: size_dimensions: size_dimensions}}</p>
+  {% if price_per_meter_squared != blank %}
+    {% assign size_unit = 'm2' %}
+    <p class="bold">{{ 'products.product.m2' | t: price_per_meter_squared:  price_per_meter_squared, size_unit: size_unit }}</p>
+  {% elsif price_per_ != blank and size_unit != blank %}
+    <p class="bold">{{ 'products.product.price_per_' | t: price_per_:  price_per_, size_unit: size_unit }}</p>
+  {% elsif price_per_ != blank and size_unit == blank %}
+    <p class="bold test">{{ price_per_ }}</p>
+  {% endif %}
+</div>

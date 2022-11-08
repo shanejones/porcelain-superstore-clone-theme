@@ -1,0 +1,29 @@
+{%- comment -%}
+  {% render 'features-images-and-text' %}
+{%- endcomment -%}
+
+{% if product.metafields.product.feature_text_1 != blank or product.metafields.product.feature_text_2 != blank or product.metafields.product.feature_text_3 != blank %}
+  <div class="product-features-images-and-text-snippet">
+    <ul class="product-features-images-and-text-snippet-inner">
+      {% assign list = '1,2,3' %}
+      {% assign list = list | split: ',' %}
+      {% assign product_metafields = product.metafields.product %}
+      {% for item in list %}
+        {% assign text = 'feature_text_' | append: item %}
+        {% assign img = 'feature_image_' | append: item %}
+        {% assign feature_text = product_metafields[text] %}
+        {% assign feature_image = product_metafields[img] %}
+        <li class="feature-image-and-text">
+          <div class="feature-image-and-text-inner">
+            <img 
+              data-lazy-load
+              data-src="{{ feature_image | file_img_url: '200x' }}"
+              src="{{ feature_image | file_img_url: '50x' }}" 
+              alt="{{ feature_text | append: ' image' }}">
+            <p>{{ feature_text }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

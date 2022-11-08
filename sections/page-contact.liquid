@@ -1,0 +1,121 @@
+<div class="page-template page-template-contact">
+  {% render 'page-header'%}
+
+  <div class="container">
+    {% render 'page-contact' %}
+  </div>
+</div>
+
+{% comment %} Schema {% endcomment %}
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "row1_col1",
+      "label": "Customer queries content"
+    },
+    {
+      "type": "richtext",
+      "id": "row1_col2",
+      "label": "PR / Press content"
+    },
+    {
+      "type": "richtext",
+      "id": "row1_col3",
+      "label": "Collaborations content"
+    },
+    {
+      "type": "richtext",
+      "id": "row2_col1",
+      "label": "Social / Shoots content"
+    },
+    {
+      "type": "richtext",
+      "id": "row2_col2",
+      "label": "Wholesale content"
+    },
+    {
+      "type": "richtext",
+      "id": "row2_col3",
+      "label": "Extra content"
+    },
+    {
+      "type": "richtext",
+      "id": "row3_col1",
+      "label": "Online Phone Number"
+    },
+    {
+      "type": "richtext",
+      "id": "row4_col1",
+      "label": "Instagram content"
+    },
+    {
+      "type": "richtext",
+      "id": "row5_col1",
+      "label": "Returns Address"
+    },
+    {
+      "type": "richtext",
+      "id": "row5_col2",
+      "label": "Store Address"
+    },
+    {
+      "type": "richtext",
+      "id": "row5_col3",
+      "label": "Store Phone Number"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Alternatively, fill out our contact form"
+    },
+    {
+      "type": "richtext",
+      "id": "form_content",
+      "label": "Form content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "page-text",
+      "name": "Page headers",
+      "settings": [
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Attach to a page"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Add custom background image"
+        }
+      ]
+    },
+    {
+      "type": "reason",
+      "name": "Reason for Contacting",
+      "settings": [
+        {
+          "type": "text",
+          "id": "reason",
+          "label": "Reason"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

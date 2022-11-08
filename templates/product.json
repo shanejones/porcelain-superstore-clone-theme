@@ -1,0 +1,267 @@
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "settings": {
+      }
+    },
+    "shogun-above": {
+      "type": "shogun-above",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "product-main",
+      "blocks": {
+        "2020f1ce-01f3-4ff2-87d9-f1c4da6d357c": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bathrooms_80x80_a1886d1a-103b-4ebb-8874-b054f1c5e08d.png",
+            "text": "Bathrooms"
+          }
+        },
+        "40f90224-2551-4c08-a730-1b31540f58ad": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kitchens_80x80_9b46b63c-3777-4830-b01d-4fd679358d90.png",
+            "text": "Kitchens"
+          }
+        },
+        "6c45bb42-f523-4ae8-80f1-e36c57363a44": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fireplaces_80x80_26a6ba55-0a02-431e-9b1f-c0fac3f1e8bf.png",
+            "text": "Fireplaces"
+          }
+        },
+        "10a0acbe-7df2-4425-af4e-be7a81a5cbc6": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wetrooms_80x80_c23d554e-6ff7-41f8-88c4-b43baec96b19.png",
+            "text": "Wetrooms"
+          }
+        },
+        "68bfa8c1-2c77-4e31-b621-05cac327ca75": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Heating_80x80_119b2b6b-9d18-4118-b28f-ababf0f32c59.png",
+            "text": "Underfloor_heating"
+          }
+        },
+        "21dbfee9-1daf-428b-aa4f-b31daa69f416": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Floors_80x80_b549fb03-9c99-488c-b81b-3609455fc73d.png",
+            "text": "Floors"
+          }
+        },
+        "52ec01ee-4c9d-4268-b387-e2ddb40ae27d": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frostproof_80x80_a348478b-15a3-4474-a788-af32e0a083f3.png",
+            "text": "Frostproof"
+          }
+        },
+        "757df29f-43ed-48be-983e-66a199308744": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Heating_80x80_119b2b6b-9d18-4118-b28f-ababf0f32c59.png",
+            "text": "Underfloor Heating"
+          }
+        },
+        "d228c042-85b6-4d1c-93c2-afdc391f52a7": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Splashback_80x80_aec08c19-1b3e-4938-9f73-3fab0c53b083.png",
+            "text": "Splashbacks"
+          }
+        },
+        "87ea55ea-2799-4c23-ba40-48f6b422f687": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Splashback_80x80_aec08c19-1b3e-4938-9f73-3fab0c53b083.png",
+            "text": "Splashback"
+          }
+        },
+        "2e1ef7b4-41cb-4b4e-afa8-a9803f240dca": {
+          "type": "suitable_for",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/outdoor_80x80_279b7ae9-23a4-4808-a3a2-6ddfc9d726fe.png",
+            "text": "Outdoor"
+          }
+        }
+      },
+      "block_order": [
+        "2020f1ce-01f3-4ff2-87d9-f1c4da6d357c",
+        "40f90224-2551-4c08-a730-1b31540f58ad",
+        "6c45bb42-f523-4ae8-80f1-e36c57363a44",
+        "10a0acbe-7df2-4425-af4e-be7a81a5cbc6",
+        "68bfa8c1-2c77-4e31-b621-05cac327ca75",
+        "21dbfee9-1daf-428b-aa4f-b31daa69f416",
+        "52ec01ee-4c9d-4268-b387-e2ddb40ae27d",
+        "757df29f-43ed-48be-983e-66a199308744",
+        "d228c042-85b6-4d1c-93c2-afdc391f52a7",
+        "87ea55ea-2799-4c23-ba40-48f6b422f687",
+        "2e1ef7b4-41cb-4b4e-afa8-a9803f240dca"
+      ],
+      "settings": {
+        "character_limit": 300,
+        "delivery": "<p><strong>Express Delivery is FREE on Orders Over £500<\/strong><br\/>For orders under £500, delivery is just £36<br\/><br\/><strong>Choose a Convenient Delivery Date<br\/><\/strong>At the shopping cart you can pick a convenient weekday for your delivery. <br\/><br\/><strong>Please Note<\/strong><br\/>Most orders are delivered on a pallet and are kerbside only. <br\/>For smaller order that weigh less than 18kg, delivery is just £15<br\/>There may be a surcharge to certain postcodes.<br\/>Please see our <a href=\"\/pages\/deliveries\" title=\"Deliveries\">deliveries<\/a> page for more information. <br\/><br\/><strong>Returns<br\/><\/strong>You can return your full order to us within 30 days for a complete refund. <br\/>Please see our <a href=\"\/pages\/returns\" title=\"Returns\">returns<\/a> page for more information.<\/p>",
+        "delivery_non_tiles": "<p><strong>Express Delivery is FREE on Orders Over £500<\/strong><br\/>For orders under £500, delivery is just £30<br\/><br\/><strong>Choose a Convenient Delivery Date<br\/><\/strong>At the shopping cart you can pick a convenient weekday for your delivery. <br\/><br\/><strong>Please Note<\/strong><br\/>Most orders are delivered on a pallet and are kerbside only. <br\/>For smaller order that weigh less than 18kg, delivery is just £15<br\/>There may be a surcharge to certain postcodes.<br\/>Please see our <a href=\"\/pages\/deliveries\" title=\"Deliveries\">deliveries<\/a> page for more information. <br\/><br\/><strong>Returns<br\/><\/strong>You can return your full order to us within 30 days for a complete refund. <br\/>Please see our <a href=\"\/pages\/returns\" title=\"Returns\">returns<\/a> page for more information.<\/p>",
+        "tile_icon": "shopify:\/\/shop_images\/ruler_1_99x_crop_center_7f00c9b3-6db5-45fc-9878-51eda7a93ff7.png",
+        "hide_product_code": true,
+        "yotpo": "61fa99037546e30e2a38ec8d",
+        "image": "shopify:\/\/shop_images\/samples_2880x1540_crop_center_9aace75e-4c89-4003-8345-bb1bfe57e243.jpg",
+        "image_non_tile": "shopify:\/\/shop_images\/samples_2880x1540_crop_center_9aace75e-4c89-4003-8345-bb1bfe57e243.jpg",
+        "layout": "left",
+        "title": "Find your match, for free",
+        "title_non_tile": "Find your match, for free",
+        "text": "<p>Finding your perfect tile is super easy - you can order up to 4 free samples, completely free of charge.<br\/><br\/>Simply click the Add Free Sample button above and head to the checkout when you're ready.<\/p>",
+        "text_non_tile": "<p>Finding your perfect tile is super easy - you can order up to 4 free samples, completely free of charge.<br\/><br\/>Simply click the Add Free Sample button above and head to the checkout when you're ready.<\/p>",
+        "button_label": "LEARN MORE",
+        "button_label_non_tile": "LEARN MORE",
+        "button_link": "shopify:\/\/pages\/samples",
+        "button_link_non_tile": "shopify:\/\/pages\/samples"
+      }
+    },
+    "product-yotpo-instagram": {
+      "type": "product-yotpo-instagram",
+      "settings": {
+        "yotpo": "61fa99037546e30e2a38ec8d"
+      }
+    },
+    "1662997275f7cde2f3": {
+      "type": "image-text-feature-blocks",
+      "blocks": {
+        "8c3c6c5a-462f-4bbf-9267-a5880dea7e11": {
+          "type": "feature_blocks",
+          "settings": {
+            "featured_collection": "outdoor-tiles",
+            "image": "shopify:\/\/shop_images\/outdoor-anti-slip.jpg",
+            "layout": "right",
+            "title": "Anti-slip as standard",
+            "text": "<p>Our outdoor pavers will give you a stylish surface with excellent slip resistance. They are all certified as R11 or higher, so your garden is safe to use, whatever the weather.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "15e044e2-b0ba-4f2d-9233-a02c73f790ca": {
+          "type": "feature_blocks",
+          "settings": {
+            "featured_collection": "outdoor-tiles",
+            "image": "shopify:\/\/shop_images\/outdoor-weatherproof.jpg",
+            "layout": "left",
+            "title": "Completely weatherproof",
+            "text": "<p>Ideal for British gardens, our outdoor tiles are impervious to frost, mould and stains. So unlike natural stone or wood decking, they’re easy to care for all year round and they won’t fade over time. <\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "df436d04-bb4f-42ae-9afd-7e4dbb9b587e": {
+          "type": "feature_blocks",
+          "settings": {
+            "featured_collection": "outdoor-tiles",
+            "image": "shopify:\/\/shop_images\/installation.jpg",
+            "layout": "right",
+            "title": "Easy installation",
+            "text": "<p>You can lay our outdoor tiles onto traditional hardcore, concrete, gravel or pedestals. If you’re installing onto MOT hardcore, we recommend using our ProPave fixing materials.<\/p>",
+            "button_label": "Shop Fixing Materials",
+            "button_link": "shopify:\/\/collections\/outdoor"
+          }
+        }
+      },
+      "block_order": [
+        "8c3c6c5a-462f-4bbf-9267-a5880dea7e11",
+        "15e044e2-b0ba-4f2d-9233-a02c73f790ca",
+        "df436d04-bb4f-42ae-9afd-7e4dbb9b587e"
+      ],
+      "settings": {
+      }
+    },
+    "product-yotpo": {
+      "type": "product-yotpo",
+      "settings": {
+      }
+    },
+    "product-related-products": {
+      "type": "product-related-products",
+      "settings": {
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+      }
+    },
+    "image-text-feature-blocks": {
+      "type": "image-text-feature-blocks",
+      "blocks": {
+        "0215f6ac-a379-4d14-8087-c4f2c3a46ed8": {
+          "type": "feature_blocks",
+          "settings": {
+            "featured_collection": "white-kitchen-tiles",
+            "image": "shopify:\/\/shop_images\/samples_2880x1540_crop_center_9aace75e-4c89-4003-8345-bb1bfe57e243.jpg",
+            "layout": "left",
+            "title": "Find your match, for free",
+            "text": "<p>Finding your perfect tile is super easy - you can order up to 4 free samples, completely free of charge.<br\/><br\/>Simply click the Add Free Sample button above and head to the checkout when you're ready.<\/p>",
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/samples"
+          }
+        }
+      },
+      "block_order": [
+        "0215f6ac-a379-4d14-8087-c4f2c3a46ed8"
+      ],
+      "settings": {
+      }
+    },
+    "seo-block": {
+      "type": "seo-block",
+      "settings": {
+      }
+    },
+    "shogun-below": {
+      "type": "shogun-below",
+      "settings": {
+      }
+    },
+    "16517666362bb90c0d": {
+      "type": "content-and-images",
+      "disabled": true,
+      "blocks": {
+        "6680c177-7028-4529-bb53-6d7977e70d75": {
+          "type": "content-image-block",
+          "settings": {
+            "size": "half",
+            "image": "{{ product.metafields.feature_block.content_image.value }}",
+            "text_position": "center",
+            "textAlignment": "center",
+            "title": "{{ product.metafields.feature_block.content_title_1.value }}",
+            "title_color": "",
+            "cta_text": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "6680c177-7028-4529-bb53-6d7977e70d75"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "shogun-above",
+    "main",
+    "product-yotpo-instagram",
+    "1662997275f7cde2f3",
+    "product-yotpo",
+    "product-related-products",
+    "recently-viewed",
+    "image-text-feature-blocks",
+    "seo-block",
+    "shogun-below",
+    "16517666362bb90c0d"
+  ]
+}

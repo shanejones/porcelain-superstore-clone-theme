@@ -1,0 +1,410 @@
+{
+  "sections": {
+    "16624576746d92039d": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Jewel-Onyx-Hero.jpg",
+        "mob_image": "shopify:\/\/shop_images\/Jewel-Onyx-Hero-mobile2.jpg",
+        "text_color": "#ffffff",
+        "text_position": "center",
+        "text_vertical_position": "flex-end",
+        "text_alignment": "center",
+        "title": "Modern Drama",
+        "text": "",
+        "cta_text": "Shop Onyx Marbles",
+        "link": "https:\/\/www.porcelainsuperstore.co.uk\/collections\/onyx-effect-tiles",
+        "cta_colour": "#212a2f",
+        "cta_text_colour": "#ffffff"
+      }
+    },
+    "1662389781ba05cd9e": {
+      "type": "rich-text",
+      "settings": {
+        "title": "Popular tile collections",
+        "text": "<p>Browse through our most popular wall and floor tile collections and find the perfect choice for your new tiling project. <\/p>"
+      }
+    },
+    "161295933227c9aea2": {
+      "type": "collections-showcase",
+      "blocks": {
+        "9477b2ff-9864-48bb-8934-2a32f8d2fa2a": {
+          "type": "category",
+          "settings": {
+            "title": "White Tiles",
+            "title_color": "",
+            "link": "shopify:\/\/collections\/white-tiles",
+            "image": "shopify:\/\/shop_images\/white-cat_896x_crop_center_1f0197a7-e897-4bb7-af8c-3416d1300bbd.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "c7a792c3-c43c-4a0f-bd07-3f1633f4cb4d": {
+          "type": "category",
+          "settings": {
+            "title": "Onyx Tiles",
+            "title_color": "",
+            "link": "shopify:\/\/collections\/onyx-effect-tiles",
+            "image": "shopify:\/\/shop_images\/Onyx-tiles.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "3de891eb-1375-48cf-a862-56f7b7ded61a": {
+          "type": "category",
+          "settings": {
+            "title": "Green Tiles",
+            "title_color": "",
+            "link": "shopify:\/\/collections\/green-tiles",
+            "image": "shopify:\/\/shop_images\/green-cat_896x_crop_center_fcfcc318-1829-4b44-b2e4-16394da16565.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "b62a7539-0880-4e17-a328-33cae02a574a": {
+          "type": "category",
+          "settings": {
+            "title": "Marble tiles",
+            "title_color": "#ffffff",
+            "link": "shopify:\/\/collections\/marble-effect-floor-tiles",
+            "image": "shopify:\/\/shop_images\/Marble.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "4570b7aa-aa18-49b8-94bb-f0aab7533b28": {
+          "type": "category",
+          "settings": {
+            "title": "Outdoor Tiles",
+            "title_color": "",
+            "link": "shopify:\/\/collections\/outdoor-tiles",
+            "image": "shopify:\/\/shop_images\/Nexus_White_2cm_sml.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "9c8f6498-d94b-4a68-b46e-9c42b275693f": {
+          "type": "category",
+          "settings": {
+            "title": "Terrazzo tiles",
+            "title_color": "#ffffff",
+            "link": "shopify:\/\/collections\/terrazzo-tiles",
+            "image": "shopify:\/\/shop_images\/terrazo.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/terrazo.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "62a1968b-4a03-4b79-aec3-2d8200a07523": {
+          "type": "category",
+          "settings": {
+            "title": "Wood Effect tiles",
+            "title_color": "#ffffff",
+            "link": "shopify:\/\/collections\/wood-effect-tiles",
+            "image": "shopify:\/\/shop_images\/wood-effect_1536x_crop_center_4dfbd56f-be2b-4360-9694-17cf138cc394.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/wood-effect_1536x_crop_center_4dfbd56f-be2b-4360-9694-17cf138cc394.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "8b2c2a55-8919-4c27-9cff-10c949f52497": {
+          "type": "category",
+          "settings": {
+            "title": "Victorian Tiles",
+            "title_color": "",
+            "link": "shopify:\/\/collections\/victorian-tiles",
+            "image": "shopify:\/\/shop_images\/victorian_896x_crop_center_36d50711-95f9-417e-a4f3-246141da6798.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        },
+        "1c108035-bc07-4ea1-bfbe-362d90ada315": {
+          "type": "category",
+          "settings": {
+            "title": "Mosaic Tiles",
+            "title_color": "",
+            "link": "shopify:\/\/collections\/mosaics",
+            "image": "shopify:\/\/shop_images\/mosaic-cat_896x_crop_center_eac52da7-cc06-4058-8f24-555086eaa213.jpg",
+            "dt_width": "one_third",
+            "show_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "9477b2ff-9864-48bb-8934-2a32f8d2fa2a",
+        "c7a792c3-c43c-4a0f-bd07-3f1633f4cb4d",
+        "3de891eb-1375-48cf-a862-56f7b7ded61a",
+        "b62a7539-0880-4e17-a328-33cae02a574a",
+        "4570b7aa-aa18-49b8-94bb-f0aab7533b28",
+        "9c8f6498-d94b-4a68-b46e-9c42b275693f",
+        "62a1968b-4a03-4b79-aec3-2d8200a07523",
+        "8b2c2a55-8919-4c27-9cff-10c949f52497",
+        "1c108035-bc07-4ea1-bfbe-362d90ada315"
+      ],
+      "settings": {
+        "title": "",
+        "link": "",
+        "background_color": "#ffffff"
+      }
+    },
+    "1612961469a00a244b": {
+      "type": "popular-products",
+      "blocks": {
+        "48f820a4-e0b0-4ecf-9dea-2e468dda8a38": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "abbey-decor-black"
+          }
+        },
+        "ff6f9331-e5e0-4cb0-9ae7-ad81b5fe03ef": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "antique-marble"
+          }
+        },
+        "3a6f2cca-e524-4ce4-90ed-4ce9201abb3b": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "palm-springs-pink"
+          }
+        },
+        "50ae8390-c910-4ca7-bf1a-401e6d6f6388": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "arlo-light"
+          }
+        },
+        "55d916dc-7376-4d32-be9e-5dcde809cbe1": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "dwell-emerald"
+          }
+        },
+        "230320e7-2518-4af0-b45a-0f14d3770da6": {
+          "type": "popular_product",
+          "settings": {
+            "product": "marais-rose"
+          }
+        },
+        "f42b3415-a57d-4813-805a-f186357a9c7f": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "tivoli-mix"
+          }
+        },
+        "035d0784-c77a-45c6-9376-a9891b284151": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "willow-sage"
+          }
+        },
+        "92628074-5067-4c1f-9829-b697519587da": {
+          "type": "popular_product",
+          "settings": {
+            "product": "croft-white"
+          }
+        },
+        "1a9072e4-99a6-4c35-af75-9026336f13aa": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "product": "illusion-gold"
+          }
+        },
+        "d02a5b42-c458-4d44-b608-a49ae219ba24": {
+          "type": "popular_product",
+          "settings": {
+            "product": "dwell-azul"
+          }
+        },
+        "3364e384-6a96-4d25-bc01-ac1cd18ef4bb": {
+          "type": "popular_product",
+          "settings": {
+            "product": "motion-light"
+          }
+        }
+      },
+      "block_order": [
+        "48f820a4-e0b0-4ecf-9dea-2e468dda8a38",
+        "ff6f9331-e5e0-4cb0-9ae7-ad81b5fe03ef",
+        "3a6f2cca-e524-4ce4-90ed-4ce9201abb3b",
+        "50ae8390-c910-4ca7-bf1a-401e6d6f6388",
+        "55d916dc-7376-4d32-be9e-5dcde809cbe1",
+        "230320e7-2518-4af0-b45a-0f14d3770da6",
+        "f42b3415-a57d-4813-805a-f186357a9c7f",
+        "035d0784-c77a-45c6-9376-a9891b284151",
+        "92628074-5067-4c1f-9829-b697519587da",
+        "1a9072e4-99a6-4c35-af75-9026336f13aa",
+        "d02a5b42-c458-4d44-b608-a49ae219ba24",
+        "3364e384-6a96-4d25-bc01-ac1cd18ef4bb"
+      ],
+      "settings": {
+        "title": "#Trending tiles",
+        "url": "shopify:\/\/collections\/trending-tiles",
+        "use_collection": false,
+        "collection": "trending-tiles"
+      }
+    },
+    "1615544922a96cbdaf": {
+      "type": "yotpo-instagram-gallery",
+      "settings": {
+        "yotpo": "604b398b1b07c34b3e97abcc",
+        "title": "Shop our Instagram",
+        "text": "Share your #tilelove and tag @porcelainsuperstore for a chance to be featured on our site"
+      }
+    },
+    "161297336465de97c5": {
+      "type": "rich-text",
+      "settings": {
+        "title": "Tile shopping, made simple",
+        "text": "<p>We make tile shopping easy with handpicked designs, free samples and premium tiles delivered to your door.<\/p>"
+      }
+    },
+    "1614080994a6240d26": {
+      "type": "mascot-and-text",
+      "blocks": {
+        "2b9cb891-dc46-4c27-b761-548ebe24d4bc": {
+          "type": "mascot_and_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mable1_240x240_png.webp",
+            "link": "shopify:\/\/pages\/samples",
+            "title": "Your Perfect Samples",
+            "text": "<p>With our free and speedy sample service, it's super easy to find the tile you'll love.<\/p>"
+          }
+        },
+        "45048606-b5d3-421b-8337-2cd45d7e9865": {
+          "type": "mascot_and_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mable2_240x240_png.webp",
+            "link": "shopify:\/\/pages\/contact",
+            "title": "Friendly Advice",
+            "text": "<p>Need some help? Our awesome customer service team can answer any of your tile questions.<\/p>"
+          }
+        },
+        "0392e351-36dd-4ec3-a7ae-aeeabc9cdb77": {
+          "type": "mascot_and_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mable3_240x240_png.webp",
+            "link": "shopify:\/\/pages\/about-us",
+            "title": "Better For Less",
+            "text": "<p>We handpick our tiles to make sure you'll get better tiles, at better prices, than you'll find elsewhere.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2b9cb891-dc46-4c27-b761-548ebe24d4bc",
+        "45048606-b5d3-421b-8337-2cd45d7e9865",
+        "0392e351-36dd-4ec3-a7ae-aeeabc9cdb77"
+      ],
+      "settings": {
+      }
+    },
+    "1618477960e7a9c845": {
+      "type": "rich-text",
+      "settings": {
+        "title": "Thousands of happy customers...",
+        "text": "<p>Don't just take our word for it - have a read of all our verified customers <a href=\"\/pages\/reviews\" title=\"Reviews\">reviews<\/a>!<\/p>"
+      }
+    },
+    "1613738851defb2362": {
+      "type": "reviews-carousel",
+      "blocks": {
+        "b079dfea-a548-4d2a-b119-5f231997e513": {
+          "type": "carousel_image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/artiste2_1536x_crop_center_jpg.webp",
+            "quote": "“Everyone loves my new tiles. <br>They're so unique and actually look handmade.”",
+            "info": "<p>Lucy H on  <strong>Artiste Azul Mix<\/strong><\/p>",
+            "cta": "shopify:\/\/products\/artiste-azul-mix"
+          }
+        },
+        "77d3b096-9f07-45d7-b77d-6a3aa4cfde21": {
+          "type": "carousel_image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/review-2_1536x_crop_center_jpg.webp",
+            "quote": "“The sample service was so quick and easy to use. <br>And best of all they were free!“",
+            "info": "<p>Elizabeth E on <strong>Marais Rose<\/strong><\/p>",
+            "cta": "shopify:\/\/products\/marais-rose"
+          }
+        },
+        "54cd1e01-f6fd-4864-857b-cd2ddf1959d0": {
+          "type": "carousel_image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/review-3_1536x_crop_center_bc7ff127-af1c-4b63-8201-9b5125147a81.jpg",
+            "quote": "“Any questions I had were answered super quick.<br>Really impressive customer service“",
+            "info": "<p>Simon R. on <strong>Harmony Sky Decor<\/strong><\/p>",
+            "cta": "shopify:\/\/products\/harmony-sky-decor"
+          }
+        }
+      },
+      "block_order": [
+        "b079dfea-a548-4d2a-b119-5f231997e513",
+        "77d3b096-9f07-45d7-b77d-6a3aa4cfde21",
+        "54cd1e01-f6fd-4864-857b-cd2ddf1959d0"
+      ],
+      "settings": {
+        "background_color": "#ffe5d4",
+        "text_color": "#212a2f",
+        "cta_text": "SHOP NOW"
+      }
+    },
+    "1612972915de4ecc9f": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "Discover tiling tips and inspiration...",
+        "blog": "inspiration",
+        "featured_article_1": "help-advice\/everything-you-need-to-know-about-tile-grout",
+        "featured_article_2": "inspiration\/hexagonal-heaven",
+        "blog_show_date": false,
+        "cta": "shopify:\/\/blogs\/inspiration"
+      }
+    },
+    "16129593238540884c": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/harlequin_1536x920_crop_center_jpg.webp",
+        "layout": "right",
+        "title": "About Us",
+        "text": "<p>Whether you're after the latest terrazzo trend or a simple white bathroom tile, we've got you covered. At Porcelain Superstore you'll find hundreds of beautiful wall tiles and floor tiles to make your home look great, without breaking the bank.<\/p><p><br\/>We offer tiles for all areas of your home. From bathroom tiles to kitchen tiles, living room tiles to hallway tiles and now the latest porcelain outdoor tiles, we have everything you need for your latest tiling project. <br\/><br\/>And to top it off, we're a family-run company putting great customer service at the heart of everything we do. Just give us a call - our friendly team are here to help!<\/p>",
+        "button_label": "Read More",
+        "button_link": "shopify:\/\/pages\/about-us"
+      }
+    },
+    "1613731000a4234b30": {
+      "type": "full-width-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/samples_2880x1540_crop_center_9aace75e-4c89-4003-8345-bb1bfe57e243.jpg",
+        "text_color": "#212a2f",
+        "text_position": "flex-start",
+        "text_vertical_position": "center",
+        "text_alignment": "flex-start",
+        "title": "Find your match,<br>for free",
+        "text": "Be inspired with our free sample service.<br>Your home will thank you.",
+        "cta_text": "LEARN MORE",
+        "link": "shopify:\/\/pages\/samples",
+        "cta_colour": "#212a2f",
+        "cta_text_colour": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "16624576746d92039d",
+    "1662389781ba05cd9e",
+    "161295933227c9aea2",
+    "1612961469a00a244b",
+    "1615544922a96cbdaf",
+    "161297336465de97c5",
+    "1614080994a6240d26",
+    "1618477960e7a9c845",
+    "1613738851defb2362",
+    "1612972915de4ecc9f",
+    "16129593238540884c",
+    "1613731000a4234b30"
+  ]
+}

@@ -1,0 +1,14 @@
+{%- comment -%}
+    {% render 'header-standard', class_name: 'collection-header', title: collection.title, description: collection.description, orientation: cdata.orientation, text_color: cdata.text_color, background_color: cdata.background_color, background_image: cdata.background_image %}
+{%- endcomment -%}
+
+<header class="collection-header-snippet" role="banner">
+    <div class="container">
+        <h1 class="heading-1">{{ collection.title }}</h1>
+        {% if collection.description != blank %}
+            <div class="rte">
+                {{ collection.description }}
+            </div>
+        {% endif %}
+    </div>
+</header>  

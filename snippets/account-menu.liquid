@@ -1,0 +1,35 @@
+
+{%- comment -%}   
+  {%- assign example_linklist = section.settings.example_linklist -%}
+
+  {% render 'account-menu', linklist: linklists[example_linklist], class_name: 'example-menu', linklist_header: linklists[example_linklist].title %}
+{%- endcomment -%}
+
+<section class="{{ class_name }}">
+  {% if linklist.links.size > 0 %}
+    {% if linklist_header %}
+      <h4 class="heading-4">{{linklist_header}}</h4>
+    {% endif %}
+    <ul data-turbolinks="false">
+      {% for link in linklist.links %}
+        <li {% if link.active or (link.url == '/account' and template == 'customers/order') %} class="active" {% endif %}>
+          <a href="{{ link.url }}" >{{ link.title }}</a>
+        </li>
+      {% endfor %}
+      <li><a href="/account/login#recover" data-change-password>{{ 'customer.account.change_password' | t }}</a></li>
+      <li><a href="/account/logout">{{ 'customer.account.logout' | t }}</a></li>
+    </ul>
+
+    <div class="select-wrapper mobile-menu">
+      <select class="select" data-select-as-nav>
+        {% for link in linklist.links %}
+          <option {% if link.active or (link.url == '/account' or template == 'customers/order') %} selected {% endif %} data-url="{{link.url}}" >
+            {{ 'customer.account.mobile_menu_prefix' | t }}{{ link.title }}
+          </option>
+        {% endfor %}
+        <option data-url="/account/login#recover" data-change-password>{{ 'customer.account.change_password' | t }}</option>
+        <option data-url="/account/logout" >{{ 'customer.account.logout' | t }}</option>
+      </select>
+    </div>
+  {% endif %}
+</section>

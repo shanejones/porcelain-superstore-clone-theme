@@ -1,0 +1,23 @@
+{% layout none %}
+{% assign variant_ids = cart.items | map: 'variant_id' | uniq %}
+{% assign product_variants = cart.items | map: 'product' | map: 'variants' | uniq %}
+{% assign variants_at_limit = '{' %}
+{% for id in variant_ids %}
+  {% assign variant = product_variants | where: 'id', id | first %}
+  {% assign quantities = cart.items | where: 'variant_id', variant.id | map: 'quantity' %}
+  {% assign total_quantity_in_cart = 0 %}
+  {% for quantity in quantities %}
+    {% assign total_quantity_in_cart = quantity | plus: total_quantity_in_cart %}
+  {% endfor %}
+  {% assign inventory_quantity_remaining = variant.inventory_quantity | minus: total_quantity_in_cart %}
+  {% if inventory_quantity_remaining < 1 and variant.inventory_policy != 'continue' %}
+    {% assign actual_variant_quantity = variant.inventory_quantity %}
+    {% if variant.inventory_management == blank %}
+      {% comment %} inventory management set to not track, but the quantity will likely be -1234 so default to 1{% endcomment %}
+      {% assign actual_variant_quantity = 1 %}
+    {% endif %}
+    {% assign variants_at_limit = variants_at_limit | append: ',"' | append: id | append: '":' | append: actual_variant_quantity %}
+  {% endif %}
+{% endfor %}
+{% assign variants_at_limit = variants_at_limit | remove_first: ',' | append: '}' %}
+{{- variants_at_limit -}}

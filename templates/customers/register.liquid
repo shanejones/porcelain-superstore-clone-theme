@@ -1,0 +1,63 @@
+<section class="customer-register-template customer-template customer-contained-template">
+  <div class="container">
+    <div class="customer-register-main">
+      <h1 class="heading-2 bold">{{ 'customer.register.title' | t }}</h1>
+      <p>{{ 'customer.register.description' | t }}</p>
+
+      {% form 'create_customer' %}
+        {{ form.errors | default_errors }}
+
+        <label for="FirstName" class="label hide">
+          {{ 'customer.register.first_name' | t }}
+        </label>
+        <input type="text"
+          class="text-input"
+          name="customer[first_name]"
+          id="FirstName"
+          placeholder="{{ 'customer.register.first_name' | t }}"
+          autofocus
+          {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+
+        <label for="LastName" class="label hide">
+          {{ 'customer.register.last_name' | t }}
+        </label>
+        <input type="text"
+          class="text-input"
+          name="customer[last_name]"
+          id="LastName"
+          placeholder="{{ 'customer.register.last_name' | t }}"
+          {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+
+        <label for="Email" class="label hide">
+          {{ 'customer.register.email' | t }}
+        </label>
+        <input type="email"
+          class="text-input"
+          name="customer[email]"
+          id="Email"
+          class="{% if form.errors contains 'email' %}input-error{% endif %}"
+          placeholder="{{ 'customer.register.email' | t }}"
+          value="{% if form.email %}{{ form.email }}{% endif %}"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off">
+
+        <label for="CreatePassword" class="label hide">
+          {{ 'customer.register.password' | t }}
+        </label>
+        <input type="password"
+          class="text-input"
+          name="customer[password]"
+          id="CreatePassword"
+          class="{% if form.errors contains 'password' %}input-error{% endif %}"
+          placeholder="{{ 'customer.register.password' | t }}">
+
+        <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn-primary">
+
+        <div class="supporting-text">
+          {{ 'customer.register.login_html' | t }}
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</section>

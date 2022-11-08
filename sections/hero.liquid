@@ -1,0 +1,94 @@
+{% render 'content-background-image' data: section.settings, id: section.id %}
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image",
+      "info": "Recommended Size: 2880x1540"
+    },
+    {
+      "type": "image_picker",
+      "id": "mob_image",
+      "label": "Mobile Background Image",
+      "info": "Optional. Recommended Size: 750x930"
+    },
+    {
+      "type":      "color",
+      "id":        "text_color",
+      "label":     "Text Color",
+      "default":   "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text Position",
+      "options": [
+          { "value": "flex-start", "label": "left"},
+          { "value": "center", "label": "center"},
+          { "value": "flex-end", "label": "right"}
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_vertical_position",
+      "label": "Text Vertical Position",
+      "options": [
+        { "value": "flex-start", "label": "top"},
+        { "value": "center", "label": "center"},
+        { "value": "flex-end", "label": "bottom"}
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+          { "value": "flex-start", "label": "left"},
+          { "value": "center", "label": "center"},
+          { "value": "flex-end", "label": "right"}
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "CTA Link"
+    },
+    {
+      "type": "color",
+      "id": "cta_colour",
+      "label": "CTA Colour",
+      "default": "#00d0bb"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_colour",
+      "label": "CTA Text Colour",
+      "default": "#000"
+    }
+  ],
+  "presets": [{
+    "name": "Hero",
+    "category": "Baseline"
+  }]
+}
+{% endschema %}

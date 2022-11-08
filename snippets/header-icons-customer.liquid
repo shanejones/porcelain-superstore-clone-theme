@@ -1,0 +1,14 @@
+{% if shop.customer_accounts_enabled %}
+  <section class="header-icons-customer-snippet header-icon">
+    {% if button_only %}
+      <a href="/account" class="icon-wrapper" aria-label="Customer icon">
+        {% render 'icon-account' %}
+      </a>
+    {% else %}
+      <a href="/account">
+        {% render 'icon-account' %}
+        <small class="text-upper">{{ 'layout.customer.account' | t }}</small>
+      </a>
+    {% endif %}
+  </section>
+{% endif %}

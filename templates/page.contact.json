@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-contact",
+      "settings": {
+        "title": "Contact Us",
+        "content": "<p>From start to finish, we're here to help. And we might be bragging, but we think our friendly Customer Service team are the best in the business. <\/p><p>So whether you're after advice on bathroom colours or need to know how deliveries work, just get in touch.<\/p><p><strong>By Phone<br\/><\/strong>0330 094 0304<br\/><br\/>We're open Monday - Friday, 9am - 5pm<br\/>Our lines are closed during weekends and Bank holidays<br\/><\/p>",
+        "row1_col1": "<p>By Email<br\/><a href=\"mailto:help@porcelainsuperstore.co.uk\" title=\"mailto:help@porcelainsuperstore.co.uk\">help@porcelainsuperstore.co.uk<\/a><\/p>",
+        "row1_col2": "",
+        "row1_col3": "",
+        "row2_col1": "",
+        "row2_col2": "",
+        "row2_col3": "",
+        "row3_col1": "",
+        "row4_col1": "<p>On Instagram<br\/>@porcelainsuperstore<\/p>",
+        "row5_col1": "<p>Main Warehouse<br\/>Unit 7<br\/>Millbrook Industrial Estate<br\/>Floats Road<br\/>Manchester<br\/>M23 9WT<\/p>",
+        "row5_col2": "<p>Please note<br\/>This is a warehouse for customer collections only and we don't have a showroom.<\/p>",
+        "row5_col3": "",
+        "form_title": "Alternatively, fill out our contact form",
+        "form_content": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

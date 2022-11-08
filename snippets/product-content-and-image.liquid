@@ -1,0 +1,23 @@
+{%- comment -%}
+  {% render 'product-content-and-image', product: product %}
+{%- endcomment -%}
+{% if product.metafields.metacontent.blurb %}
+  <div class="container">
+    <div class="product-content-and-image__snippet">
+      <div class="product-content-and-image__blurb-container">
+        <div class="product-content-and-image__blurb-content">
+          {% if product.metafields.metacontent.title %}
+            <h2 class="heading-2 product-content-and-image__title">{{ product.metafields.metacontent.title }}</h2>
+          {% endif %}
+    
+          <div class="rte product-content-and-image__blurb">
+            {{ product.metafields.metacontent.blurb }}
+          </div>
+        </div>
+      </div>
+      <div class="product-content-and-image__img-container">
+        <img src="{{ product.metafields.metacontent.image }}" alt="{{ product.metafields.metacontent.title }}">
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,38 @@
+{% assign product_count = 0 %}
+{%- capture product_list -%}
+  {%- comment -%}pretend paginiation{%- endcomment -%}
+  {% paginate collections[collection.handle].products by collection.all_products_count %}
+    {% assign count = 0 %}
+    {% for product in collections[collection.handle].products %}
+      {% assign tags = product.tags | downcase %}
+      {% assign match = true %}
+        {% for filter_group in current_tags %}
+          {% unless filter_group contains 'filter' %}
+            {% continue %}
+          {% endunless%}
+          {% assign match = false %}
+          {% assign filters = filter_group | split: '~' %}
+          {% for filter in filters %}
+            {% assign filter = filter | downcase %}
+            {% assign match = false %}
+            {% if tags contains filter %}
+              {% assign match = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% unless match %}{% break %}{% endunless %}
+        {% endfor %}
+      {% unless match %}{% continue %}{% endunless %}
+      {% assign count = count | plus: 1 %}
+      <div class="grid-item">
+        {% render 'product-card', product: product %}
+      </div>
+    {% endfor %}
+    {% if count == 0 %}
+      <p>{{ 'collections.general.no_matches' | t }}</p>
+    {% endif %}
+    {% assign product_count = count %}
+  {% endpaginate %}
+{%- endcapture -%}
+{% if display == 'count' %}{{ product_count }}{% endif %}
+{% if display == 'list' %}<div class="cl-product-card-container">{{ product_list }}</div>{% endif %}

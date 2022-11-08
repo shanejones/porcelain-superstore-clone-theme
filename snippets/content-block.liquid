@@ -1,0 +1,35 @@
+<div class="content-container container">
+  {% for block in content_blocks %}
+    {% if block.type == 'Content-1' %}
+      <div 
+      class="content {% if block.settings.image != blank %}content-background-image{% endif %}"
+      style="{% if block.settings.image != blank %}background-image: url({{ block.settings.image | img_url: '1280x', crop: 'center' }}){% endif %}"
+      >
+        <h3 class="heading-3">{{ block.settings.title }}</h3>
+        {% if block.settings.text != blank %}
+          <p class="content-text">{{ block.settings.text }}</p>  
+        {% endif %}
+        {% if block.settings.cta_text != blank %}
+          <button class="btn btn--{{ block.settings.cta_type }}">{{ block.settings.cta_text }}</button>
+        {% endif %}
+      </div>
+    {% elsif block.type == 'Content-2' %}
+      <div class="content">
+        <div 
+        class="content-image-box"
+        style="{% if block.settings.image != blank %}background-image: url({{ block.settings.image | img_url: '1280x', crop: 'center' }}){% endif %}"
+        ></div>
+        <div class="text-center">
+          <h3 class="heading-3">{{ block.settings.title }}</h3>
+          {% if block.settings.text != blank %}
+            <p class="content-text">{{ block.settings.text }}</p>  
+          {% endif %}
+          {% if block.settings.cta_text != blank %}
+            <button class="btn btn--{{ block.settings.cta_type }}">{{ block.settings.cta_text }}</button>
+          {% endif %} 
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+

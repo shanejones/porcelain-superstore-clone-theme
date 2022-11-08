@@ -1,0 +1,42 @@
+{% render 'mascot-and-text', blocks: section.blocks %}
+
+{% schema %}
+  {
+    "name": "mascot-and-text",
+    "settings": [],
+    "blocks":
+      [
+        {
+          "type": "mascot_and_text",
+          "name": "Mascot and Text",
+          "settings" : [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image",
+              "info": "Recommended Size: 480x480"
+            },
+            {
+              "id": "link",
+              "type": "url",
+              "label": "CTA Link"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "text",
+              "label": "Text"
+            }
+          ]
+        }
+      ],
+    "presets": [{
+      "name": "Mascot and Text",
+      "category": "Homepage"
+    }]
+  }
+{% endschema %}

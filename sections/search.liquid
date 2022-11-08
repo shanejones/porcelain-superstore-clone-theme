@@ -1,0 +1,60 @@
+<section class="search-template">
+  <div class="container">
+    {% paginate search.results by 96 %}
+      <header class="search-header"> 
+        <h1 class="heading-2 text-center">
+          {% if search.performed %}
+            <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
+            {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+          {% else %}
+            {{ 'general.search.title' | t }}
+          {% endif %}
+        </h1>
+        
+        <form action="/search" method="get" role="search" class="search-form center">
+          <label for="Search" class="label hide">
+            {{ 'general.search.placeholder' | t }}
+          </label>
+          <div class="input-container">
+            <input type="text"
+              name="q"
+              id="Search"
+              value="{{ search.terms | escape }}"
+              placeholder="{{ 'general.search.placeholder' | t }}"
+              class="text-input">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            {{ 'general.search.submit' | t }}
+          </button>
+        </form>
+      </header>
+
+      {% if search.performed %}
+        {% if search.results_count == 0 %}
+          <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+        {% else %}
+          <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+          <ul class="grid-list">
+            {% for item in search.results %}
+              <li class="grid-item">
+                {% if item.object_type == 'product' %}
+                  {% render 'product-card', product: item %}
+                {% else %}
+                  <a href="{{ item.url | within: collection }}">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
+                  </a>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+
+          {% if paginate.pages > 1 %}
+            {% include 'pagination' %}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+
+    {% endpaginate %}
+  </div>
+</section>

@@ -1,0 +1,67 @@
+{% render 'page-header'%}
+{% render 'page-faqs' %}
+  
+{% schema %}
+  {
+    "name": "FAQS",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Header image"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "page-text",
+        "name": "Page headers",
+        "settings": [
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Attach to a page"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Add custom background image"
+          }
+        ]
+      },
+      {
+        "type": "accordion",
+        "name": "Accordion",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "This FAQ name (so you can find it quickly in the sidebar)",
+            "default": "FAQ Title"
+          },
+          {
+            "type": "text",
+            "id": "parent_title",
+            "label": "Parent Category Title",
+            "info": "This the title that will sit in the menu box on the left."
+          },
+          {
+            "type": "text",
+            "id": "category_title",
+            "label": "Category Title",
+            "info": "Optional"
+          },
+          {
+            "type": "textarea",
+            "id": "accordion_title",
+            "label": "Accordion Title"
+          },
+          {
+            "type": "richtext",
+            "id": "accordion_body",
+            "label": "Accordion Body Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

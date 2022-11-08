@@ -1,0 +1,28 @@
+{% comment %}
+  {% render 'product-quick-add-button', product: product %}
+{% endcomment %}
+
+{%- assign pricePerMeterSquared = product.metafields.product.price_per_meter_squared | escape -%}
+{%- assign priceSizeDimensions = product.metafields.product.size_dimensions | escape -%}
+
+{% if product.available %}
+  {% assign options = '' %}
+    {% for variant in product.variants %}
+      {% for option in variant.options %}
+        {% assign options = options | append: option %}
+      {% endfor %}
+    {% endfor %}
+
+    {% if options contains 'Box' %}
+      {% capture packSize %}{{'products.product.per_box' | t }}{% endcapture %}
+    {% elsif options contains 'Sheet' %}
+      {% capture packSize %}{{'products.product.per_sheet' | t }}{% endcapture %}
+    {% endif %}
+  {% endif %}
+
+  <button
+    data-quick-add-btn="{{product.handle}}" 
+    class="quick-add-btn btn btn-secondary" 
+    onclick='window.blubolt.quickadd.open("{{product.handle}}", {"metafields":{"pricePerMeterSquared":"{{ pricePerMeterSquared }}", "sizeDimensions":"{{ priceSizeDimensions }}", "packSize": "{{ packSize }}" }})'>
+      {{ 'products.product.quickadd_title' | t  }}
+  </button>

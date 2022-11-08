@@ -1,0 +1,76 @@
+{%- comment -%}
+{% render 'tags', tags: collection.all_tags %}
+{%- endcomment -%}
+
+<section class="tags-snippet">
+  {% if tags.size > 0 %}
+  {% for block in section.blocks %}
+    {% assign data = block.settings %}
+    
+    {% if data.tag == 'View all' %}
+      {% assign background_color = data.color %}
+      {% assign text_color = data.text_color %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+    <ul class="center-align">
+      <li {% if current_tags == null %} class="active"{% endif %}>
+        <a style="
+          {% if background_color != blank %}
+            background-color: {{ background_color }};
+          {% endif %}
+          {% if text_color != blank %}
+            color: {{ text_color }};
+          {% endif %}"
+
+        href="/blogs/{{ blog.handle }}">{{ 'blogs.article.view_all' | t }}</a>
+      </li>
+
+      {% for tag in tags %}
+        {% unless tag contains 'Category_' %}
+          {% continue %}
+        {% endunless %}
+
+        {% assign background_color = blank %}
+        {% assign text_color = blank %}
+        {% assign tag_formatted = tag | replace: 'Category_', '' %}
+        {% for block in section.blocks %}
+          {% assign data = block.settings %}
+         
+          {% if data.tag == tag_formatted %}
+            {% assign background_color = data.color %}
+            {% assign text_color = data.text_color %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% if current_tags contains tag %}
+          <li class="active" data-type="{{ tag | replace: 'Category_', '' }}">
+            <a style="
+              {% if background_color != blank %}
+                background-color: {{ background_color }};
+              {% endif %}
+              {% if text_color != blank %}
+                color: {{ text_color }};
+              {% endif %}" 
+                href="/blogs/{{ blog.handle }}">{{ tag_formatted }}</a>
+          </li>
+        {% else %}
+          <li>
+            <a style="
+              {% if background_color != blank %}
+                background-color: {{ background_color }};
+              {% endif %}
+              {% if text_color != blank %}
+                color: {{ text_color }};
+              {% endif %}" 
+
+            href="/blogs/{{ blog.handle }}/tagged/{{ tag | replace: " ", "-"  }}">{{ tag_formatted }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>
+  

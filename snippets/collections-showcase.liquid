@@ -1,0 +1,46 @@
+{% assign max_grid_items = 9 %}
+
+<section shsh class="collections-showcase-section collections-showcase--lifestyle section-with-header section-margin-bottom"
+  id="collections-showcase-section-{{ section.id }}">
+  <div class="container">
+    {% if settings.title != blank or  settings.link != blank %}
+      <header>
+        {% if settings.title != blank %}
+          <h2 class="heading-2">{{ settings.title }}</h2>
+        {% endif %}
+        {% if settings.link != blank %}
+          <a class="view-all cta"
+            href="{{ settings.link }}">{{ 'general.listings.view_all_link' | t }}</a>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <ul class="list-collections">
+      {% if blocks != blank %}
+        {% for block in blocks %}
+          {% assign data = block.settings %}
+          {% render 'collections-showcase-item',
+            mobile_image: data.mobile_image,
+            dt_width: data.dt_width,
+            show_on_mobile: data.show_on_mobile,
+            image: data.image,
+            link: data.link,
+            title: data.title,
+            title_color: data.title_color,
+            id: block.id %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+  <style>
+    #collections-showcase-section-{{ section.id }} {
+      background: {{ settings.background_color }}
+    }
+
+    {% if settings.heading_color != blank %}
+      #collections-showcase-section-{{ section.id }} .heading-2 {
+        color: {{ settings.heading_color }};
+      }
+    {% endif %}
+  </style>
+</section>

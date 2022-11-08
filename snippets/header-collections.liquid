@@ -1,0 +1,48 @@
+
+{%- comment -%}
+  {% render 'header-collections' %}
+{%- endcomment -%}
+{% assign text_color_style = '' %}
+{% if text_color != blank and text_color != 'rgba(0,0,0,0)' %}
+  {% assign text_color_style = 'color: ' | append: text_color %}
+{% endif %}
+
+{% assign class = "truncated-container" %}
+{% if description.size <= character_limit %}
+  {% assign class = "" %}
+{% endif %}
+
+<header class="header-collections-snippet {{ class_name }}" role="banner">
+  <div class="image-container">
+    {% if collection_image != blank %}
+      <img
+        data-lazy-load
+        src="{{ collection_image | img_url: '100x', crop: 'center' }}"
+        data-srcset="
+          {{ collection_image | img_url: '375x', crop: 'center' }} 320w,
+          {{ collection_image | img_url: '768x', crop: 'center' }} 770w,
+          {{ collection_image | img_url: '1440x374', crop: 'center' }} 1x,
+          {{ collection_image| img_url: '2880x748', crop: 'center' }} 2x"
+        "
+        alt="{{ media.alt }}" />
+    {% endif %}
+  </div>
+  <div class="container">
+    <div class="text-container {{ class }}">
+      <h1 class="heading-2 bold" style="{{ text_color_style }}">{{ title }}</h1>
+        {% if description %}
+          <div class="rte">
+            <div class="truncated">{{ description | truncate: character_limit, "..." }} <span data-click-toggle='{"target": ".text-container.truncated-container", "toggle": "truncated-container"}'>{{ 'blogs.article.read_more' | t}}</span></div>
+            <div class="full">{{ description }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if text_color_style != '' %}
+      <style>
+        .rte p {
+          {{ text_color_style }};
+        }
+      </style>
+    {% endif %}
+</header>

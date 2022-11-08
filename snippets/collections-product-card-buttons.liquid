@@ -1,0 +1,8 @@
+<div class="button-container">
+  {% if has_free_sample %}
+    {% render 'collection-add-sample-button', product: product, has_free_sample: has_free_sample %}
+  {% endif %}
+  {% if product.images.size > 1  %}
+    {% render 'product-quick-add-button', product: product %}
+  {% endif %}
+</div>

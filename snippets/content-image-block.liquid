@@ -1,0 +1,49 @@
+
+{%- comment -%}
+  {% render 'content-image-block' %}
+{%- endcomment -%}
+
+{% assign thumbnail = block.settings.image | img_url: '100x', crop: 'center' %}
+{% assign oneXImage = block.settings.image | img_url: '1200x1200', crop: 'center' %}
+{% assign twoXImage = block.settings.image | img_url: '2400x2400', crop: 'center' %}
+{% assign link = block.settings.link %}
+{% assign size = block.settings.size %}
+{% assign title = block.settings.title %}
+{% assign title_colour = block.settings.title_color %}
+{% assign text_position = block.settings.text_position %}
+{% assign textAlignment = block.settings.textAlignment %}
+{% assign cta_text = block.settings.cta_text %}
+
+<section class="content-image-block-snippet {{ size }} content-image-block">
+  <a class="image-wrapper" href="{{ link }}">
+    <img class="opt_lazy"
+ data-src="{{ thumbnail }}"
+      
+      alt="{{ title }}" />
+
+    <div class="overlay"></div>
+  </a>
+
+  <a href="{{ link }}" class="text-wrapper" style="align-items: {{ text_position }};">
+    
+    {% assign textAlign = 'left' %}
+    {% if textAlignment == 'center' %}
+      {% assign textAlign = 'center' %}
+    {% endif %}
+    {% if textAlignment == 'flex-end' %}
+      {% assign textAlign = 'right' %}
+    {% endif %}
+
+    <div class="text-wrapper-inner" style="text-align: {{ textAlign }};">
+      <h2 class="{% if style == 'over' %}heading-2{% else %}heading-3{% endif%}"
+        {% if title_colour != blank %}style="color: {{ title_colour }};"{% endif %}>
+        {{ title }}
+      </h2>
+  
+      {% if link != blank %}
+        <button type="button" class="btn btn--primary">{{ cta_text }}</button>
+      {% endif %}
+    </div>
+  </a>
+</section>
+  

@@ -1,0 +1,39 @@
+<div class="cart-shipping-bands-section">
+  <ul>
+    {% for block in section.blocks %}
+      <li>
+        {% assign thumbnail = block.settings.icon | img_url: '40x', crop: 'center' %}
+        <img src="{{ thumbnail }}" alt="{{ block.settings.text | escape }}" />
+        <div class="flex flex-items-center">
+          {{ block.settings.text }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+  {
+    "name": "Shipping Text",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "shipping_band",
+        "name": "Shipping Information Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+  

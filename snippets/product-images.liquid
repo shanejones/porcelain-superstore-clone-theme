@@ -1,0 +1,145 @@
+
+{% comment %} Image Slider (using GliderJS) {% endcomment %}
+{% assign loop_size = product.images.size | minus: 1 %}
+
+<div class="glide glide--ltr glide--slider glide--swipeable" id="product-image-slider" data-glide-mob data-id="product-image-slider" data-glide-id="22" data-glider-config='{
+              "type": "slider",
+              "animationDuration": 1000}'>
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      {% for i in (0..1) %}
+        {% assign count = i %}
+        <li class="glide__slide {% unless i == 0 %} hide {% endunless %}" data-image-index="{{ count }}" data-image-zoom-toggle>
+          {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+            <button class="glide__video-btn" data-image-video-btn data-anchor="product-image-list-img-2"></button>
+          {% endif %}
+          <picture class="pic-container">
+            <source
+                    media="(max-width: 415px)"
+                    data-lazy-load fetchpriority="high"
+                    src="{{ product.images[i] | img_url: '415x', crop: 'center' }}"
+                    data-srcset="
+                                 {{ product.images[i] | img_url: '415x', crop: 'center' }} 1x,
+                                 {{ product.images[i] | img_url: '415x', crop: 'center', scale:2 }} 2x" />
+            <source
+                    media="(max-width: 768px)"
+                    data-lazy-load
+                    src="{{ product.images[i] | img_url: '600x', crop: 'center' }}"
+                    data-srcset="
+                                 {{ product.images[i] | img_url: '768x', crop: 'center' }} 1x,
+                                 {{ product.images[i] | img_url: '1536x', crop: 'center', scale:2 }} 2x" />
+            <img
+                 data-lazy-load 
+                 src="{{ product.images[i] | img_url: '600x', crop: 'center' }}"
+                 data-src="{{ product.images[i]| img_url: '816x', crop: 'center' }}"
+                 data-srcset="
+                              {{ product.images[i] | img_url: '816x', crop: 'center' }} 1x,
+                              {{ product.images[i] | img_url: '1630x', crop: 'center' }} 2x"
+                 data-anchor="product-image-list-img-{{ count }}"
+                 alt="{{ product.title }}">
+          </picture>  
+          <button class="glide__zoom-btn" data-image-zoom-btn data-anchor="product-image-list-img-{{ count }}"></button> 
+        </li>
+      {% endfor %}
+      {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+        <li class="glide__slide hide" data-image-index="2"> 
+          <div class="glide__slide--video">
+            <iframe src="https://www.youtube.com/embed/{{ product.metafields.video.video_id }}?enablejsapi=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </li>
+      {% endif %}
+      {% for i in (2..loop_size) %}
+        {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+          {% assign count = i | plus: 1 %}
+        {% else %}
+          {% assign count = i %}
+        {% endif %}
+        <li class="glide__slide {% unless i == 0 %} hide {% endunless %}" data-image-index="{{ count }}" data-image-zoom-toggle>
+          {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+            <button class="glide__video-btn" data-image-zoom-btn data-anchor="product-image-list-img-2"></button> 
+          {% endif %}
+          <picture class="pic-container">
+            <source
+                    media="(max-width: 415px)"
+                    data-lazy-load fetchpriority="high"
+                    src="{{ product.images[i] | img_url: '415x', crop: 'center' }}"
+                    data-srcset="
+                                 {{ product.images[i] | img_url: '415x', crop: 'center' }} 1x,
+                                 {{ product.images[i] | img_url: '415x', crop: 'center', scale:2 }} 2x" />
+            <source
+                    media="(max-width: 768px)"
+                    data-lazy-load
+                    src="{{ product.images[i] | img_url: '600x', crop: 'center' }}"
+                    data-srcset="
+                                 {{ product.images[i] | img_url: '768x', crop: 'center' }} 1x,
+                                 {{ product.images[i] | img_url: '1536x', crop: 'center', scale:2 }} 2x" />
+            <img
+                 data-lazy-load 
+                 src="{{ product.images[i] | img_url: '600x', crop: 'center' }}"
+                 data-src="{{ product.images[i]| img_url: '816x', crop: 'center' }}"
+                 data-srcset="
+                              {{ product.images[i] | img_url: '816x', crop: 'center' }} 1x,
+                              {{ product.images[i] | img_url: '1630x', crop: 'center' }} 2x"
+                 data-anchor="product-image-list-img-{{ count }}"
+                 alt="{{ product.title }}">
+          </picture>  
+          <button class="glide__zoom-btn" data-image-zoom-btn data-anchor="product-image-list-img-{{ count }}"></button> 
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+    </div>
+  </div>
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    {% for i in (0..1) %}
+      {% assign count = i %}
+      <button class="glide__bullet" aria-label="Product image carousel button" data-glide-dir="={{ count }}">
+        <img
+             data-lazy-load
+             src="{{ product.images[i] | img_url: '50x', crop: 'center' }}"
+             data-src="{{ product.images[i] | img_url: '100x', crop: 'center' }}"
+             data-srcset="
+                          {{ product.images[i] | img_url: '100x', crop: 'center' }} 1x,
+                          {{ product.images[i] | img_url: '200x', crop: 'center' }} 2x"
+             alt="{{ product.title }}"
+             class="hide-mobile" >
+      </button>
+    {% endfor %}
+    {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+      {% assign video_thumnail_image = product.metafields.video.thumbnail %}
+      <button class="glide__bullet video_thumbnail" aria-label="Product image carousel button" data-glide-dir="=2">
+        <img
+              data-lazy-load
+              src="{{ video_thumnail_image | img_url: '50x', crop: 'center' }}"
+              data-src="{{ video_thumnail_image| img_url: '100x', crop: 'center' }}"
+              data-srcset="
+              {{ video_thumnail_image | img_url: '100x', crop: 'center' }} 1x,
+              {{ video_thumnail_image | img_url: '200x', crop: 'center' }} 2x"
+              alt="{{ product.title }}"
+              class="hide-mobile" >
+      </button>
+    {% endif %}
+    {% for i in (2..loop_size) %}
+      {% if product.metafields.video.thumbnail and product.metafields.video.video_id %}
+        {% assign count = i | plus: 1 %}
+      {% else %}
+        {% assign count = i %}
+      {% endif %}
+      <button class="glide__bullet" aria-label="Product image carousel button" data-glide-dir="={{ count }}">
+        <img
+             data-lazy-load
+             src="{{ product.images[i] | img_url: '50x', crop: 'center' }}"
+             data-src="{{ product.images[i] | img_url: '100x', crop: 'center' }}"
+             data-srcset="
+                          {{ product.images[i] | img_url: '100x', crop: 'center' }} 1x,
+                          {{ product.images[i] | img_url: '200x', crop: 'center' }} 2x"
+             alt="{{ product.title }}"
+             class="hide-mobile" >
+      </button>
+    {% endfor %}
+  </div>
+</div>
+{% render 'product-images-list', product: product, current_variant: current_variant %}

@@ -1,0 +1,25 @@
+<div class="cl-product-card-image">
+  {% comment %} Main image {% endcomment %}
+  <img data-lazy-load
+   class=""
+    data-src="{{ product.featured_image | img_url: '500x' }}"
+    src="{{ product.featured_image | img_url: '250x' }}"
+    alt="{{ product.featured_image.alt }}"
+    >
+
+  {% comment %} Image hover {% endcomment %}
+  {% for img in product.images %}
+    {% if img != product.featured_image %}
+      <img 
+        class="img-hover opt_lazy"
+        data-src="{{ img | img_url: '500x' }}"
+        alt="{{ img.alt }}"
+        
+       >
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %} Stickers {% endcomment %}
+  {% render 'product-sticker', product: product %}
+</div>

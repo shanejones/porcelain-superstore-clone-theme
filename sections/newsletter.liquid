@@ -1,0 +1,73 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Newsletter" section on the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the newsletter section
+  - Subheading: description of the newsletter section
+{%- endcomment -%}
+<section 
+  class="newsletter-section" 
+style="padding-top: {{section.settings.padding}}px; padding-bottom: {{section.settings.padding}}px; background-color: {{section.settings.bkgColor}};"
+>
+  <div class="container">
+    {% if section.settings.section_title != blank %}
+      <label for="Email" class="heading-3">{{ section.settings.section_title | escape }}</label>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p>{{ section.settings.subheading | escape }}</p>
+    {% endif %}
+  
+    {% render 'newsletter-form' %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type":      "color",
+        "id":        "bkgColor",
+        "label":     "Background Color",
+        "default":   "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "A short sentence describing what someone will receive by subscribing"
+      },
+      {
+        "type": "paragraph",
+        "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+      },
+      {
+        "type":      "color",
+        "id":        "textColor",
+        "label":     "Text Color",
+        "default":   "#ffffff"
+      },
+      {
+        "type": "select",
+        "id": "padding",
+        "label": "Padding",
+        "options": [
+            { "value": "16", "label": "thin"},
+            { "value": "32", "label": "thicker"},
+            { "value": "64", "label": "thickest"}
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter",
+      "category": "Baseline"
+    }]
+  }
+{% endschema %}

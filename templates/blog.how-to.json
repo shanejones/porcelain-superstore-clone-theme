@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-main",
+      "blocks": {
+        "f7e18391-d37d-4b4b-9e2b-aead25d7e48a": {
+          "type": "tag",
+          "settings": {
+            "tag": "Advice",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "1296e111-a535-4d44-88fd-ec9a985e1f75": {
+          "type": "tag",
+          "settings": {
+            "tag": "Planning",
+            "color": "#f4f4f4",
+            "text_color": "#000000"
+          }
+        },
+        "762b3bfa-a30b-45fa-89d5-081f3ad1af38": {
+          "type": "tag",
+          "settings": {
+            "tag": "Preparation",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "2457f1ef-1ef5-438e-bdc4-b6efb09e551c": {
+          "type": "tag",
+          "settings": {
+            "tag": "Installation",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        },
+        "166a3200-2b3b-4a76-b528-d480a3563ade": {
+          "type": "tag",
+          "settings": {
+            "tag": "Care & Maintenance",
+            "color": "#f4f4f4",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "f7e18391-d37d-4b4b-9e2b-aead25d7e48a",
+        "1296e111-a535-4d44-88fd-ec9a985e1f75",
+        "762b3bfa-a30b-45fa-89d5-081f3ad1af38",
+        "2457f1ef-1ef5-438e-bdc4-b6efb09e551c",
+        "166a3200-2b3b-4a76-b528-d480a3563ade"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/floor_3840x_762bf56b-f6b0-4852-afd9-7546c873b5bb.jpg",
+        "title": "Help & Advice",
+        "content": "Looking for tiling answers? You’re in the right place. From measuring up floors to cleaning kitchen tiles, our help and advice guides have got you covered, every step of the way. You can filter by a specific topic below  to find the answer you need. And if you need a little more help, just get in touch with our friendly team.",
+        "text_limit": 370,
+        "display_feature": false,
+        "feature_image": "shopify:\/\/shop_images\/How-to-tile-onto-concrete-floors.jpg",
+        "article": "help-advice\/how-to-tile-onto-concrete-floors"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

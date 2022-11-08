@@ -1,0 +1,39 @@
+{% render 'page-header' %}
+{% render 'page-trade' %}
+
+{% schema %}
+  {"name": "Trade",
+    "settings":
+      [
+      {
+        "type": "richtext",
+        "id": "text_1",
+        "label": "Top Text"
+      },
+      {
+        "type": "richtext",
+        "id": "text_2",
+        "label": "Bottom Text"
+      }
+      ],
+    "blocks": 
+      [
+        {
+          "type": "page-text",
+          "name": "Page headers",
+          "settings": [
+            {
+              "type": "page",
+              "id": "page",
+              "label": "Attach to a page"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Add custom background image"
+            }
+          ]
+        }
+      ]
+    }
+{% endschema %}
